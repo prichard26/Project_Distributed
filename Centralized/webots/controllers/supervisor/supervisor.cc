@@ -73,8 +73,9 @@ double gauss(void)
 }
 
 double rand_coord() {
-  // return -1.0 + 2.0*RAND;
-  return -0.95 + 1.9*RAND;
+  double min = -0.45;
+  double max = 0.45;
+  return min + (max - min) * RAND;
 }
 
 double expovariate(double mu) {
@@ -183,10 +184,7 @@ private:
     // Get the robot node's handle
     sprintf(node_name, kRobotNameFormat, id);
     printf("Linking robot: %s\n", node_name);  // Debugging line
-    printf("robot name: %s\n", kRobotNameFormat);
 
-    printf("Expected node name: %s\n", node_name);
-    printf("Expected node name: %s\n", node_name);
     robots_[id] = wb_supervisor_node_get_from_def(node_name);
     if (!robots_[id]) {
       DBG(("Missing node for robot #%d\n", id));
@@ -203,22 +201,6 @@ private:
     wb_receiver_enable(receivers_[id], 2); //32
     wb_receiver_set_channel(receivers_[id], id+1);
   }
-
-  //debug function
-  void printExpectedNodes(uint16_t num_robots) {
-      printf("Checking expected robot nodes...\n");
-      for (uint16_t i = 0; i < num_robots; ++i) {
-          char node_name[16];
-          sprintf(node_name, "e-puck%d", i);  // Match the expected DEF format
-          WbNodeRef node = wb_supervisor_node_get_from_def(node_name);
-          if (node) {
-              printf("Found node: %s\n", node_name);
-          } else {
-              printf("Node not found: %s\n", node_name);
-          }
-      }
-  }
-
 
   // Assemble a new message to be sent to robots
   void buildMessage(uint16_t robot_id, const Event* event,
@@ -257,7 +239,7 @@ private:
   void setRobotPos(uint16_t robot_id, double x, double y) {
     WbFieldRef f_pos = wb_supervisor_node_get_field(robots_[robot_id],
       "translation");
-    double pos[3] = {x, y, 0.1};
+    double pos[3] = {x, y, 0.005};
     return wb_supervisor_field_set_sf_vec3f(f_pos, pos);
   }
 
@@ -331,6 +313,32 @@ private:
     }
   }
 
+// Helper function to check if a position is at least MIN_DISTANCE away from all existing positions
+bool isValidPosition(double x, double y, int robot_id) {
+    Point2d candidate(x, y);
+    for (int i = 0; i < robot_id; ++i) {
+        const double *existing_pos = getRobotPos(i);
+        Point2d existing(existing_pos[0], existing_pos[1]);
+        if (candidate.Distance(existing) < 0.2) { // 20 cm
+            return false;
+        }
+    }
+    return true;
+}
+
+// Helper function to place a robot ensuring minimum distance
+void placeRobotWithMinDistance(int robot_id) {
+    double x, y;
+    do {
+        x = rand_coord();
+        y = rand_coord();
+    } while (!isValidPosition(x, y, robot_id));
+
+    setRobotPos(robot_id, x, y);
+    stat_robot_prev_pos_[robot_id][0] = x;
+    stat_robot_prev_pos_[robot_id][1] = y;
+}
+
 public:
   Supervisor() : events_(MAX_EVENTS){}
   
@@ -354,17 +362,10 @@ public:
       addEvent();
     }
 
-    printf("Listing all available nodes:\n");
-    printExpectedNodes(NUM_ROBOTS);
-
     // link & initialize robots
     for (int i=0;i<NUM_ROBOTS;i++) {
       linkRobot(i);
-
-      double pos[2] = {rand_coord(), rand_coord()};
-      setRobotPos(i, pos[0], pos[1]);
-      stat_robot_prev_pos_[i][0] = pos[0];
-      stat_robot_prev_pos_[i][1] = pos[1];
+      placeRobotWithMinDistance(i); // Ensure placement respects minimum distance
     }
 
     // initialize the emitter
