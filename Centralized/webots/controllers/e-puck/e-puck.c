@@ -73,6 +73,7 @@ int Interconn[16] = {17,29,34,10,8,-38,-56,-76,-72,-58,-36,8,10,36,28,18};
 int clock;
 uint16_t robot_id;          // Unique robot ID
 robot_state_t state;        // State of the robot
+int robot_specialization;   // 0 for Task A and 1 for Task B
 double my_pos[3];           // X, Z, Theta of this robot
 char target_valid;          // boolean; whether we are supposed to go to the target
 double target[99][3];       // x and z coordinates of target position (max 99 targets)
@@ -110,6 +111,22 @@ double dist(double x0, double y0, double x1, double y1) {
     return sqrt((x0-x1)*(x0-x1) + (y0-y1)*(y0-y1));
 }
 
+double calculate_completion_time(int task_type) {
+    if (robot_specialization == task_type) {
+        return (task_type == 0) ? 3 : 1; // Specialized: Task A=3s, Task B=1s
+    } else {
+        return (task_type == 0) ? 9 : 5; // Non-specialized: Task A=9s, Task B=5s
+    }
+}
+
+double calculate_bid(double distance, int task_type) {
+    double travel_time = distance / 0.5; // Speed = 0.5 m/s
+    double completion_time = calculate_completion_time(task_type);
+    printf("Robot ID: %d, Distance: %.2f, Task Type: %d, Bid: %.2f\n", robot_id, distance, task_type, calculate_bid(distance, task_type));
+
+    return travel_time + completion_time;
+}
+
 // Check if we received a message and extract information
 static void receive_updates() 
 {
@@ -117,6 +134,7 @@ static void receive_updates()
     int target_list_length = 0;
     int i;
     int k;
+    printf("Robot ID: %d, Received a message from Supervisor\n", robot_id);
 
     while (wb_receiver_get_queue_length(receiver_tag) > 0) {
         const message_t *pmsg = wb_receiver_get_data(receiver_tag);
@@ -160,6 +178,7 @@ static void receive_updates()
         }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
+            printf("Robot ID: %d, Completed Event ID: %d\n", robot_id, msg.event_id);
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
             {
@@ -195,34 +214,17 @@ static void receive_updates()
         // check if new event is being auctioned
         else if(msg.event_state == MSG_EVENT_NEW)
         {                
-            indx = 0;
-            double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);             
-            if(target_list_length > 0)
-            {  
-              double dbeforegoal = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);             
-              double daftergoal  = dist(target[i][0], target[i][1], msg.event_x, msg.event_y);             
-              double dbeforetoafter = dist(my_pos[0], my_pos[1], target[i][0], target[i][1]); 
-              d = dbeforegoal + daftergoal - dbeforetoafter;            
+            printf("Robot ID: %d, Received new event: Event ID: %d, Task Type: %d, Position: (%.2f, %.2f), Calculated Bid: %.2f\n", 
+                   robot_id, msg.event_id, msg.task_type, msg.event_x, msg.event_y, calculate_bid(distance, msg.task_type));
 
-            }else{
-              double dbeforegoal = dist(target[i-1][0], target[i-1][1], msg.event_x, msg.event_y);             
-              double daftergoal  = dist(target[i][0], target[i][1], msg.event_x, msg.event_y);             
-              double dbeforetoafter = dist(target[i][0], target[i][1], target[i-1][0], target[i-1][1]);
-              if((dbeforegoal + daftergoal - dbeforetoafter)<d){
-                d = dbeforegoal + daftergoal - dbeforetoafter; 
-                indx = i;           
-              }
-              if(i == target_list_length -1){
-                if(daftergoal < d){
-                  d = daftergoal;
-                  indx = i +1;
-                }
-              }
-            } 
-            // Send my bid to the supervisor
-            const bid_t my_bid = {robot_id, msg.event_id, d, indx};
-            wb_emitter_set_channel(emitter_tag, robot_id+1);
-            wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
+            indx = 0;
+            double distance = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y); 
+            double bid_time = calculate_bid(distance, msg.task_type); // Use the new function
+            
+            // Send bid to the supervisor
+            const bid_t my_bid = {robot_id, msg.event_id, bid_time, indx};
+            wb_emitter_set_channel(emitter_tag, robot_id + 1);
+            wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));
         }
     }
     
@@ -256,6 +258,14 @@ static void receive_updates()
     }
 }
 
+void assign_specialization() {
+    if (robot_id < NUM_ROBOTS / 3) {
+        robot_specialization = 0; // Task A specialization
+    } else {
+        robot_specialization = 1; // Task B specialization
+    }
+    printf("Robot ID: %d, Specialization: %s\n", robot_id,(robot_specialization == 0) ? "Task A" : "Task B");
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* RESET and INIT (combined in function reset()) */
@@ -289,9 +299,9 @@ void reset(void)
         target[i][2] = INVALID; 
     }
 
-    // Start in the DEFAULT_STATE
+    // Start in the DEFAULT_STATE and assign the specialization (1/3 of Task A and 2/3 of Task B)
     state = DEFAULT_STATE;
-
+    assign_specialization();
     // read robot id and state from the robot's name
     char* robot_name; 
     robot_name = (char*) wb_robot_get_name();
@@ -325,6 +335,8 @@ void reset(void)
 
 void update_state(int _sum_distances)
 {
+    printf("Robot ID: %d, Current State: %d, Target Valid: %d\n", robot_id, state, target_valid);
+
     if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
     {
         state = OBSTACLE_AVOID;
@@ -448,18 +460,14 @@ void run(int ms)
             break;
 
         case GO_TO_GOAL:
+            printf("Robot ID: %d, Heading to Target: (%.2f, %.2f)\n", robot_id, target[0][0], target[0][1]);
             compute_go_to_goal(&msl, &msr);
             break;
 
         case OBSTACLE_AVOID:
+            printf("Robot ID: %d, Avoiding obstacle\n", robot_id);
             compute_avoid_obstacle(&msl, &msr, distances);
             break;
-
-        case RANDOM_WALK:
-            msl = 400;
-            msr = 400;
-            break;
-
         default:
             printf("Invalid state: robot_id %d \n", robot_id);
     }

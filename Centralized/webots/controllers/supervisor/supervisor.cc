@@ -52,7 +52,7 @@ using namespace std;
 #define MAX_RUNTIME (3*60*1000)      // ... total runtime after which simulation stops
 
 // Robot specializations: 0 for Task A, 1 for Task B
-vector<int> robot_specializations = {0, 0, 1, 1, 1};
+vector<int> robot_specializations = {0, 0, 1, 1, 1}; // 1/3 for Task A, 2/3 for Task B
 
 WbNodeRef g_event_nodes[MAX_EVENTS];
 vector<WbNodeRef> g_event_nodes_free;
