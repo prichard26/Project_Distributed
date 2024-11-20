@@ -1,0 +1,290 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "The model of the Khepera III robot"
+    "Author: Simon Blanchoud"
+    "Date: 26 SEP 2006"
+  ]
+  title "Lab05 Threshold"
+}
+Viewpoint {
+  orientation -0.37394084545199424 0.35195153486969705 0.8580782954984423 1.6633061990400768
+  position 0.07281806259322549 -1.563246610356692 1.6106887113744923
+}
+Background {
+  skyColor [
+    0.15 0.15 0.15
+  ]
+}
+RectangleArena {
+  rotation 0 0 1 1.5707963267948966
+}
+PointLight {
+  attenuation 0 0 0.5
+  intensity 0.5
+  location 0.55 -0.14 0.6
+}
+PointLight {
+  attenuation 0 0 0.5
+  intensity 0.5
+  location -0.5 0.43 0.6
+}
+Robot {
+  children [
+    DEF emitter Emitter {
+      channel 1
+    }
+    DEF rec1 Receiver {
+      name "rec1"
+      channel 1
+    }
+    DEF rec2 Receiver {
+      name "rec2"
+      channel 2
+      baudRate 960000
+    }
+    DEF rec3 Receiver {
+      name "rec3"
+      channel 3
+      baudRate 960000
+    }
+    DEF rec4 Receiver {
+      name "rec4"
+      channel 4
+      baudRate 960000
+    }
+    DEF rec5 Receiver {
+      name "rec5"
+      channel 5
+      baudRate 960000
+    }
+    DEF rec6 Receiver {
+      name "rec6"
+      channel 6
+      baudRate 960000
+    }
+    DEF rec7 Receiver {
+      name "rec7"
+      channel 7
+      baudRate 960000
+    }
+    DEF rec8 Receiver {
+      name "rec8"
+      channel 8
+      baudRate 960000
+    }
+    DEF rec9 Receiver {
+      name "rec9"
+      channel 9
+      baudRate 960000
+    }
+    DEF rec0 Receiver {
+      name "rec0"
+      baudRate 960000
+    }
+  ]
+  name "supervisor"
+  controller "threshold_super"
+  supervisor TRUE
+}
+DEF e0 Transform {
+  translation 0.12 0.13 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e1 Transform {
+  translation -0.13 0.37 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e2 Transform {
+  translation -0.3 -0.39 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          ambientIntensity 0.5
+          diffuseColor 0 0 1
+          shininess 0.5
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e3 Transform {
+  translation 0.1 -0.18 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e4 Transform {
+  translation 0.39 -0.41 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e5 Transform {
+  translation -0.4 0.07 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e6 Transform {
+  translation -0.14 -0.15 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e7 Transform {
+  translation 0.38 0.3 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e8 Transform {
+  translation 0.1 -0.39 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF e9 Transform {
+  translation -0.2 0.14 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+epuck_range {
+  translation 0.259002 -0.1 -0.000112239
+  rotation 2.5328875497210855e-06 -0.9999999999717659 -7.074790640191939e-06 0.000962939036823482
+  controller "reciever"
+}
+epuck_range {
+  translation -0.21 -0.05 -6.3962e-05
+  rotation 0.6827272638098751 -0.7306733081546841 9.856302523928403e-07 3.578580787255785e-09
+  name "e-puck(1)"
+  controller "reciever"
+}
+epuck_range {
+  translation -0.1 -0.34 -6.3962e-05
+  rotation 0.6827287797539088 -0.7306718916823538 -1.0341736665017168e-06 3.578585231465048e-09
+  name "e-puck(2)"
+  controller "reciever"
+}
+epuck_range {
+  translation 9.92153e-11 0.32 -6.3962e-05
+  rotation 0.682725681247687 -0.7306747868661172 -1.7424514968735983e-06 3.578578181166109e-09
+  name "e-puck(3)"
+  controller "reciever"
+}
+epuck_range {
+  translation 9.921458359717937e-11 1.7762698410103202e-11 -6.396198619608787e-05
+  rotation 0.6827253339456953 -0.7306751113787674 -6.038461811196375e-07 3.5785772366067095e-09
+  name "e-puck(4)"
+  controller "emitter"
+}
