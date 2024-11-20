@@ -5,7 +5,7 @@ sceneTreePerspectives: 000000ff0000000100000002000000c0000000fa01000000020100000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 0 "controllers/supervisor/supervisor.cc" "controllers/e-puck/e-puck.c"
+textFiles: 1 "controllers/supervisor/supervisor.cc" "controllers/EpuckCentralized/EpuckCentralized.c"
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck0:camera;1;1;0;0
 renderingDevicePerspectives: e-puck1:camera;1;1;0;0

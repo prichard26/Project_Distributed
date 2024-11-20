@@ -134,11 +134,10 @@ static void receive_updates()
     int target_list_length = 0;
     int i;
     int k;
-    printf("Robot ID: %d, Received a message from Supervisor\n", robot_id);
 
     while (wb_receiver_get_queue_length(receiver_tag) > 0) {
         const message_t *pmsg = wb_receiver_get_data(receiver_tag);
-        
+        printf("Robot ID: %d received message on channel %d\n", robot_id, robot_id + 1);
         // save a copy, cause wb_receiver_next_packet invalidates the pointer
         memcpy(&msg, pmsg, sizeof(message_t));
         wb_receiver_next_packet(receiver_tag);
@@ -214,13 +213,15 @@ static void receive_updates()
         // check if new event is being auctioned
         else if(msg.event_state == MSG_EVENT_NEW)
         {                
-            printf("Robot ID: %d, Received new event: Event ID: %d, Task Type: %d, Position: (%.2f, %.2f), Calculated Bid: %.2f\n", 
-                   robot_id, msg.event_id, msg.task_type, msg.event_x, msg.event_y, calculate_bid(distance, msg.task_type));
+
 
             indx = 0;
             double distance = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y); 
             double bid_time = calculate_bid(distance, msg.task_type); // Use the new function
-            
+
+            printf("Robot ID: %d, Received new event: Event ID: %d, Task Type: %d, Position: (%.2f, %.2f), Calculated Bid: %.2f\n", 
+                   robot_id, msg.event_id, msg.task_type, msg.event_x, msg.event_y, calculate_bid(distance, msg.task_type));
+
             // Send bid to the supervisor
             const bid_t my_bid = {robot_id, msg.event_id, bid_time, indx};
             wb_emitter_set_channel(emitter_tag, robot_id + 1);
@@ -322,7 +323,7 @@ void reset(void)
     wb_emitter_set_channel(emitter_tag, robot_id+1);
 
     receiver_tag = wb_robot_get_device("receiver");
-    wb_receiver_enable(receiver_tag, RX_PERIOD); // listen to incoming data every 1000ms
+    wb_receiver_enable(receiver_tag, TIME_STEP); // listen to incoming data every 1000ms
     wb_receiver_set_channel(receiver_tag, robot_id+1);
     
     // Seed random generator
@@ -445,7 +446,6 @@ void run(int ms)
         distances[sensor_nb] = wb_distance_sensor_get_value(ds[sensor_nb]);
         sum_distances += distances[sensor_nb];
     }
-
     // Get info from supervisor
     receive_updates();
 
@@ -455,6 +455,8 @@ void run(int ms)
     // Set wheel speeds depending on state
     switch (state) {
         case STAY:
+            printf("STAY \n");
+
             msl = 0;
             msr = 0;
             break;
@@ -486,7 +488,6 @@ void run(int ms)
 int main(int argc, char **argv) 
 {
     reset();
-  
     // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {run(TIME_STEP);}
     wb_robot_cleanup();

@@ -56,7 +56,7 @@
 ###
 ### ---- Webots included libraries ----
 ### if you want to use the Webots C API in your C++ controller program:
-### USE_C_API = true
+USE_C_API = true
 ###
 ### ---- Debug mode ----
 ### if you want to display the gcc command line for compilation and link, as

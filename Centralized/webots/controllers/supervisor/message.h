@@ -18,6 +18,9 @@ typedef struct {
   message_event_state_t event_state;
   // [[ valid if event_state > 0: 
   uint16_t event_id;
+
+  int task_type;  // Ensure this field exists
+
   double event_x;
   double event_y;
   // ]]

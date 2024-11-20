@@ -263,7 +263,7 @@ DEF e-puck0 E-puck {
   translation 0.259002 -0.1 -0.000112239
   rotation 2.5328875497210855e-06 -0.9999999999717659 -7.074790640191939e-06 0.000962939036823482
   name "e-puck0"
-  controller "e-puck"
+  controller "EpuckCentralized"
   emitter_channel 0
   receiver_channel 0
 }
@@ -271,7 +271,7 @@ DEF e-puck1 E-puck {
   translation -0.21 -0.05 -6.3962e-05
   rotation 0.6827272638098751 -0.7306733081546841 9.856302523928403e-07 3.578580787255785e-09
   name "e-puck1"
-  controller "e-puck"
+  controller "EpuckCentralized"
     emitter_channel 1
   receiver_channel 1
 }
@@ -279,7 +279,7 @@ DEF e-puck2 E-puck {
   translation -0.1 -0.34 -6.3962e-05
   rotation 0.6827287797539088 -0.7306718916823538 -1.0341736665017168e-06 3.578585231465048e-09
   name "e-puck2"
-  controller "e-puck"
+  controller "EpuckCentralized"
   emitter_channel 2
   receiver_channel 2
 }
@@ -287,7 +287,7 @@ DEF e-puck3 E-puck {
   translation 9.92153e-11 0.32 -6.3962e-05
   rotation 0.682725681247687 -0.7306747868661172 -1.7424514968735983e-06 3.578578181166109e-09
   name "e-puck3"
-  controller "e-puck"
+  controller "EpuckCentralized"
   emitter_channel 3
   receiver_channel 3
 }
@@ -295,7 +295,7 @@ DEF e-puck4 E-puck {
   translation 9.921458359717937e-11 1.7762698410103202e-11 -6.396198619608787e-05
   rotation 0.6827253339456953 -0.7306751113787674 -6.038461811196375e-07 3.5785772366067095e-09
   name "e-puck4"
-  controller "e-puck"
+  controller "EpuckCentralized"
   emitter_channel 4
   receiver_channel 4
 }

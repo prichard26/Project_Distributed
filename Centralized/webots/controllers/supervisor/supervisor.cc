@@ -18,6 +18,7 @@
 #include <vector>
 #include <memory>
 #include <time.h>       /* time_t, struct tm, difftime, time, mktime */
+#include <inttypes.h>
 
 using namespace std;
 
@@ -53,7 +54,6 @@ using namespace std;
 
 // Robot specializations: 0 for Task A, 1 for Task B
 vector<int> robot_specializations = {0, 0, 1, 1, 1}; // 1/3 for Task A, 2/3 for Task B
-
 WbNodeRef g_event_nodes[MAX_EVENTS];
 vector<WbNodeRef> g_event_nodes_free;
 
@@ -119,10 +119,12 @@ public:
 
   // Check if event can be assigned
   void updateAuction(uint16_t bidder, double bid, int index) {
+    printf("Robot %d bidding on event %d with bid %.2f\n", bidder, id_, bid);
     if (bid >= 0.0 && (!has_bids() || bid < best_bid_)) {
       best_bidder_ = bidder;
       best_bid_ = bid;
       bidder_index = index;  
+      printf("Robot %d now has the best bid %.2f for event %d\n", bidder, bid, id_);
     }
     bids_in_.set(bidder);
     if (bids_in_.all()) assigned_to_ = best_bidder_;
@@ -377,105 +379,132 @@ public:
   }
 
   //Do a step
-  bool step(uint64_t step_size) {
-    
+//Do a step
+bool step(uint64_t step_size) {
+    printf("==== Step Function Called ====\n");
+
+    // Update clock
     clock_ += step_size;
+    printf("Clock updated: %" PRIu64 "\n", clock_);
+
+    // Print number of active events
+    printf("Number of active events: %d\n", num_active_events_);
+
+    // Print upcoming event time
+    printf("Next event will be added at clock: %" PRIu64 "\n", t_next_event_);
+
+    // Print auction status
+    if (auction) {
+        printf("Current auction for event ID: %d\n", auction->id_);
+    } else {
+        printf("No active auction at the moment.\n");
+    }
+
+    // Print robot positions
+    for (int i = 0; i < NUM_ROBOTS; i++) {
+        const double* pos = getRobotPos(i);
+        printf("Robot %d position: x=%.2f, y=%.2f\n", i, pos[0], pos[1]);
+    }
 
     // Events that will be announced next or that have just been assigned/done
     event_queue_t event_queue;
 
+    // Mark events as done
     markEventsDone(event_queue);
 
-    // ** Add a random new event, if the time has come
+    // Add new event if the time has come
     assert(t_next_event_ > 0);
     if (clock_ >= t_next_event_ && num_active_events_ < NUM_ACTIVE_EVENTS) {
-      addEvent();
+      printf("Adding a new event. Current clock: %" PRIu64 ", Next event time: %" PRIu64 "\n", clock_, t_next_event_);
+        addEvent();
     }
 
+    // Handle auction events
     handleAuctionEvents(event_queue);
- 
-    // Send and receive messages
+
+    // Print incoming messages (receivers)
     bid_t* pbid; // inbound
-    for (int i=0;i<NUM_ROBOTS;i++) {
-      // Check if we're receiving data
-      if (wb_receiver_get_queue_length(receivers_[i]) > 0) {
-        assert(wb_receiver_get_queue_length(receivers_[i]) > 0);
-        assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
-        
-        pbid = (bid_t*) wb_receiver_get_data(receivers_[i]); 
-        assert(pbid->robot_id == i);
+    for (int i = 0; i < NUM_ROBOTS; i++) {
+        int queue_length = wb_receiver_get_queue_length(receivers_[i]);
+        printf("Receiver queue length for robot %d: %d\n", i, queue_length);
 
-        Event* event = events_.at(pbid->event_id).get();
-        event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
-        // TODO: Refactor this (same code above in handleAuctionEvents)
-        if (event->is_assigned()) {
-          event_queue.emplace_back(event, MSG_EVENT_WON);
-          auction = NULL;
-          printf("W robot %d won event %d\n", event->assigned_to_, event->id_);
+        if (queue_length > 0) {
+            printf("We are receiving data from robot %d!\n", i);
+            assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
+
+            pbid = (bid_t*)wb_receiver_get_data(receivers_[i]);
+            printf("Received bid: robot_id=%d, event_id=%d, value=%.2f, event_index=%d\n", pbid->robot_id, pbid->event_id, pbid->value, pbid->event_index);
+
+            Event* event = events_.at(pbid->event_id).get();
+            event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
+
+            if (event->is_assigned()) {
+                printf("Event %d assigned to robot %d\n", event->id_, event->assigned_to_);
+                event_queue.emplace_back(event, MSG_EVENT_WON);
+                auction = NULL;
+            }
+
+            wb_receiver_next_packet(receivers_[i]);
         }
-
-        wb_receiver_next_packet(receivers_[i]);
-      }
     }
 
-    // outbound
+    // Outgoing messages (emitter)
     message_t msg;
     bool is_gps_tick = false;
 
     if (clock_ >= t_next_gps_tick_) {
-      is_gps_tick = true;
-      t_next_gps_tick_ = clock_ + GPS_INTERVAL;
+        is_gps_tick = true;
+        t_next_gps_tick_ = clock_ + GPS_INTERVAL;
+        printf("GPS tick triggered. Next GPS tick: %" PRIu64 "\n", t_next_gps_tick_);
     }
 
-    for (int i=0;i<NUM_ROBOTS;i++) {
-      // Send updates to the robot
-      while (wb_emitter_get_channel(emitter_) != i+1)
-      wb_emitter_set_channel(emitter_, i+1);
-      
-      if (is_gps_tick) {
-        buildMessage(i, NULL, MSG_EVENT_GPS_ONLY, &msg);
-//        printf("sending message %d , %d \n",msg.event_id,msg.robot_id);
-        while (wb_emitter_get_channel(emitter_) != i+1)
-            wb_emitter_set_channel(emitter_, i+1);        
-        wb_emitter_send(emitter_, &msg, sizeof(message_t));
-      }
+    for (int i = 0; i < NUM_ROBOTS; i++) {
+        // Set emitter channel
+        while (wb_emitter_get_channel(emitter_) != i + 1)
+            wb_emitter_set_channel(emitter_, i + 1);
 
-      for (const auto& e_es_tuple : event_queue) {
-        const Event* event = e_es_tuple.first;
-        const message_event_state_t event_state = e_es_tuple.second;
-        if (event->is_assigned() && event->assigned_to_ != i) continue;
+        // Send GPS updates
+        if (is_gps_tick) {
+            buildMessage(i, NULL, MSG_EVENT_GPS_ONLY, &msg);
+            wb_emitter_send(emitter_, &msg, sizeof(message_t));
+            printf("Sent GPS update to robot %d\n", i);
+        }
 
-        buildMessage(i, event, event_state, &msg);
-        while (wb_emitter_get_channel(emitter_) != i+1)
-              wb_emitter_set_channel(emitter_, i+1);        
-//        printf("> Sent message to robot %d // event_state=%d\n", i, event_state);
-//        printf("sending message event %d , robot %d , emitter %d, channel %d\n",msg.event_id,msg.robot_id,emitter_,      wb_emitter_get_channel(emitter_));
-        
-        wb_emitter_send(emitter_, &msg, sizeof(message_t));
-      }
+        // Send event updates
+        for (const auto& e_es_tuple : event_queue) {
+            const Event* event = e_es_tuple.first;
+            const message_event_state_t event_state = e_es_tuple.second;
+
+            if (event->is_assigned() && event->assigned_to_ != i) continue;
+
+            buildMessage(i, event, event_state, &msg);
+            wb_emitter_send(emitter_, &msg, sizeof(message_t));
+            printf("Sent event update to robot %d: event_id=%d, event_state=%d\n", i, event->id_, event_state);
+        }
     }
-
     // Keep track of distance travelled by all robots
     statTotalDistance();
 
-    // Time to end the experiment?
-    if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE ||(MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
-      for(int i=0;i<NUM_ROBOTS;i++){
-          buildMessage(i, NULL, MSG_QUIT, &msg);
-          wb_emitter_set_channel(emitter_, i+1);
-          wb_emitter_send(emitter_, &msg, sizeof(message_t));
-      }
-      double clock_s = ((double) clock_) / 1000.0;
-      double ehr = ((double) num_events_handled_) / clock_s;
-      double perf = ((double) num_events_handled_) / stat_total_distance_;
-      
-      printf("Handled %d events in %d seconds, events handled per second = %.2f\n",
-             num_events_handled_, (int) clock_ / 1000, ehr);
-      printf("Performance: %f\n", perf);
-      return false;
-    } 
-    else { return true;} //continue
-  } // << step() <<
+    // Check if the experiment should end
+    if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE || (MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
+        for (int i = 0; i < NUM_ROBOTS; i++) {
+            buildMessage(i, NULL, MSG_QUIT, &msg);
+            wb_emitter_set_channel(emitter_, i + 1);
+            wb_emitter_send(emitter_, &msg, sizeof(message_t));
+        }
+        double clock_s = ((double)clock_) / 1000.0;
+        double ehr = ((double)num_events_handled_) / clock_s;
+        double perf = ((double)num_events_handled_) / stat_total_distance_;
+
+        printf("Handled %d events in %d seconds, events handled per second = %.2f\n",
+               num_events_handled_, (int)clock_ / 1000, ehr);
+        printf("Performance: %f\n", perf);
+        return false;
+    } else {
+        return true;
+    }
+  }
+// << step() <<
 };
 
 //Links up all the nodes we are interested in.
