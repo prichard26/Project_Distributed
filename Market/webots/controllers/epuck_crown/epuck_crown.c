@@ -44,6 +44,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 
 #define NUM_ROBOTS 5 // Change this also in the supervisor!
 
+#define MAX_ENERGY 200
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Collective decision parameters */
@@ -55,6 +56,7 @@ typedef enum {
     GO_TO_GOAL      = 2,                    // Initial state aliases
     OBSTACLE_AVOID  = 3,
     RANDOM_WALK     = 4,
+    TASK_MAKING     = 5, 
 } robot_state_t;
 
 #define DEFAULT_STATE (STAY)
@@ -83,7 +85,10 @@ int indx;                   // Event index to be sent to the supervisor
 float buff[99];             // Buffer for physics plugin
 
 double stat_max_velocity;
+int rob_energy[MAX_ENERGY];
 
+int task_in_progress = 0;       // 0: No task, 1: Task in progress
+int task_remaining_time = 0;    // Time remaining to complete the current task
 
 // Proximity and radio handles
 WbDeviceTag emitter_tag, receiver_tag;
@@ -195,62 +200,79 @@ static void receive_updates()
         // check if new event is being auctioned
         else if(msg.event_state == MSG_EVENT_NEW)
         {                
-                //*********         INSERT YOUR TACTIC BELOW         *********//
-                //                                                            //
-                // Determine your bid "d" and the index "indx" at             //
-                // which you want to insert the event into the target list.   //
-                // Available variables:                                       //
-                // my_pos[0], my_pos[1]: Current x and y position of e-puck   //
-                // msg.event_x, msg.event_z: Event x and y position           //
-                // target[n][0], target[n][1]: x and y pos of target n in your//
-                //                             target list                    //
-                // target_list_length: current length of your target list     //
-                //                                                            //
-                // You can use dist(ax, ay, bx, by) to determine the distance //
-                // between points a and b.                                    //
-                ////////////////////////////////////////////////////////////////
 
-            ///*** SIMPLE TACTIC ***///
             indx = target_list_length;
-            double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-            ///*** END SIMPLE TACTIC ***///
-                
+            double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
-            ///*** BETTER TACTIC ***///
-            // Place your code here for I17 
-            /*
-		    indx = target_list_length;
-            double d = 0;
-            if(target_list_length > 0){
-			    // TODO: put your strategy here
-               
-		    }else{
-			    // TODO: put your strategy here
-               
-		    }
-		    */
-            ///*** END BETTER TACTIC ***///
-                
-                
-            ///*** BEST TACTIC ***/// 
-		    // Place your code here for I20
-            //indx = 0;
-            //double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_z);             
-            //if(target_list_length > 0)
-            //{  
-                // for all the tasks inside the task list (i.e. target[i] where i goes up to target_list_length)  check if putting the current 
-                // event (located at (msg.event_x, msg.event_z)) in between two task results in  a smaller distance, and modify the d accordingly.
-            //}
+            double time_to_reach_task = distance_to_task / MAX_SPEED; // Convert to milliseconds
 
-            ///*** END BEST TACTIC ***///
-                
+            Event_type task_type = msg.event_type;  
+            if (task_type == A) { 
+                if (robot_id == 0 || robot_id == 1) {
+                    time_to_complete = 3000; 
+                } else {
+                    time_to_complete = 9000; 
+                }
+            } else if (task_type == B) { task_remaining_time
+                if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
+                    time_to_complete = 1000;
+                } else {
+                    time_to_complete = 5000;
+                }
+            }
+
+            double total_time = time_to_reach + time_to_complete;
+
             // Send my bid to the supervisor
-            const bid_t my_bid = {robot_id, msg.event_id, d, indx};
+            const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
             wb_emitter_set_channel(emitter_tag, robot_id+1);
             wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
         }
     }
-    
+
+    // Check if new event is being auctioned
+else if(msg.event_state == MSG_EVENT_NEW)
+{                
+    indx = target_list_length;
+
+    // Calculate distance to the task
+    double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+
+    // Calculate travel time based on a constant speed
+    double robot_speed = 0.05; // Assume robot speed in meters per second
+    double time_to_reach = distance_to_task / robot_speed * 1000; // Convert to milliseconds
+
+    // Determine task type and calculate task duration
+    int task_type = msg.event_id; // Assume event ID corresponds to task type
+    int time_to_complete = 0;
+
+    if (task_type == 0) { // Task A
+        if (robot_id == 0 || robot_id == 1) {
+            time_to_complete = 3000; // Specialized for Task A
+        } else {
+            time_to_complete = 9000; // Not specialized
+        }
+    } else if (task_type == 1) { // Task B
+        if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
+            time_to_complete = 1000; // Specialized for Task B
+        } else {
+            time_to_complete = 5000; // Not specialized
+        }
+    }
+
+    // Calculate total bid time (travel + task duration)
+    double total_time = time_to_reach + time_to_complete;
+
+    // Send the bid
+    const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
+    wb_emitter_set_channel(emitter_tag, robot_id + 1);
+    wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));
+}
+
+
+
+
+====================
     
     // Communication with physics plugin (channel 0)            
     i = 0; k = 1;
@@ -307,7 +329,10 @@ void reset(void)
 
     clock = 0;
     indx = 0;
-    
+    rob_energy = MAX_ENERGY;
+    task_in_progress = 0;
+    task_remaining_time = 0;
+
     // Init target positions to "INVALID"
     for(i=0;i<99;i++){ 
         target[i][0] = 0;
@@ -348,19 +373,14 @@ void reset(void)
     stat_max_velocity = 0.0;
 }
 
-
-void update_state(int _sum_distances)
-{
-    if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
-    {
+void update_state(int _sum_distances) {
+    if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL) {
         state = OBSTACLE_AVOID;
-    }
-    else if (target_valid)
-    {
+    } else if (target_valid && dist(my_pos[0], my_pos[1], target[0][0], target[0][1]) < 0.1) {
+        state = TASK_MAKING; 
+    } else if (target_valid) {
         state = GO_TO_GOAL;
-    }
-    else
-    {
+    } else {
         state = DEFAULT_STATE;
     }
 }
@@ -441,6 +461,42 @@ void compute_go_to_goal(int *msl, int *msr)
     limit(msr,MAX_SPEED);
 }
 
+void task_doing() {
+    if (task_in_progress == 0) {
+        // Determine task type and robot specialization
+        Event_type task_type = msg.event_type;  
+        if (task_type == A) { 
+            if (robot_id == 0 || robot_id == 1) {
+                task_remaining_time = 3000; 
+            } else {
+                task_remaining_time = 9000; 
+            }
+        } else if (task_type == B) { 
+            if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
+                task_remaining_time = 1000;
+            } else {
+                task_remaining_time = 5000;
+            }
+        }
+
+        task_in_progress = 1;
+    } else {
+        task_remaining_time -= TIME_STEP;
+
+        rob_energy -= (TIME_STEP / 1000); // Energy cost per second
+        if (rob_energy < 0) rob_energy = 0;
+
+        // Check if the task is completed
+        if (task_remaining_time <= 0) {
+            task_in_progress = 0;         // Reset task progress
+            target_valid = 0;             // Clear target
+            state = STAY;                 // Transition to STAY or another state
+        }
+    }
+}
+
+
+
 // RUN e-puck
 void run(int ms)
 {
@@ -479,6 +535,10 @@ void run(int ms)
 
         case OBSTACLE_AVOID:
             compute_avoid_obstacle(&msl, &msr, distances);
+            break;
+
+        case TASK_MAKING:
+            task_doing();
             break;
 
         case RANDOM_WALK:
