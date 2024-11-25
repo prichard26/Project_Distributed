@@ -24,6 +24,7 @@
 #include <webots/supervisor.h> 
 
 #include "../auct_super/message.h" 
+
 #define MAX_SPEED_WEB      6.28    // Maximum speed webots
 WbDeviceTag left_motor; //handler for left wheel of the robot
 WbDeviceTag right_motor; //handler for the right wheel of the robot
@@ -85,10 +86,12 @@ int indx;                   // Event index to be sent to the supervisor
 float buff[99];             // Buffer for physics plugin
 
 double stat_max_velocity;
-int rob_energy[MAX_ENERGY];
+int rob_energy = MAX_ENERGY;
 
 int task_in_progress = 0;       // 0: No task, 1: Task in progress
 int task_remaining_time = 0;    // Time remaining to complete the current task
+
+Event_type current_task_type;  
 
 // Proximity and radio handles
 WbDeviceTag emitter_tag, receiver_tag;
@@ -198,22 +201,24 @@ static void receive_updates()
             target_list_length = target_list_length+1;
         }
         // check if new event is being auctioned
-        else if(msg.event_state == MSG_EVENT_NEW)
+        else if(msg.event_state == MSG_EVENT_NEW && state == STAY)
         {                
 
             indx = target_list_length;
             double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
             double time_to_reach_task = distance_to_task / MAX_SPEED; // Convert to milliseconds
+            double time_to_complete = 0;
 
-            Event_type task_type = msg.event_type;  
-            if (task_type == A) { 
+            current_task_type = msg.event_type;  
+
+            if (current_task_type == A) { 
                 if (robot_id == 0 || robot_id == 1) {
                     time_to_complete = 3000; 
                 } else {
                     time_to_complete = 9000; 
                 }
-            } else if (task_type == B) { task_remaining_time
+            } else if (current_task_type == B) { 
                 if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
                     time_to_complete = 1000;
                 } else {
@@ -221,7 +226,7 @@ static void receive_updates()
                 }
             }
 
-            double total_time = time_to_reach + time_to_complete;
+            double total_time = time_to_reach_task + time_to_complete;
 
             // Send my bid to the supervisor
             const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
@@ -229,51 +234,6 @@ static void receive_updates()
             wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
         }
     }
-
-    // Check if new event is being auctioned
-else if(msg.event_state == MSG_EVENT_NEW)
-{                
-    indx = target_list_length;
-
-    // Calculate distance to the task
-    double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-
-    // Calculate travel time based on a constant speed
-    double robot_speed = 0.05; // Assume robot speed in meters per second
-    double time_to_reach = distance_to_task / robot_speed * 1000; // Convert to milliseconds
-
-    // Determine task type and calculate task duration
-    int task_type = msg.event_id; // Assume event ID corresponds to task type
-    int time_to_complete = 0;
-
-    if (task_type == 0) { // Task A
-        if (robot_id == 0 || robot_id == 1) {
-            time_to_complete = 3000; // Specialized for Task A
-        } else {
-            time_to_complete = 9000; // Not specialized
-        }
-    } else if (task_type == 1) { // Task B
-        if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
-            time_to_complete = 1000; // Specialized for Task B
-        } else {
-            time_to_complete = 5000; // Not specialized
-        }
-    }
-
-    // Calculate total bid time (travel + task duration)
-    double total_time = time_to_reach + time_to_complete;
-
-    // Send the bid
-    const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
-    wb_emitter_set_channel(emitter_tag, robot_id + 1);
-    wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));
-}
-
-
-
-
-====================
-    
     // Communication with physics plugin (channel 0)            
     i = 0; k = 1;
     while((int)target[i][2] != INVALID){i++;}
@@ -459,19 +419,22 @@ void compute_go_to_goal(int *msl, int *msr)
     *msr = 50*(u + AXLE_LENGTH*w/2.0) / WHEEL_RADIUS;
     limit(msl,MAX_SPEED);
     limit(msr,MAX_SPEED);
+
+    rob_energy -= (TIME_STEP / 1000); // Energy cost per second
+
 }
 
 void task_doing() {
+
     if (task_in_progress == 0) {
         // Determine task type and robot specialization
-        Event_type task_type = msg.event_type;  
-        if (task_type == A) { 
+        if (current_task_type == A) { 
             if (robot_id == 0 || robot_id == 1) {
                 task_remaining_time = 3000; 
             } else {
                 task_remaining_time = 9000; 
             }
-        } else if (task_type == B) { 
+        } else if (current_task_type == B) { 
             if (robot_id == 2 || robot_id == 3 || robot_id == 4) {
                 task_remaining_time = 1000;
             } else {

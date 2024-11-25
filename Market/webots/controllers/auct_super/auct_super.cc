@@ -77,39 +77,61 @@ double expovariate(double mu) {
   return -log(uniform) * mu;
 }
 
-// void changeCylinderColor(WbNodeRef node, double r, double g, double b) {
-//   // Get the children field
-//   WbFieldRef children_field = wb_supervisor_node_get_field(node,"children");
+void changeEventColor(WbNodeRef node, double r, double g, double b) {
+    if (!node) {
+        printf("Error: Node is null\n");
+        return;
+    }
 
-//   printf(children_field[0]);
+    // Get the 'children' field to access node structure
+    WbFieldRef children_field = wb_supervisor_node_get_field(node, "children");
+    if (!children_field) {
+        printf("Error: Children field not found\n");
+        return;
+    }
 
-//   // Get the Appearance node
-//   WbFieldRef appearanceField = wb_supervisor_node_get_field(shapeNode, "appearance");
+    WbNodeRef shape_node = wb_supervisor_field_get_mf_node(children_field, 0);
+    if (!shape_node) {
+        printf("Error: Shape node not found\n");
+        return;
+    }
 
-//   if (appearanceField == NULL){
-//     cerr << "appearance field node not found!" << endl;
-//     return;
-//   }
+    // Get the 'appearance' field to access material properties
+    WbFieldRef appearance_field = wb_supervisor_node_get_field(shape_node, "appearance");
+    if (!appearance_field) {
+        printf("Error: Appearance field not found\n");
+        return;
+    }
 
-//   WbNodeRef appearanceNode = wb_supervisor_field_get_sf_node(appearanceField);
+    WbNodeRef appearance_node = wb_supervisor_field_get_sf_node(appearance_field);
+    if (!appearance_node) {
+        printf("Error: Appearance node not found\n");
+        return;
+    }
 
-//   // Get the Material node
-//   WbFieldRef materialField = wb_supervisor_node_get_field(appearanceNode, "material");
+    // Get the 'material' field to modify the color
+    WbFieldRef material_field = wb_supervisor_node_get_field(appearance_node, "material");
+    if (!material_field) {
+        printf("Error: Material field not found\n");
+        return;
+    }
 
-//   if (materialField == NULL){
-//     cerr << "material field node not found!" << endl;
-//     return;
-//   }
+    WbNodeRef material_node = wb_supervisor_field_get_sf_node(material_field);
+    if (!material_node) {
+        printf("Error: Material node not found\n");
+        return;
+    }
 
-//   WbNodeRef materialNode = wb_supervisor_field_get_sf_node(materialField);
+    // Finally, get the 'diffuseColor' field to set the new color
+    WbFieldRef color_field = wb_supervisor_node_get_field(material_node, "diffuseColor");
+    if (!color_field) {
+        printf("Error: Color field not found\n");
+        return;
+    }
 
-//   // Get the diffuseColor field of the Material node
-//   WbFieldRef diffuseColorField = wb_supervisor_node_get_field(materialNode, "diffuseColor");
-
-//   // Set the new color
-//   const double newColor[3] = {r, g, b};
-//   wb_supervisor_field_set_sf_color(diffuseColorField, newColor);
-// }
+    const double new_color[3] = {r, g, b};
+    wb_supervisor_field_set_sf_color(color_field, new_color);
+}
 
 // Event class
 class Event {
@@ -120,7 +142,7 @@ public:
   Point2d pos_;          //event pos
   WbNodeRef node_;       //event node ref
   uint16_t assigned_to_; //id of the robot that will handle this event
-  Event_type type_;
+  Event_type type_;      //task type 
 
   // Auction data
   uint64_t t_announced_;        //time at which event was announced to robots
@@ -145,6 +167,7 @@ public:
       //changeCylinderColor(node_, 1, 0, 0);
     }else{
       type_ = B;
+
       //changeCylinderColor(node_, 0, 0, 1);
     }
     
@@ -219,11 +242,20 @@ private:
 // Private functions
 private:
   void addEvent() {
-    events_.push_back(unique_ptr<Event>(new Event{next_event_id_++})); // add to list
-    assert(num_active_events_ < NUM_ACTIVE_EVENTS); // check max. active events not reached
+    auto new_event = std::make_unique<Event>(next_event_id_++);
+    
+    // Assign color based on event type
+    if (new_event->type_ == A) {
+        changeEventColor(new_event->node_, 1.0, 0.0, 0.0);  // Red for Type A
+    } else {
+        changeEventColor(new_event->node_, 0.0, 0.0, 1.0);  // Blue for Type B
+    }
+
+    events_.push_back(std::move(new_event));
     num_active_events_++;
     t_next_event_ = clock_ + expovariate(EVENT_GENERATION_DELAY);
   }
+
 
   // Init robot and get robot_ids and receivers
   void linkRobot(uint16_t id) {
