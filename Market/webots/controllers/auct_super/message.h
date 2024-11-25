@@ -10,6 +10,8 @@ typedef enum {
   MSG_QUIT
 } message_event_state_t;
 
+typedef enum {A = 0, B = 1} Event_type;
+
 typedef struct {
   uint16_t robot_id; // id of the intended receiver
   double robot_x;
@@ -20,6 +22,8 @@ typedef struct {
   uint16_t event_id;
   double event_x;
   double event_y;
+  Event_type event_type;
+
   // ]]
   int event_index;
 } message_t;
