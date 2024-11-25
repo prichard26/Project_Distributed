@@ -77,6 +77,8 @@ double expovariate(double mu) {
   return -log(uniform) * mu;
 }
 
+enum Event_type {A = 0, B = 1};
+
 // Event class
 class Event {
 
@@ -86,6 +88,7 @@ public:
   Point2d pos_;          //event pos
   WbNodeRef node_;       //event node ref
   uint16_t assigned_to_; //id of the robot that will handle this event
+  Event_type type_;
 
   // Auction data
   uint64_t t_announced_;        //time at which event was announced to robots
@@ -101,8 +104,15 @@ public:
   Event(uint16_t id) : id_(id), pos_(rand_coord(), rand_coord()),
     assigned_to_(-1), t_announced_(-1), best_bidder_(-1), best_bid_(0.0), t_done_(-1)
   {
-    node_ = g_event_nodes_free.back();  // Place node
-    g_event_nodes_free.pop_back();
+    node_ = g_event_nodes_free.back();  // Get the node from the free event list
+    g_event_nodes_free.pop_back();      // and remove it from the free event list
+
+    // draw event type: 1/3 -> A  |  2/3 -> B
+    if (RAND <= 0.3){
+      type_ = A;
+    }else{
+      type_ = B;
+    }
     
     double event_node_pos[3];           // Place event in arena
     event_node_pos[0] = pos_.x;
@@ -111,6 +121,7 @@ public:
     wb_supervisor_field_set_sf_vec3f(
       wb_supervisor_node_get_field(node_,"translation"),
       event_node_pos);
+
   }
 
   bool is_assigned() const { return assigned_to_ != (uint16_t) -1; }
@@ -257,8 +268,8 @@ private:
       double dist = event->pos_.Distance(robot_pos_pt);
 
       if (dist <= EVENT_RANGE) {
-        printf("D robot %d reached event %d\n", event->assigned_to_,
-          event->id_);
+        printf("D robot %d reached event %d which is of type %s\n", event->assigned_to_,
+          event->id_, (event->type_ == A) ? "A" : "B");
         num_events_handled_++;
         event->markDone(clock_);
         num_active_events_--;
