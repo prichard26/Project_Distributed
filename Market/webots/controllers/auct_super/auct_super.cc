@@ -337,6 +337,7 @@ private:
           event->markDone(clock_);    // Timestamp the completion of the event
           num_active_events_--;       // decrease the number of active event
           event_queue.emplace_back(event.get(), MSG_EVENT_DONE);
+          addEvent();
         }    
       }
     }
