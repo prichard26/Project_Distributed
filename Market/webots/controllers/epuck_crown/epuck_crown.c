@@ -121,8 +121,6 @@ static void receive_updates()
 
     while (wb_receiver_get_queue_length(receiver_tag) > 0) {
 
-        printf("HEEEY BRROOO");
-
         const message_t *pmsg = wb_receiver_get_data(receiver_tag);
         
         // save a copy, cause wb_receiver_next_packet invalidates the pointer
@@ -146,7 +144,8 @@ static void receive_updates()
         if(target_list_length == 0) target_valid = 0; 
 
         // DEEEEEBUUUUUUUUUUUUUUUG
-        printf("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
+        log_message("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
+        log_message("robot n %d, state of the robot: %d", robot_id, state);
 
         // Event state machine
         if(msg.event_state == MSG_EVENT_GPS_ONLY)
@@ -164,9 +163,9 @@ static void receive_updates()
             wb_robot_step(TIME_STEP);
             exit(0);
         }
-        else if (msg.event_state == MSG_EVENT_BEING_HANDLED && state == GO_TO_GOAL){
+        else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){      // removed && state == GO_TO_GOAL
             state = HANDLING_TASK;
-            printf("YEEEEEE YEEEEE YEEEEE");
+            log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK);
         }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
@@ -473,8 +472,6 @@ void run(int ms)
     int distances[NB_SENSORS];  // array keeping the distance sensor readings
     int sum_distances=0;        // sum of all distance sensor inputs, used as threshold for state change.  	
 
-    printf("JOSHUAAAA");
-
     // Other variables
     int sensor_nb;
 
@@ -534,7 +531,6 @@ void run(int ms)
 int main(int argc, char **argv) 
 {
     reset();
-    printf("GROOSSSBOUFFE");
     // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {run(TIME_STEP);}
     wb_robot_cleanup();

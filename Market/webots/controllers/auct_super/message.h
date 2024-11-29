@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdarg.h>
 
 // A message sent from the supervisor to the robot
 typedef enum {
@@ -36,3 +37,17 @@ typedef struct {
   double value; // value of the bid (estimated distance)
   int event_index;
 } bid_t;
+
+void log_message(const char *format, ...) {
+    FILE *file = fopen("debug_log.txt", "a");  // Open in append mode
+    if (file) {
+        va_list args;
+        va_start(args, format);
+        vfprintf(file, format, args);  // Write formatted output
+        va_end(args);
+        fprintf(file, "\n");  // Add a newline for better readability
+        fclose(file);  // Ensure the file is properly closed
+    } else {
+        printf("Failed to open log file.\n");  // Optional error handling
+    }
+}
