@@ -451,11 +451,11 @@ public:
 
     markEventsDone(event_queue);
 
-    // ** Add a random new event, if the time has come
-    assert(t_next_event_ > 0);
-    if (clock_ >= t_next_event_ && num_active_events_ < NUM_ACTIVE_EVENTS) {
-      addEvent();
-    }
+    // // ** Add a random new event, if the time has come
+    // assert(t_next_event_ > 0);
+    // if (clock_ >= t_next_event_ && num_active_events_ < NUM_ACTIVE_EVENTS) {
+    //   addEvent();
+    // }
 
     handleAuctionEvents(event_queue);
  
