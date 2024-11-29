@@ -55,6 +55,7 @@ typedef enum {
     GO_TO_GOAL      = 2,                    // Initial state aliases
     OBSTACLE_AVOID  = 3,
     RANDOM_WALK     = 4,
+    HANDLING_TASK   = 5,
 } robot_state_t;
 
 #define DEFAULT_STATE (STAY)
@@ -73,7 +74,7 @@ int Interconn[16] = {17,29,34,10,8,-38,-56,-76,-72,-58,-36,8,10,36,28,18};
 // The state variables
 int clock;
 uint16_t robot_id;          // Unique robot ID
-robot_state_t state;                 // State of the robot
+robot_state_t state;        // State of the robot
 double my_pos[3];           // X, Z, Theta of this robot
 char target_valid;          // boolean; whether we are supposed to go to the target
 double target[99][3];       // x and z coordinates of target position (max 99 targets)
@@ -119,6 +120,9 @@ static void receive_updates()
     int k;
 
     while (wb_receiver_get_queue_length(receiver_tag) > 0) {
+
+        printf("HEEEY BRROOO");
+
         const message_t *pmsg = wb_receiver_get_data(receiver_tag);
         
         // save a copy, cause wb_receiver_next_packet invalidates the pointer
@@ -139,9 +143,11 @@ static void receive_updates()
         while(target[i][2] != INVALID){ i++;}
         target_list_length = i;  
         
-        if(target_list_length == 0) target_valid = 0;   
+        if(target_list_length == 0) target_valid = 0; 
 
-        
+        // DEEEEEBUUUUUUUUUUUUUUUG
+        printf("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
+
         // Event state machine
         if(msg.event_state == MSG_EVENT_GPS_ONLY)
         {
@@ -158,8 +164,13 @@ static void receive_updates()
             wb_robot_step(TIME_STEP);
             exit(0);
         }
+        else if (msg.event_state == MSG_EVENT_BEING_HANDLED && state == GO_TO_GOAL){
+            state = HANDLING_TASK;
+            printf("YEEEEEE YEEEEE YEEEEE");
+        }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
+            state = STAY;
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
             {
@@ -351,18 +362,30 @@ void reset(void)
 
 void update_state(int _sum_distances)
 {
-    if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
-    {
+
+    if (state == GO_TO_GOAL && _sum_distances > STATECHANGE_DIST){
         state = OBSTACLE_AVOID;
     }
-    else if (target_valid)
-    {
+    else if(state == OBSTACLE_AVOID && _sum_distances < STATECHANGE_DIST && target_valid){
         state = GO_TO_GOAL;
     }
-    else
-    {
-        state = DEFAULT_STATE;
+    else if(state == STAY && target_valid){
+        state = GO_TO_GOAL;
     }
+
+
+    // if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
+    // {
+    //     state = OBSTACLE_AVOID;
+    // }
+    // else if (target_valid)
+    // {
+    //     state = GO_TO_GOAL;
+    // }
+    // else
+    // {
+    //     state = DEFAULT_STATE;
+    // }
 }
 
 // Odometry
@@ -450,6 +473,8 @@ void run(int ms)
     int distances[NB_SENSORS];  // array keeping the distance sensor readings
     int sum_distances=0;        // sum of all distance sensor inputs, used as threshold for state change.  	
 
+    printf("JOSHUAAAA");
+
     // Other variables
     int sensor_nb;
 
@@ -469,6 +494,11 @@ void run(int ms)
     // Set wheel speeds depending on state
     switch (state) {
         case STAY:
+            msl = 0;
+            msr = 0;
+            break;
+
+        case HANDLING_TASK:
             msl = 0;
             msr = 0;
             break;
@@ -504,7 +534,7 @@ void run(int ms)
 int main(int argc, char **argv) 
 {
     reset();
-  
+    printf("GROOSSSBOUFFE");
     // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {run(TIME_STEP);}
     wb_robot_cleanup();

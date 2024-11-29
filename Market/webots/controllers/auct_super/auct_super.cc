@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
+#include <map>
 
 #include <vector>
 #include <memory>
@@ -50,8 +51,14 @@ using namespace std;
 #define MAX_RUNTIME (3*60*1000)      // ...total runtime after which simulation stops
 //
 
+struct RobotState {
+  bool state;         // 0: idle or going to goal   |   1: handling task
+  int counter; 
+};
+
 WbNodeRef g_event_nodes[MAX_EVENTS];
 vector<WbNodeRef> g_event_nodes_free;
+map<uint16_t, RobotState> robotStates;
 
 double gauss(void) 
 {
@@ -75,6 +82,24 @@ double expovariate(double mu) {
   double uniform = RAND;
   while (uniform < 1e-7) uniform = RAND;
   return -log(uniform) * mu;
+}
+
+uint16_t set_counter(Event_type event_type, uint16_t robot_id){
+  if (robot_id < 2){      // robot of type A
+    if (event_type == A){
+      return 3000;    //[ms]
+    }
+    else{
+      return 5000;
+    }
+  }else{
+    if (event_type == A){
+      return 9000;
+    }
+    else{
+      return 1000;
+    }
+  }
 }
 
 // void changeCylinderColor(WbNodeRef node, double r, double g, double b) {
@@ -294,7 +319,7 @@ private:
 
   // Marks one event as done, if one of the robots is within the range
   void markEventsDone(event_queue_t& event_queue) {
-    for (auto& event : events_) {
+    for (auto& event : events_) {  //iterate through all the events of the supervisor (keep in memory event old events)
       if (!event->is_assigned() || event->is_done())
         continue;
       
@@ -305,10 +330,27 @@ private:
       if (dist <= EVENT_RANGE) {
         printf("D robot %d reached event %d which is of type %s\n", event->assigned_to_,
           event->id_, (event->type_ == A) ? "A" : "B");
-        num_events_handled_++;
-        event->markDone(clock_);
-        num_active_events_--;
-        event_queue.emplace_back(event.get(), MSG_EVENT_DONE);
+
+        // implement the waiting time
+        if (robotStates[event->assigned_to_].state == 0){     // robot arrives in range but is not handling the task yet 
+          printf("HEELlOOOOOOOOO\n");
+          robotStates[event->assigned_to_].state = 1;   // starts handling the task  
+          robotStates[event->assigned_to_].counter = set_counter(event->type_, event->assigned_to_);
+          printf("COUNTER %d\n", robotStates[event->assigned_to_].counter); 
+          event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED); // PAS SUR BON C'EST SUREMENT LA QUE çA FOIRE
+        }
+        else if (robotStates[event->assigned_to_].state == 1 && robotStates[event->assigned_to_].counter > 0){ // the robot is handling the task but isn't finish yet
+          robotStates[event->assigned_to_].counter -= STEP_SIZE;
+        }
+        else{     // the robot finished the task
+          robotStates[event->assigned_to_].state = 0;
+          robotStates[event->assigned_to_].counter = 0;
+
+          num_events_handled_++;      // increase the number of event that were handled
+          event->markDone(clock_);    // Timestamp the completion of the event
+          num_active_events_--;       // decrease the number of active event
+          event_queue.emplace_back(event.get(), MSG_EVENT_DONE);
+        }    
       }
     }
   }
@@ -369,6 +411,14 @@ public:
   // Reset robots & events
   void reset() {
     clock_ = 0;
+
+    // initialize the robot states
+    for (int i=0;i<NUM_ROBOTS;i++) {
+      robotStates[i].state = 0;
+      robotStates[i].counter = 0;
+
+      printf("robot %d has state %d and counter %d\n", i, robotStates[i].state, robotStates[i].counter);
+    }
 
     // initialize & link events
     next_event_id_ = 0;

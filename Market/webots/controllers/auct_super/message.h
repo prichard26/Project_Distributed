@@ -7,7 +7,8 @@ typedef enum {
   MSG_EVENT_NEW,
   MSG_EVENT_WON,
   MSG_EVENT_DONE,
-  MSG_QUIT
+  MSG_QUIT,
+  MSG_EVENT_BEING_HANDLED
 } message_event_state_t;
 
 typedef enum {A = 0, B = 1} Event_type;
