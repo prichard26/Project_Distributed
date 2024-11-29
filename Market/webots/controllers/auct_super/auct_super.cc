@@ -102,39 +102,26 @@ uint16_t set_counter(Event_type event_type, uint16_t robot_id){
   }
 }
 
-// void changeCylinderColor(WbNodeRef node, double r, double g, double b) {
-//   // Get the children field
-//   WbFieldRef children_field = wb_supervisor_node_get_field(node,"children");
+void changeCylinderColor(WbNodeRef node, double r, double g, double b) {
+  WbFieldRef childrenField = wb_supervisor_node_get_field(node, "children");
+    
 
-//   printf(children_field[0]);
+    WbNodeRef shapeNode = wb_supervisor_field_get_mf_node(childrenField, 0); // Get the Shape node
+    WbFieldRef appearanceField = wb_supervisor_node_get_field(shapeNode, "appearance");
+    
 
-//   // Get the Appearance node
-//   WbFieldRef appearanceField = wb_supervisor_node_get_field(shapeNode, "appearance");
+    WbNodeRef appearanceNode = wb_supervisor_field_get_sf_node(appearanceField); // Get Appearance node
+    WbFieldRef materialField = wb_supervisor_node_get_field(appearanceNode, "material");
+    
 
-//   if (appearanceField == NULL){
-//     cerr << "appearance field node not found!" << endl;
-//     return;
-//   }
+    WbNodeRef materialNode = wb_supervisor_field_get_sf_node(materialField); // Get Material node
+    WbFieldRef diffuseColorField = wb_supervisor_node_get_field(materialNode, "diffuseColor");
+    
 
-//   WbNodeRef appearanceNode = wb_supervisor_field_get_sf_node(appearanceField);
-
-//   // Get the Material node
-//   WbFieldRef materialField = wb_supervisor_node_get_field(appearanceNode, "material");
-
-//   if (materialField == NULL){
-//     cerr << "material field node not found!" << endl;
-//     return;
-//   }
-
-//   WbNodeRef materialNode = wb_supervisor_field_get_sf_node(materialField);
-
-//   // Get the diffuseColor field of the Material node
-//   WbFieldRef diffuseColorField = wb_supervisor_node_get_field(materialNode, "diffuseColor");
-
-//   // Set the new color
-//   const double newColor[3] = {r, g, b};
-//   wb_supervisor_field_set_sf_color(diffuseColorField, newColor);
-// }
+  // Set the new color
+  const double newColor[3] = {r, g, b};
+  wb_supervisor_field_set_sf_color(diffuseColorField, newColor);
+}
 
 // Event class
 class Event {
@@ -167,10 +154,10 @@ public:
     // draw event type: 1/3 -> A  |  2/3 -> B
     if (RAND <= 0.3){
       type_ = A;
-      //changeCylinderColor(node_, 1, 0, 0);
+      changeCylinderColor(node_, 1, 0, 0);
     }else{
       type_ = B;
-      //changeCylinderColor(node_, 0, 0, 1);
+      changeCylinderColor(node_, 0, 0, 1);
     }
     
     double event_node_pos[3];           // Place event in arena
