@@ -1,0 +1,5206 @@
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 2
+robot_id = 1 took the state 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 2
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 2
+robot_id = 3 took the state 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 2
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 3, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 2
+robot_id = 2 took the state 5
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 2
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 1
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 2
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 4: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 4: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 5
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 4: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 2: msg.event_state = 1
+robot n 3: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 1, state of the robot: 3
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 2
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 3
+robot_id = 2 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 5
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 5
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 5
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 5
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 5
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 2
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 2
+robot_id = 4 took the state 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 6
+robot n 2, state of the robot: 2
+robot_id = 2 took the state 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 2
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 2
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 2
+robot_id = 1 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 3
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 2
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 1
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 2
+robot_id = 3 took the state 5
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 5
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 4
+robot n 2, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 4: msg.event_state = 6
+robot n 4, state of the robot: 3
+robot_id = 4 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 4
+robot n 4, state of the robot: 5
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 2
+robot n 3: msg.event_state = 3
+robot n 3, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 3
+robot n 0, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 6
+robot n 0, state of the robot: 3
+robot_id = 0 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 5
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 4
+robot n 0, state of the robot: 5
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 1
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 1
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 1
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 2
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 1: msg.event_state = 6
+robot n 1, state of the robot: 3
+robot_id = 1 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 5
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 4
+robot n 1, state of the robot: 5
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 1
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 2: msg.event_state = 3
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 3: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 3
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 3: msg.event_state = 6
+robot n 3, state of the robot: 3
+robot_id = 3 took the state 5
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 5
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 2
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 2
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 2
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 4
+robot n 3, state of the robot: 5
+robot n 3: msg.event_state = 2
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 2
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 1: msg.event_state = 3
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
+robot n 0: msg.event_state = 1
+robot n 0, state of the robot: 3
+robot n 1: msg.event_state = 1
+robot n 1, state of the robot: 3
+robot n 2: msg.event_state = 1
+robot n 2, state of the robot: 3
+robot n 3: msg.event_state = 1
+robot n 3, state of the robot: 1
+robot n 4: msg.event_state = 1
+robot n 4, state of the robot: 3
