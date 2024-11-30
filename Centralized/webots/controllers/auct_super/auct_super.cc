@@ -38,7 +38,7 @@ using namespace std;
 #define STEP_SIZE 64            // simulation step size
 #define AUCTION_TIMEOUT 1000    // number of steps after which an auction stops
 
-#define EVENT_RANGE (0.1)      // distance within which a robot must come to do event
+#define EVENT_RANGE (0.1)       // distance within which a robot must come to do event
 #define EVENT_TIMEOUT (10000)   // ticks until an event auction runs out
 #define EVENT_GENERATION_DELAY (1000) // average time between events ms (expo distribution)
 
@@ -46,10 +46,9 @@ using namespace std;
 
 // Parameters that can be changed
 #define NUM_ROBOTS 5                 // Change this also in the epuck_crown.c!
-#define NUM_ACTIVE_EVENTS 10           // number of active events
+#define NUM_ACTIVE_EVENTS 10         // number of active events
 #define TOTAL_EVENTS_TO_HANDLE  50   // Events after which simulation stops or...
 #define MAX_RUNTIME (3*60*1000)      // ...total runtime after which simulation stops
-//
 
 struct RobotState {
   bool state;         // 0: idle or going to goal   |   1: handling task
@@ -74,7 +73,6 @@ double gauss(void)
 }
 
 double rand_coord() {
-  // return -1.0 + 2.0*RAND;
   return -0.45 + 0.9 * RAND;
 }
 
@@ -85,14 +83,14 @@ double expovariate(double mu) {
 }
 
 uint16_t set_counter(Event_type event_type, uint16_t robot_id){
-  if (robot_id < 2){      // robot of type A
+  if (robot_id < 2){              // robot of type A
     if (event_type == A){
       return 3000;    //[ms]
     }
     else{
       return 5000;
     }
-  }else{
+  }else{                          // robot of type B
     if (event_type == A){
       return 9000;
     }
@@ -105,18 +103,16 @@ uint16_t set_counter(Event_type event_type, uint16_t robot_id){
 void changeCylinderColor(WbNodeRef node, double r, double g, double b) {
   WbFieldRef childrenField = wb_supervisor_node_get_field(node, "children");
     
+  WbNodeRef shapeNode = wb_supervisor_field_get_mf_node(childrenField, 0); // Get the Shape node
+  WbFieldRef appearanceField = wb_supervisor_node_get_field(shapeNode, "appearance");
+  
 
-    WbNodeRef shapeNode = wb_supervisor_field_get_mf_node(childrenField, 0); // Get the Shape node
-    WbFieldRef appearanceField = wb_supervisor_node_get_field(shapeNode, "appearance");
-    
+  WbNodeRef appearanceNode = wb_supervisor_field_get_sf_node(appearanceField); // Get Appearance node
+  WbFieldRef materialField = wb_supervisor_node_get_field(appearanceNode, "material");
+  
 
-    WbNodeRef appearanceNode = wb_supervisor_field_get_sf_node(appearanceField); // Get Appearance node
-    WbFieldRef materialField = wb_supervisor_node_get_field(appearanceNode, "material");
-    
-
-    WbNodeRef materialNode = wb_supervisor_field_get_sf_node(materialField); // Get Material node
-    WbFieldRef diffuseColorField = wb_supervisor_node_get_field(materialNode, "diffuseColor");
-    
+  WbNodeRef materialNode = wb_supervisor_field_get_sf_node(materialField); // Get Material node
+  WbFieldRef diffuseColorField = wb_supervisor_node_get_field(materialNode, "diffuseColor");
 
   // Set the new color
   const double newColor[3] = {r, g, b};
@@ -324,7 +320,7 @@ private:
           robotStates[event->assigned_to_].state = 1;   // starts handling the task  
           robotStates[event->assigned_to_].counter = set_counter(event->type_, event->assigned_to_);
           printf("COUNTER %d\n", robotStates[event->assigned_to_].counter); 
-          event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED); // PAS SUR BON C'EST SUREMENT LA QUE çA FOIRE
+          event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED);
         }
         else if (robotStates[event->assigned_to_].state == 1 && robotStates[event->assigned_to_].counter > 0){ // the robot is handling the task but isn't finish yet
           robotStates[event->assigned_to_].counter -= STEP_SIZE;

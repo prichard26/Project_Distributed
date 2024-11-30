@@ -30,19 +30,19 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 
 
 #define DEBUG 1
-#define TIME_STEP           64      // Timestep (ms)
-#define RX_PERIOD           2    // time difference between two received elements (ms) (1000)
+#define TIME_STEP           64                  // Timestep (ms)
+#define RX_PERIOD           2                   // time difference between two received elements (ms) (1000)
 
-#define AXLE_LENGTH         0.052   // Distance between wheels of robot (meters)
-#define SPEED_UNIT_RADS     0.00628 // Conversion factor from speed unit to radian per second
-#define WHEEL_RADIUS        0.0205  // Wheel radius (meters)
-#define DELTA_T             TIME_STEP/1000   // Timestep (seconds)
-#define MAX_SPEED         800     // Maximum speed
+#define AXLE_LENGTH         0.052               // Distance between wheels of robot (meters)
+#define SPEED_UNIT_RADS     0.00628             // Conversion factor from speed unit to radian per second
+#define WHEEL_RADIUS        0.0205              // Wheel radius (meters)
+#define DELTA_T             TIME_STEP/1000      // Timestep (seconds)
+#define MAX_SPEED           800                 // Maximum speed
 
-#define INVALID          -999
-#define BREAK            -999 //for physics plugin
+#define INVALID             -999
+#define BREAK               -999                //for physics plugin
 
-#define NUM_ROBOTS 5 // Change this also in the supervisor!
+#define NUM_ROBOTS          5                   // Change this also in the supervisor!
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -163,9 +163,9 @@ static void receive_updates()
             wb_robot_step(TIME_STEP);
             exit(0);
         }
-        else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){      // removed && state == GO_TO_GOAL
+        else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){    
             state = HANDLING_TASK;
-            log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK);
+            log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK); // pour print dans un fichier txt 
         }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
@@ -207,14 +207,38 @@ static void receive_updates()
         {                
 
             indx = target_list_length;
-            double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+            // msg.event_type et le robot connait son numero donc son type 
+            //double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+            //const bid_t my_bid = {robot_id, msg.event_id, d, indx};
 
-            const bid_t my_bid = {robot_id, msg.event_id, d, indx};
+            double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+            double time_to_target = distance_to_task*1000 / MAX_SPEED;
+            Event_type event_type = msg.event_type;
+            double time_to_handle_task = 0;
+
+            if (robot_id < 2){              // robot of type A
+                if (event_type == A){
+                time_to_handle_task = 3000;    //[ms]
+                }
+                else{
+                time_to_handle_task = 5000;
+                }
+            }else{                          // robot of type B
+                if (event_type == A){
+                time_to_handle_task = 9000;
+                }
+                else{
+                time_to_handle_task = 1000;
+                }
+            }
+            double total_time = time_to_target + time_to_handle_task;
+
+            const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
             wb_emitter_set_channel(emitter_tag, robot_id+1);
             wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
         }
     }
-    
+
     
     // Communication with physics plugin (channel 0)            
     i = 0; k = 1;
@@ -312,7 +336,6 @@ void reset(void)
     stat_max_velocity = 0.0;
 }
 
-
 void update_state(int _sum_distances)
 {
 
@@ -325,20 +348,6 @@ void update_state(int _sum_distances)
     else if(state == STAY && target_valid){
         state = GO_TO_GOAL;
     }
-
-
-    // if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
-    // {
-    //     state = OBSTACLE_AVOID;
-    // }
-    // else if (target_valid)
-    // {
-    //     state = GO_TO_GOAL;
-    // }
-    // else
-    // {
-    //     state = DEFAULT_STATE;
-    // }
 }
 
 // Odometry
@@ -422,7 +431,7 @@ void run(int ms)
 {
     float msl_w, msr_w;
     // Motor speed and sensor variables	
-    int msl=0,msr=0;                // motor speed left and right
+    int msl=0,msr=0;            // motor speed left and right
     int distances[NB_SENSORS];  // array keeping the distance sensor readings
     int sum_distances=0;        // sum of all distance sensor inputs, used as threshold for state change.  	
 
