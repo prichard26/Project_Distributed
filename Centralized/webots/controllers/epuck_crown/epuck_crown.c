@@ -144,8 +144,8 @@ static void receive_updates()
         if(target_list_length == 0) target_valid = 0; 
 
         // DEEEEEBUUUUUUUUUUUUUUUG
-        log_message("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
-        log_message("robot n %d, state of the robot: %d", robot_id, state);
+        //log_message("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
+        //log_message("robot n %d, state of the robot: %d", robot_id, state);
 
         // Event state machine
         if(msg.event_state == MSG_EVENT_GPS_ONLY)
@@ -165,7 +165,7 @@ static void receive_updates()
         }
         else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){    
             state = HANDLING_TASK;
-            log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK); // pour print dans un fichier txt 
+            //log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK); // pour print dans un fichier txt 
         }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
@@ -212,28 +212,38 @@ static void receive_updates()
             //const bid_t my_bid = {robot_id, msg.event_id, d, indx};
 
             double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-            double time_to_target = distance_to_task*1000 / MAX_SPEED;
+            double time_to_target = distance_to_task*10000 / MAX_SPEED;
             Event_type event_type = msg.event_type;
             double time_to_handle_task = 0;
+            // Debug print for event and robot position
+            log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
+                        robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
             if (robot_id < 2){              // robot of type A
                 if (event_type == A){
-                time_to_handle_task = 3000;    //[ms]
+                time_to_handle_task = 3;    //[ms]
                 }
                 else{
-                time_to_handle_task = 5000;
+                time_to_handle_task = 5;
                 }
             }else{                          // robot of type B
                 if (event_type == A){
-                time_to_handle_task = 9000;
+                time_to_handle_task = 9;
                 }
                 else{
-                time_to_handle_task = 1000;
+                time_to_handle_task = 1;
                 }
             }
             double total_time = time_to_target + time_to_handle_task;
 
+            // Debug print for calculated values
+            log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
+                        robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
+
             const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
+            log_message("robot_id = %d bid = %.2f to task of type %d at distance %.2f", 
+                        robot_id, total_time, event_type, distance_to_task);
+
             wb_emitter_set_channel(emitter_tag, robot_id+1);
             wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
         }
