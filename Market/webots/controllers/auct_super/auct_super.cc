@@ -67,7 +67,6 @@ double gauss(void)
 }
 
 double rand_coord() {
-  // return -1.0 + 2.0*RAND;
   return -0.45 + 0.9 * RAND;
 }
 
@@ -324,26 +323,7 @@ private:
     return wb_supervisor_field_set_sf_vec3f(f_pos, pos);
   }
 
-  // Marks one event as done, if one of the robots is within the range
-  void markEventsDone(event_queue_t& event_queue) {
-    for (auto& event : events_) {
-      if (!event->is_assigned() || event->is_done())
-        continue;
-      
-      const double *robot_pos = getRobotPos(event->assigned_to_);
-      Point2d robot_pos_pt(robot_pos[0], robot_pos[1]);
-      double dist = event->pos_.Distance(robot_pos_pt);
 
-      if (dist <= EVENT_RANGE) {
-        printf("D robot %d reached event %d which is of type %s\n", event->assigned_to_,
-          event->id_, (event->type_ == A) ? "A" : "B");
-        num_events_handled_++;
-        event->markDone(clock_);
-        num_active_events_--;
-        event_queue.emplace_back(event.get(), MSG_EVENT_DONE);
-      }
-    }
-  }
 
   void handleAuctionEvents(event_queue_t& event_queue) {
     // For each unassigned event
@@ -444,8 +424,6 @@ public:
     // Events that will be announced next or that have just been assigned/done
     event_queue_t event_queue;
 
-    markEventsDone(event_queue);
-
     // ** Add a random new event, if the time has come
     assert(t_next_event_ > 0);
     if (clock_ >= t_next_event_ && num_active_events_ < NUM_ACTIVE_EVENTS) {
@@ -453,29 +431,63 @@ public:
     }
 
     handleAuctionEvents(event_queue);
- 
-    // Send and receive messages
-    bid_t* pbid; // inbound
-    for (int i=0;i<NUM_ROBOTS;i++) {
-      // Check if we're receiving data
-      if (wb_receiver_get_queue_length(receivers_[i]) > 0) {
-        assert(wb_receiver_get_queue_length(receivers_[i]) > 0);
-        assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
-        
-        pbid = (bid_t*) wb_receiver_get_data(receivers_[i]); 
-        assert(pbid->robot_id == i);
 
-        Event* event = events_.at(pbid->event_id).get();
-        event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
-        // TODO: Refactor this (same code above in handleAuctionEvents)
-        if (event->is_assigned()) {
-          event_queue.emplace_back(event, MSG_EVENT_WON);
-          auction = NULL;
-          printf("W robot %d won event %d\n", event->assigned_to_, event->id_);
+    // Process inbound bid messages (pbid)
+    bid_t* pbid; // Bid messages
+    for (int i = 0; i < NUM_ROBOTS; i++) {
+        while (wb_receiver_get_queue_length(receivers_[i]) > 0) {
+            assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
+            pbid = (bid_t*)wb_receiver_get_data(receivers_[i]);
+
+            // Update auction with received bid
+            Event* event = events_.at(pbid->event_id).get();
+            event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
+
+            // Finalize auction if the event is assigned
+            if (event->is_assigned()) {
+                event_queue.emplace_back(event, MSG_EVENT_WON);
+                auction = NULL;
+                printf("W robot %d won event %d\n", pbid->robot_id, pbid->event_id);
+            }
+
+            wb_receiver_next_packet(receivers_[i]);
         }
+    }
 
-        wb_receiver_next_packet(receivers_[i]);
-      }
+    // Process robot updates
+    for (int i = 0; i < NUM_ROBOTS; i++) {
+        // Check if we're receiving data
+        while (wb_receiver_get_queue_length(receivers_[i]) > 0) {
+            assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(message_t));
+
+            const message_t* msg = (message_t*)wb_receiver_get_data(receivers_[i]);
+
+            switch (msg->event_state) {
+                case MSG_EVENT_STARTED: {
+                    // Task started: Change event color to green
+                    printf("Supervisor: Robot %d started task %d.\n", msg->robot_id, msg->event_id);
+                    Event* event = events_.at(msg->event_id).get();
+                    if (event) {
+                        changeEventColor(event->node_, 0.0, 1.0, 0.0); // Green for "in progress"
+                    }
+                    break;
+                }
+                case MSG_EVENT_DONE: {
+                    // Task done: Mark the event as completed
+                    printf("Supervisor: Robot %d completed task %d.\n", msg->robot_id, msg->event_id);
+                    Event* event = events_.at(msg->event_id).get();
+                    if (event) {
+                        event->markDone(clock_);
+                        num_active_events_--;
+                    }
+                    break;
+                }
+                default:
+                    break;
+            }
+
+            wb_receiver_next_packet(receivers_[i]);
+        }
     }
 
     // outbound
@@ -508,9 +520,6 @@ public:
         buildMessage(i, event, event_state, &msg);
         while (wb_emitter_get_channel(emitter_) != i+1)
               wb_emitter_set_channel(emitter_, i+1);        
-//        printf("> Sent message to robot %d // event_state=%d\n", i, event_state);
-//        printf("sending message event %d , robot %d , emitter %d, channel %d\n",msg.event_id,msg.robot_id,emitter_,      wb_emitter_get_channel(emitter_));
-        
         wb_emitter_send(emitter_, &msg, sizeof(message_t));
       }
     }

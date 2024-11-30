@@ -425,6 +425,7 @@ void compute_go_to_goal(int *msl, int *msr)
 }
 
 void task_doing() {
+    static int sent_task_started = 0;  // Flag to ensure the "started" message is sent only once.
 
     if (task_in_progress == 0) {
         // Determine task type and robot specialization
@@ -443,22 +444,41 @@ void task_doing() {
         }
 
         task_in_progress = 1;
+        sent_task_started = 0;  // Reset the flag for the new task.
     } else {
-        task_remaining_time -= TIME_STEP;
+        // Notify supervisor that task has started
+        if (!sent_task_started) {
+            message_t msg;
+            msg.robot_id = robot_id;
+            msg.event_state = MSG_EVENT_STARTED;  
+            msg.event_id = target[0][2];        
+            wb_emitter_set_channel(emitter_tag, robot_id + 1);
+            wb_emitter_send(emitter_tag, &msg, sizeof(message_t));
 
-        rob_energy -= (TIME_STEP / 1000); // Energy cost per second
+            sent_task_started = 1;  // Ensure this message is sent only once.
+        }
+
+        // Perform task
+        task_remaining_time -= TIME_STEP;
+        rob_energy -= (TIME_STEP / 1000);  // Energy cost per second
         if (rob_energy < 0) rob_energy = 0;
 
         // Check if the task is completed
         if (task_remaining_time <= 0) {
-            task_in_progress = 0;         // Reset task progress
-            target_valid = 0;             // Clear target
-            state = STAY;                 // Transition to STAY or another state
+            // Task is complete; notify the supervisor
+            message_t msg;
+            msg.robot_id = robot_id;
+            msg.event_state = MSG_EVENT_DONE;
+            msg.event_id = target[0][2];
+            wb_emitter_set_channel(emitter_tag, robot_id + 1);
+            wb_emitter_send(emitter_tag, &msg, sizeof(message_t));
+
+            task_in_progress = 0;  // Reset task progress
+            target_valid = 0;      // Clear target
+            state = STAY;          // Transition to STAY or another state
         }
     }
 }
-
-
 
 // RUN e-puck
 void run(int ms)
@@ -488,19 +508,27 @@ void run(int ms)
     // Set wheel speeds depending on state
     switch (state) {
         case STAY:
+            printf("[CONTROLER]: Robot %d switcht to STAY State", robot_id);
+
             msl = 0;
             msr = 0;
             break;
 
         case GO_TO_GOAL:
+            printf("[CONTROLER]: Robot %d switcht to GO TO GOAL State", robot_id);
+
             compute_go_to_goal(&msl, &msr);
             break;
 
         case OBSTACLE_AVOID:
+            printf("[CONTROLER]: Robot %d switcht to OBSTACLE AVOID State", robot_id);
+
             compute_avoid_obstacle(&msl, &msr, distances);
             break;
 
         case TASK_MAKING:
+            printf("[CONTROLER]: Robot %d switcht to GO TO TASK MAKING State", robot_id);
+
             task_doing();
             break;
 

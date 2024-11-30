@@ -6,6 +6,7 @@ typedef enum {
   MSG_EVENT_GPS_ONLY,
   MSG_EVENT_NEW,
   MSG_EVENT_WON,
+  MSG_EVENT_STARTED,
   MSG_EVENT_DONE,
   MSG_QUIT
 } message_event_state_t;
