@@ -163,7 +163,7 @@ static void receive_updates()
             wb_robot_step(TIME_STEP);
             exit(0);
         }
-        else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){      // removed && state == GO_TO_GOAL
+        else if (msg.event_state == MSG_EVENT_BEING_HANDLED){
             state = HANDLING_TASK;
             log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK);
         }
@@ -371,20 +371,6 @@ void update_state(int _sum_distances)
     else if(state == STAY && target_valid){
         state = GO_TO_GOAL;
     }
-
-
-    // if (_sum_distances > STATECHANGE_DIST && state == GO_TO_GOAL)
-    // {
-    //     state = OBSTACLE_AVOID;
-    // }
-    // else if (target_valid)
-    // {
-    //     state = GO_TO_GOAL;
-    // }
-    // else
-    // {
-    //     state = DEFAULT_STATE;
-    // }
 }
 
 // Odometry

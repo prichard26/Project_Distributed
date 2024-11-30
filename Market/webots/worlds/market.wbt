@@ -134,7 +134,7 @@ DEF e0 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -151,7 +151,7 @@ DEF e1 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -169,7 +169,7 @@ DEF e2 Transform {
       appearance Appearance {
         material Material {
           ambientIntensity 0.5
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
           shininess 0.5
         }
       }
@@ -187,7 +187,7 @@ DEF e3 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -204,7 +204,7 @@ DEF e4 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -221,7 +221,7 @@ DEF e5 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 0 1
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -238,7 +238,7 @@ DEF e6 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 1 0 0
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -255,7 +255,7 @@ DEF e7 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 1 0 0
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -272,7 +272,7 @@ DEF e8 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 1 0 0
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {
@@ -289,7 +289,7 @@ DEF e9 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 1 0 0
+          diffuseColor 0 1 0
         }
       }
       geometry Cylinder {

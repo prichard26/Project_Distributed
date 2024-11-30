@@ -324,7 +324,7 @@ private:
           robotStates[event->assigned_to_].state = 1;   // starts handling the task  
           robotStates[event->assigned_to_].counter = set_counter(event->type_, event->assigned_to_);
           printf("COUNTER %d\n", robotStates[event->assigned_to_].counter); 
-          event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED); // PAS SUR BON C'EST SUREMENT LA QUE çA FOIRE
+          event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED);
         }
         else if (robotStates[event->assigned_to_].state == 1 && robotStates[event->assigned_to_].counter > 0){ // the robot is handling the task but isn't finish yet
           robotStates[event->assigned_to_].counter -= STEP_SIZE;
