@@ -302,7 +302,7 @@ private:
 
   // Marks one event as done, if one of the robots is within the range
   void markEventsDone(event_queue_t& event_queue) {
-    for (auto& event : events_) {  //iterate through all the events of the supervisor (keep in memory event old events)
+    for (auto& event : events_) {  //iterate through all the events of the supervisor (keep in memory even old events)
       if (!event->is_assigned() || event->is_done())
         continue;
       
@@ -311,15 +311,12 @@ private:
       double dist = event->pos_.Distance(robot_pos_pt);
 
       if (dist <= EVENT_RANGE) {
-        printf("D robot %d reached event %d which is of type %s\n", event->assigned_to_,
-          event->id_, (event->type_ == A) ? "A" : "B");
+        printf("[REACHED] Robot %d reached event %d which is of type %s\n", event->assigned_to_,
+                event->id_, (event->type_ == A) ? "A" : "B");
 
-        // implement the waiting time
         if (robotStates[event->assigned_to_].state == 0){     // robot arrives in range but is not handling the task yet 
-          printf("HEELlOOOOOOOOO\n");
-          robotStates[event->assigned_to_].state = 1;   // starts handling the task  
+          robotStates[event->assigned_to_].state = 1;         // starts handling the task  
           robotStates[event->assigned_to_].counter = set_counter(event->type_, event->assigned_to_);
-          printf("COUNTER %d\n", robotStates[event->assigned_to_].counter); 
           event_queue.emplace_back(event.get(), MSG_EVENT_BEING_HANDLED);
         }
         else if (robotStates[event->assigned_to_].state == 1 && robotStates[event->assigned_to_].counter > 0){ // the robot is handling the task but isn't finish yet
@@ -350,7 +347,7 @@ private:
         event->t_announced_ = clock_;
         event_queue.emplace_back(event.get(), MSG_EVENT_NEW); 
         auction = event.get();
-        printf("A event %d announced\n", event->id_);
+        printf("[EVENT] An event %d announced\n", event->id_);
 
       // End early or restart, if timed out
       } else if (clock_ - event->t_announced_ > EVENT_TIMEOUT) {
@@ -361,7 +358,7 @@ private:
           event->assigned_to_ = event->best_bidder_;
           event_queue.emplace_back(event.get(), MSG_EVENT_WON); // FIXME?
           auction = NULL;
-          printf("W robot %d won event %d\n", event->assigned_to_, event->id_);
+          printf("[EVENT] Robot %d won event %d\n", event->assigned_to_, event->id_);
 
         // Restart (incl. announce) if no bids
         } else {
@@ -462,12 +459,14 @@ public:
         assert(pbid->robot_id == i);
 
         Event* event = events_.at(pbid->event_id).get();
+        printf("[AUCTION] robot %d placed a bid of %f on event %d\n ", pbid->robot_id, pbid->value, pbid->event_index);
+
         event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
-        // TODO: Refactor this (same code above in handleAuctionEvents)
+
         if (event->is_assigned()) {
           event_queue.emplace_back(event, MSG_EVENT_WON);
           auction = NULL;
-          printf("W robot %d won event %d\n", event->assigned_to_, event->id_);
+          printf("[AUCTION] robot %d won event %d\n", event->assigned_to_, event->id_);
         }
 
         wb_receiver_next_packet(receivers_[i]);

@@ -2353,3 +2353,993 @@ robot_id = 3 bid = 13.16 to task of type 1 at distance 0.97
 robot_id = 4, my_pos = (0.46, 0.10), event_pos = (0.40, 0.41)
 robot_id = 4, distance_to_task = 0.32, time_to_target = 3.97, time_to_handle_task = 1.00, total_time = 4.97
 robot_id = 4 bid = 4.97 to task of type 1 at distance 0.32
+robot_id = 0, my_pos = (-0.32, -0.35), event_pos = (0.37, 0.32)
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.37, 0.32)
+robot_id = 0, distance_to_task = 0.97, time_to_target = 12.09, time_to_handle_task = 5.00, total_time = 17.09
+robot_id = 1, distance_to_task = 0.47, time_to_target = 5.85, time_to_handle_task = 5.00, total_time = 10.85
+robot_id = 1 bid = 10.85 to task of type 1 at distance 0.47
+robot_id = 0 bid = 17.09 to task of type 1 at distance 0.97
+robot_id = 2, my_pos = (-0.31, 0.21), event_pos = (0.37, 0.32)
+robot_id = 2, distance_to_task = 0.69, time_to_target = 8.62, time_to_handle_task = 1.00, total_time = 9.62
+robot_id = 2 bid = 9.62 to task of type 1 at distance 0.69
+robot_id = 3, my_pos = (0.03, -0.34), event_pos = (0.37, 0.32)
+robot_id = 3, distance_to_task = 0.75, time_to_target = 9.34, time_to_handle_task = 1.00, total_time = 10.34
+robot_id = 3 bid = 10.34 to task of type 1 at distance 0.75
+robot_id = 4, my_pos = (-0.33, -0.30), event_pos = (0.37, 0.32)
+robot_id = 4, distance_to_task = 0.94, time_to_target = 11.74, time_to_handle_task = 1.00, total_time = 12.74
+robot_id = 4 bid = 12.74 to task of type 1 at distance 0.94
+robot_id = 0, my_pos = (-0.32, -0.35), event_pos = (-0.11, -0.11)
+robot_id = 0, distance_to_task = 0.32, time_to_target = 4.03, time_to_handle_task = 5.00, total_time = 9.03
+robot_id = 0 bid = 9.03 to task of type 1 at distance 0.32
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.11, -0.11)
+robot_id = 1, distance_to_task = 0.52, time_to_target = 6.44, time_to_handle_task = 5.00, total_time = 11.44
+robot_id = 1 bid = 11.44 to task of type 1 at distance 0.52
+robot_id = 2, my_pos = (-0.30, 0.21), event_pos = (-0.11, -0.11)
+robot_id = 2, distance_to_task = 0.37, time_to_target = 4.63, time_to_handle_task = 1.00, total_time = 5.63
+robot_id = 2 bid = 5.63 to task of type 1 at distance 0.37
+robot_id = 3, my_pos = (0.03, -0.34), event_pos = (-0.11, -0.11)
+robot_id = 3, distance_to_task = 0.27, time_to_target = 3.44, time_to_handle_task = 1.00, total_time = 4.44
+robot_id = 3 bid = 4.44 to task of type 1 at distance 0.27
+robot_id = 4, my_pos = (-0.33, -0.30), event_pos = (-0.11, -0.11)
+robot_id = 4, distance_to_task = 0.29, time_to_target = 3.66, time_to_handle_task = 1.00, total_time = 4.66
+robot_id = 4 bid = 4.66 to task of type 1 at distance 0.29
+robot_id = 0, my_pos = (-0.32, -0.35), event_pos = (-0.05, -0.10)
+robot_id = 0, distance_to_task = 0.37, time_to_target = 4.58, time_to_handle_task = 3.00, total_time = 7.58
+robot_id = 0 bid = 7.58 to task of type 0 at distance 0.37
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.05, -0.10)
+robot_id = 1, distance_to_task = 0.46, time_to_target = 5.71, time_to_handle_task = 3.00, total_time = 8.71
+robot_id = 1 bid = 8.71 to task of type 0 at distance 0.46
+robot_id = 2, my_pos = (-0.29, 0.21), event_pos = (-0.05, -0.10)
+robot_id = 2, distance_to_task = 0.39, time_to_target = 4.91, time_to_handle_task = 9.00, total_time = 13.91
+robot_id = 2 bid = 13.91 to task of type 0 at distance 0.39
+robot_id = 3, my_pos = (0.03, -0.34), event_pos = (-0.05, -0.10)
+robot_id = 3, distance_to_task = 0.25, time_to_target = 3.15, time_to_handle_task = 9.00, total_time = 12.15
+robot_id = 3 bid = 12.15 to task of type 0 at distance 0.25
+robot_id = 4, my_pos = (-0.33, -0.30), event_pos = (-0.05, -0.10)
+robot_id = 4, distance_to_task = 0.34, time_to_target = 4.26, time_to_handle_task = 9.00, total_time = 13.26
+robot_id = 4 bid = 13.26 to task of type 0 at distance 0.34
+robot_id = 0, my_pos = (-0.31, -0.36), event_pos = (-0.41, -0.27)
+robot_id = 0, distance_to_task = 0.14, time_to_target = 1.72, time_to_handle_task = 5.00, total_time = 6.72
+robot_id = 0 bid = 6.72 to task of type 1 at distance 0.14
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.41, -0.27)
+robot_id = 1, distance_to_task = 0.83, time_to_target = 10.34, time_to_handle_task = 5.00, total_time = 15.34
+robot_id = 1 bid = 15.34 to task of type 1 at distance 0.83
+robot_id = 2, my_pos = (-0.28, 0.21), event_pos = (-0.41, -0.27)
+robot_id = 2, distance_to_task = 0.50, time_to_target = 6.21, time_to_handle_task = 1.00, total_time = 7.21
+robot_id = 2 bid = 7.21 to task of type 1 at distance 0.50
+robot_id = 3, my_pos = (0.04, -0.34), event_pos = (-0.41, -0.27)
+robot_id = 3, distance_to_task = 0.46, time_to_target = 5.74, time_to_handle_task = 1.00, total_time = 6.74
+robot_id = 3 bid = 6.74 to task of type 1 at distance 0.46
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.41, -0.27)
+robot_id = 4, distance_to_task = 0.08, time_to_target = 1.01, time_to_handle_task = 1.00, total_time = 2.01
+robot_id = 4 bid = 2.01 to task of type 1 at distance 0.08
+robot_id = 0, my_pos = (-0.30, -0.36), event_pos = (-0.09, 0.42)
+robot_id = 0, distance_to_task = 0.81, time_to_target = 10.08, time_to_handle_task = 5.00, total_time = 15.08
+robot_id = 0 bid = 15.08 to task of type 1 at distance 0.81
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.09, 0.42)
+robot_id = 1, distance_to_task = 0.75, time_to_target = 9.40, time_to_handle_task = 5.00, total_time = 14.40
+robot_id = 1 bid = 14.40 to task of type 1 at distance 0.75
+robot_id = 2, my_pos = (-0.26, 0.21), event_pos = (-0.09, 0.42)
+robot_id = 2, distance_to_task = 0.27, time_to_target = 3.35, time_to_handle_task = 1.00, total_time = 4.35
+robot_id = 2 bid = 4.35 to task of type 1 at distance 0.27
+robot_id = 3, my_pos = (0.06, -0.34), event_pos = (-0.09, 0.42)
+robot_id = 3, distance_to_task = 0.77, time_to_target = 9.63, time_to_handle_task = 1.00, total_time = 10.63
+robot_id = 3 bid = 10.63 to task of type 1 at distance 0.77
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.09, 0.42)
+robot_id = 4, distance_to_task = 0.75, time_to_target = 9.37, time_to_handle_task = 1.00, total_time = 10.37
+robot_id = 4 bid = 10.37 to task of type 1 at distance 0.75
+robot_id = 0, my_pos = (-0.28, -0.36), event_pos = (0.19, 0.18)
+robot_id = 0, distance_to_task = 0.72, time_to_target = 9.01, time_to_handle_task = 5.00, total_time = 14.01
+robot_id = 0 bid = 14.01 to task of type 1 at distance 0.72
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.19, 0.18)
+robot_id = 1, distance_to_task = 0.39, time_to_target = 4.84, time_to_handle_task = 5.00, total_time = 9.84
+robot_id = 1 bid = 9.84 to task of type 1 at distance 0.39
+robot_id = 2, my_pos = (-0.25, 0.21), event_pos = (0.19, 0.18)
+robot_id = 2, distance_to_task = 0.44, time_to_target = 5.52, time_to_handle_task = 1.00, total_time = 6.52
+robot_id = 2 bid = 6.52 to task of type 1 at distance 0.44
+robot_id = 3, my_pos = (0.07, -0.33), event_pos = (0.19, 0.18)
+robot_id = 3, distance_to_task = 0.53, time_to_target = 6.60, time_to_handle_task = 1.00, total_time = 7.60
+robot_id = 3 bid = 7.60 to task of type 1 at distance 0.53
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.19, 0.18)
+robot_id = 4, distance_to_task = 0.71, time_to_target = 8.85, time_to_handle_task = 1.00, total_time = 9.85
+robot_id = 4 bid = 9.85 to task of type 1 at distance 0.71
+robot_id = 0, my_pos = (-0.27, -0.37), event_pos = (-0.22, 0.08)
+robot_id = 0, distance_to_task = 0.45, time_to_target = 5.61, time_to_handle_task = 3.00, total_time = 8.61
+robot_id = 0 bid = 8.61 to task of type 0 at distance 0.45
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.22, 0.08)
+robot_id = 1, distance_to_task = 0.66, time_to_target = 8.30, time_to_handle_task = 3.00, total_time = 11.30
+robot_id = 1 bid = 11.30 to task of type 0 at distance 0.66
+robot_id = 2, my_pos = (-0.23, 0.21), event_pos = (-0.22, 0.08)
+robot_id = 2, distance_to_task = 0.13, time_to_target = 1.68, time_to_handle_task = 9.00, total_time = 10.68
+robot_id = 2 bid = 10.68 to task of type 0 at distance 0.13
+robot_id = 3, my_pos = (0.08, -0.33), event_pos = (-0.22, 0.08)
+robot_id = 3, distance_to_task = 0.51, time_to_target = 6.40, time_to_handle_task = 9.00, total_time = 15.40
+robot_id = 3 bid = 15.40 to task of type 0 at distance 0.51
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.22, 0.08)
+robot_id = 4, distance_to_task = 0.39, time_to_target = 4.83, time_to_handle_task = 9.00, total_time = 13.83
+robot_id = 4 bid = 13.83 to task of type 0 at distance 0.39
+robot_id = 0, my_pos = (-0.26, -0.37), event_pos = (0.37, -0.18)
+robot_id = 0, distance_to_task = 0.66, time_to_target = 8.21, time_to_handle_task = 3.00, total_time = 11.21
+robot_id = 0 bid = 11.21 to task of type 0 at distance 0.66
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.37, -0.18)
+robot_id = 1, distance_to_task = 0.05, time_to_target = 0.62, time_to_handle_task = 3.00, total_time = 3.62
+robot_id = 1 bid = 3.62 to task of type 0 at distance 0.05
+robot_id = 2, my_pos = (-0.22, 0.21), event_pos = (0.37, -0.18)
+robot_id = 2, distance_to_task = 0.71, time_to_target = 8.90, time_to_handle_task = 9.00, total_time = 17.90
+robot_id = 2 bid = 17.90 to task of type 0 at distance 0.71
+robot_id = 3, my_pos = (0.10, -0.33), event_pos = (0.37, -0.18)
+robot_id = 3, distance_to_task = 0.31, time_to_target = 3.89, time_to_handle_task = 9.00, total_time = 12.89
+robot_id = 3 bid = 12.89 to task of type 0 at distance 0.31
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.37, -0.18)
+robot_id = 4, distance_to_task = 0.72, time_to_target = 8.99, time_to_handle_task = 9.00, total_time = 17.99
+robot_id = 4 bid = 17.99 to task of type 0 at distance 0.72
+robot_id = 0, my_pos = (-0.24, -0.37), event_pos = (0.43, 0.30)
+robot_id = 0, distance_to_task = 0.95, time_to_target = 11.84, time_to_handle_task = 5.00, total_time = 16.84
+robot_id = 0 bid = 16.84 to task of type 1 at distance 0.95
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.43, 0.30)
+robot_id = 1, distance_to_task = 0.44, time_to_target = 5.52, time_to_handle_task = 5.00, total_time = 10.52
+robot_id = 1 bid = 10.52 to task of type 1 at distance 0.44
+robot_id = 2, my_pos = (-0.21, 0.22), event_pos = (0.43, 0.30)
+robot_id = 2, distance_to_task = 0.64, time_to_target = 7.97, time_to_handle_task = 1.00, total_time = 8.97
+robot_id = 2 bid = 8.97 to task of type 1 at distance 0.64
+robot_id = 3, my_pos = (0.11, -0.33), event_pos = (0.43, 0.30)
+robot_id = 3, distance_to_task = 0.70, time_to_target = 8.73, time_to_handle_task = 1.00, total_time = 9.73
+robot_id = 3 bid = 9.73 to task of type 1 at distance 0.70
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.43, 0.30)
+robot_id = 4, distance_to_task = 0.96, time_to_target = 12.05, time_to_handle_task = 1.00, total_time = 13.05
+robot_id = 4 bid = 13.05 to task of type 1 at distance 0.96
+robot_id = 0, my_pos = (-0.23, -0.37), event_pos = (0.17, -0.13)
+robot_id = 0, distance_to_task = 0.47, time_to_target = 5.87, time_to_handle_task = 5.00, total_time = 10.87
+robot_id = 0 bid = 10.87 to task of type 1 at distance 0.47
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.17, -0.13)
+robot_id = 1, distance_to_task = 0.23, time_to_target = 2.90, time_to_handle_task = 5.00, total_time = 7.90
+robot_id = 1 bid = 7.90 to task of type 1 at distance 0.23
+robot_id = 2, my_pos = (-0.19, 0.22), event_pos = (0.17, -0.13)
+robot_id = 2, distance_to_task = 0.50, time_to_target = 6.30, time_to_handle_task = 1.00, total_time = 7.30
+robot_id = 2 bid = 7.30 to task of type 1 at distance 0.50
+robot_id = 3, my_pos = (0.13, -0.32), event_pos = (0.17, -0.13)
+robot_id = 3, distance_to_task = 0.20, time_to_target = 2.47, time_to_handle_task = 1.00, total_time = 3.47
+robot_id = 3 bid = 3.47 to task of type 1 at distance 0.20
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.17, -0.13)
+robot_id = 4, distance_to_task = 0.54, time_to_target = 6.69, time_to_handle_task = 1.00, total_time = 7.69
+robot_id = 4 bid = 7.69 to task of type 1 at distance 0.54
+robot_id = 0, my_pos = (-0.21, -0.38), event_pos = (0.30, -0.40)
+robot_id = 0, distance_to_task = 0.51, time_to_target = 6.42, time_to_handle_task = 5.00, total_time = 11.42
+robot_id = 0 bid = 11.42 to task of type 1 at distance 0.51
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (0.30, -0.40)
+robot_id = 1, distance_to_task = 0.28, time_to_target = 3.48, time_to_handle_task = 5.00, total_time = 8.48
+robot_id = 1 bid = 8.48 to task of type 1 at distance 0.28
+robot_id = 2, my_pos = (-0.18, 0.22), event_pos = (0.30, -0.40)
+robot_id = 2, distance_to_task = 0.78, time_to_target = 9.75, time_to_handle_task = 1.00, total_time = 10.75
+robot_id = 2 bid = 10.75 to task of type 1 at distance 0.78
+robot_id = 3, my_pos = (0.14, -0.32), event_pos = (0.30, -0.40)
+robot_id = 3, distance_to_task = 0.18, time_to_target = 2.21, time_to_handle_task = 1.00, total_time = 3.21
+robot_id = 3 bid = 3.21 to task of type 1 at distance 0.18
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.30, -0.40)
+robot_id = 4, distance_to_task = 0.65, time_to_target = 8.09, time_to_handle_task = 1.00, total_time = 9.09
+robot_id = 4 bid = 9.09 to task of type 1 at distance 0.65
+robot_id = 0, my_pos = (-0.01, -0.40), event_pos = (-0.03, 0.30)
+robot_id = 0, distance_to_task = 0.70, time_to_target = 8.73, time_to_handle_task = 5.00, total_time = 13.73
+robot_id = 0 bid = 13.73 to task of type 1 at distance 0.70
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.03, 0.30)
+robot_id = 1, distance_to_task = 0.62, time_to_target = 7.79, time_to_handle_task = 5.00, total_time = 12.79
+robot_id = 1 bid = 12.79 to task of type 1 at distance 0.62
+robot_id = 2, my_pos = (0.02, 0.25), event_pos = (-0.03, 0.30)
+robot_id = 2, distance_to_task = 0.08, time_to_target = 0.96, time_to_handle_task = 1.00, total_time = 1.96
+robot_id = 2 bid = 1.96 to task of type 1 at distance 0.08
+robot_id = 3, my_pos = (0.34, -0.27), event_pos = (-0.03, 0.30)
+robot_id = 3, distance_to_task = 0.68, time_to_target = 8.53, time_to_handle_task = 1.00, total_time = 9.53
+robot_id = 3 bid = 9.53 to task of type 1 at distance 0.68
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.03, 0.30)
+robot_id = 4, distance_to_task = 0.67, time_to_target = 8.33, time_to_handle_task = 1.00, total_time = 9.33
+robot_id = 4 bid = 9.33 to task of type 1 at distance 0.67
+robot_id = 0, my_pos = (0.08, -0.40), event_pos = (-0.23, 0.29)
+robot_id = 0, distance_to_task = 0.76, time_to_target = 9.45, time_to_handle_task = 5.00, total_time = 14.45
+robot_id = 0 bid = 14.45 to task of type 1 at distance 0.76
+robot_id = 1, my_pos = (0.40, -0.14), event_pos = (-0.23, 0.29)
+robot_id = 1, distance_to_task = 0.76, time_to_target = 9.56, time_to_handle_task = 5.00, total_time = 14.56
+robot_id = 1 bid = 14.56 to task of type 1 at distance 0.76
+robot_id = 2, my_pos = (0.04, 0.25), event_pos = (-0.23, 0.29)
+robot_id = 2, distance_to_task = 0.27, time_to_target = 3.39, time_to_handle_task = 1.00, total_time = 4.39
+robot_id = 2 bid = 4.39 to task of type 1 at distance 0.27
+robot_id = 3, my_pos = (0.43, -0.24), event_pos = (-0.23, 0.29)
+robot_id = 3, distance_to_task = 0.84, time_to_target = 10.55, time_to_handle_task = 1.00, total_time = 11.55
+robot_id = 3 bid = 11.55 to task of type 1 at distance 0.84
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.23, 0.29)
+robot_id = 4, distance_to_task = 0.59, time_to_target = 7.39, time_to_handle_task = 1.00, total_time = 8.39
+robot_id = 4 bid = 8.39 to task of type 1 at distance 0.59
+robot_id = 0, my_pos = (0.41, -0.37), event_pos = (0.15, -0.08)
+robot_id = 0, distance_to_task = 0.39, time_to_target = 4.86, time_to_handle_task = 5.00, total_time = 9.86
+robot_id = 0 bid = 9.86 to task of type 1 at distance 0.39
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (0.15, -0.08)
+robot_id = 1, distance_to_task = 0.24, time_to_target = 3.00, time_to_handle_task = 5.00, total_time = 8.00
+robot_id = 1 bid = 8.00 to task of type 1 at distance 0.24
+robot_id = 2, my_pos = (0.28, 0.32), event_pos = (0.15, -0.08)
+robot_id = 2, distance_to_task = 0.43, time_to_target = 5.36, time_to_handle_task = 1.00, total_time = 6.36
+robot_id = 2 bid = 6.36 to task of type 1 at distance 0.43
+robot_id = 3, my_pos = (0.40, -0.04), event_pos = (0.15, -0.08)
+robot_id = 3, distance_to_task = 0.25, time_to_target = 3.18, time_to_handle_task = 1.00, total_time = 4.18
+robot_id = 3 bid = 4.18 to task of type 1 at distance 0.25
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.15, -0.08)
+robot_id = 4, distance_to_task = 0.53, time_to_target = 6.62, time_to_handle_task = 1.00, total_time = 7.62
+robot_id = 4 bid = 7.62 to task of type 1 at distance 0.53
+robot_id = 0, my_pos = (0.46, -0.33), event_pos = (-0.17, 0.34)
+robot_id = 0, distance_to_task = 0.92, time_to_target = 11.48, time_to_handle_task = 5.00, total_time = 16.48
+robot_id = 0 bid = 16.48 to task of type 1 at distance 0.92
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (-0.17, 0.34)
+robot_id = 1, distance_to_task = 0.73, time_to_target = 9.13, time_to_handle_task = 5.00, total_time = 14.13
+robot_id = 1 bid = 14.13 to task of type 1 at distance 0.73
+robot_id = 2, my_pos = (0.35, 0.36), event_pos = (-0.17, 0.34)
+robot_id = 2, distance_to_task = 0.51, time_to_target = 6.43, time_to_handle_task = 1.00, total_time = 7.43
+robot_id = 2 bid = 7.43 to task of type 1 at distance 0.51
+robot_id = 3, my_pos = (0.30, 0.09), event_pos = (-0.17, 0.34)
+robot_id = 3, distance_to_task = 0.53, time_to_target = 6.60, time_to_handle_task = 1.00, total_time = 7.60
+robot_id = 3 bid = 7.60 to task of type 1 at distance 0.53
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (-0.17, 0.34)
+robot_id = 4, distance_to_task = 0.65, time_to_target = 8.15, time_to_handle_task = 1.00, total_time = 9.15
+robot_id = 4 bid = 9.15 to task of type 1 at distance 0.65
+robot_id = 0, my_pos = (-0.13, 0.04), event_pos = (0.04, -0.40)
+robot_id = 0, distance_to_task = 0.48, time_to_target = 5.96, time_to_handle_task = 5.00, total_time = 10.96
+robot_id = 0 bid = 10.96 to task of type 1 at distance 0.48
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (0.04, -0.40)
+robot_id = 1, distance_to_task = 0.43, time_to_target = 5.36, time_to_handle_task = 5.00, total_time = 10.36
+robot_id = 1 bid = 10.36 to task of type 1 at distance 0.43
+robot_id = 2, my_pos = (0.14, 0.26), event_pos = (0.04, -0.40)
+robot_id = 2, distance_to_task = 0.67, time_to_target = 8.39, time_to_handle_task = 1.00, total_time = 9.39
+robot_id = 2 bid = 9.39 to task of type 1 at distance 0.67
+robot_id = 3, my_pos = (-0.35, 0.37), event_pos = (0.04, -0.40)
+robot_id = 3, distance_to_task = 0.87, time_to_target = 10.82, time_to_handle_task = 1.00, total_time = 11.82
+robot_id = 3 bid = 11.82 to task of type 1 at distance 0.87
+robot_id = 4, my_pos = (-0.34, -0.29), event_pos = (0.04, -0.40)
+robot_id = 4, distance_to_task = 0.40, time_to_target = 4.95, time_to_handle_task = 1.00, total_time = 5.95
+robot_id = 4 bid = 5.95 to task of type 1 at distance 0.40
+robot_id = 0, my_pos = (-0.13, 0.04), event_pos = (-0.42, 0.35)
+robot_id = 0, distance_to_task = 0.41, time_to_target = 5.19, time_to_handle_task = 5.00, total_time = 10.19
+robot_id = 0 bid = 10.19 to task of type 1 at distance 0.41
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (-0.42, 0.35)
+robot_id = 1, distance_to_task = 0.94, time_to_target = 11.71, time_to_handle_task = 5.00, total_time = 16.71
+robot_id = 1 bid = 16.71 to task of type 1 at distance 0.94
+robot_id = 2, my_pos = (0.00, 0.18), event_pos = (-0.42, 0.35)
+robot_id = 2, distance_to_task = 0.45, time_to_target = 5.65, time_to_handle_task = 1.00, total_time = 6.65
+robot_id = 2 bid = 6.65 to task of type 1 at distance 0.45
+robot_id = 3, my_pos = (-0.46, 0.29), event_pos = (-0.42, 0.35)
+robot_id = 3, distance_to_task = 0.07, time_to_target = 0.90, time_to_handle_task = 1.00, total_time = 1.90
+robot_id = 3 bid = 1.90 to task of type 1 at distance 0.07
+robot_id = 4, my_pos = (-0.19, -0.34), event_pos = (-0.42, 0.35)
+robot_id = 4, distance_to_task = 0.72, time_to_target = 9.05, time_to_handle_task = 1.00, total_time = 10.05
+robot_id = 4 bid = 10.05 to task of type 1 at distance 0.72
+robot_id = 0, my_pos = (-0.22, 0.06), event_pos = (0.33, -0.31)
+robot_id = 0, distance_to_task = 0.66, time_to_target = 8.25, time_to_handle_task = 5.00, total_time = 13.25
+robot_id = 0 bid = 13.25 to task of type 1 at distance 0.66
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (0.33, -0.31)
+robot_id = 1, distance_to_task = 0.18, time_to_target = 2.19, time_to_handle_task = 5.00, total_time = 7.19
+robot_id = 1 bid = 7.19 to task of type 1 at distance 0.18
+robot_id = 2, my_pos = (-0.08, 0.12), event_pos = (0.33, -0.31)
+robot_id = 2, distance_to_task = 0.59, time_to_target = 7.41, time_to_handle_task = 1.00, total_time = 8.41
+robot_id = 2 bid = 8.41 to task of type 1 at distance 0.59
+robot_id = 3, my_pos = (-0.46, 0.29), event_pos = (0.33, -0.31)
+robot_id = 3, distance_to_task = 0.99, time_to_target = 12.42, time_to_handle_task = 1.00, total_time = 13.42
+robot_id = 3 bid = 13.42 to task of type 1 at distance 0.99
+robot_id = 4, my_pos = (-0.10, -0.37), event_pos = (0.33, -0.31)
+robot_id = 4, distance_to_task = 0.44, time_to_target = 5.48, time_to_handle_task = 1.00, total_time = 6.48
+robot_id = 4 bid = 6.48 to task of type 1 at distance 0.44
+robot_id = 0, my_pos = (-0.35, 0.08), event_pos = (-0.04, 0.18)
+robot_id = 0, distance_to_task = 0.32, time_to_target = 4.04, time_to_handle_task = 5.00, total_time = 9.04
+robot_id = 0 bid = 9.04 to task of type 1 at distance 0.32
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (-0.04, 0.18)
+robot_id = 1, distance_to_task = 0.53, time_to_target = 6.61, time_to_handle_task = 5.00, total_time = 11.61
+robot_id = 1 bid = 11.61 to task of type 1 at distance 0.53
+robot_id = 2, my_pos = (-0.18, 0.04), event_pos = (-0.04, 0.18)
+robot_id = 2, distance_to_task = 0.20, time_to_target = 2.45, time_to_handle_task = 1.00, total_time = 3.45
+robot_id = 2 bid = 3.45 to task of type 1 at distance 0.20
+robot_id = 3, my_pos = (-0.41, 0.19), event_pos = (-0.04, 0.18)
+robot_id = 3, distance_to_task = 0.37, time_to_target = 4.65, time_to_handle_task = 1.00, total_time = 5.65
+robot_id = 3 bid = 5.65 to task of type 1 at distance 0.37
+robot_id = 4, my_pos = (-0.05, -0.39), event_pos = (-0.04, 0.18)
+robot_id = 4, distance_to_task = 0.56, time_to_target = 7.06, time_to_handle_task = 1.00, total_time = 8.06
+robot_id = 4 bid = 8.06 to task of type 1 at distance 0.56
+robot_id = 0, my_pos = (-0.38, -0.08), event_pos = (0.32, 0.38)
+robot_id = 0, distance_to_task = 0.83, time_to_target = 10.43, time_to_handle_task = 5.00, total_time = 15.43
+robot_id = 0 bid = 15.43 to task of type 1 at distance 0.83
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (0.32, 0.38)
+robot_id = 1, distance_to_task = 0.52, time_to_target = 6.55, time_to_handle_task = 5.00, total_time = 11.55
+robot_id = 1 bid = 11.55 to task of type 1 at distance 0.52
+robot_id = 2, my_pos = (-0.46, -0.26), event_pos = (0.32, 0.38)
+robot_id = 2, distance_to_task = 1.01, time_to_target = 12.62, time_to_handle_task = 1.00, total_time = 13.62
+robot_id = 2 bid = 13.62 to task of type 1 at distance 1.01
+robot_id = 3, my_pos = (-0.16, -0.03), event_pos = (0.32, 0.38)
+robot_id = 3, distance_to_task = 0.64, time_to_target = 7.95, time_to_handle_task = 1.00, total_time = 8.95
+robot_id = 3 bid = 8.95 to task of type 1 at distance 0.64
+robot_id = 4, my_pos = (0.36, -0.41), event_pos = (0.32, 0.38)
+robot_id = 4, distance_to_task = 0.79, time_to_target = 9.87, time_to_handle_task = 1.00, total_time = 10.87
+robot_id = 4 bid = 10.87 to task of type 1 at distance 0.79
+robot_id = 0, my_pos = (-0.15, -0.36), event_pos = (-0.18, -0.35)
+robot_id = 0, distance_to_task = 0.04, time_to_target = 0.45, time_to_handle_task = 5.00, total_time = 5.45
+robot_id = 0 bid = 5.45 to task of type 1 at distance 0.04
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (-0.18, -0.35)
+robot_id = 1, distance_to_task = 0.61, time_to_target = 7.57, time_to_handle_task = 5.00, total_time = 12.57
+robot_id = 1 bid = 12.57 to task of type 1 at distance 0.61
+robot_id = 2, my_pos = (-0.30, -0.44), event_pos = (-0.18, -0.35)
+robot_id = 2, distance_to_task = 0.15, time_to_target = 1.84, time_to_handle_task = 1.00, total_time = 2.84
+robot_id = 2 bid = 2.84 to task of type 1 at distance 0.15
+robot_id = 3, my_pos = (0.08, -0.16), event_pos = (-0.18, -0.35)
+robot_id = 3, distance_to_task = 0.33, time_to_target = 4.09, time_to_handle_task = 1.00, total_time = 5.09
+robot_id = 3 bid = 5.09 to task of type 1 at distance 0.33
+robot_id = 4, my_pos = (0.43, -0.32), event_pos = (-0.18, -0.35)
+robot_id = 4, distance_to_task = 0.61, time_to_target = 7.64, time_to_handle_task = 1.00, total_time = 8.64
+robot_id = 4 bid = 8.64 to task of type 1 at distance 0.61
+robot_id = 0, my_pos = (-0.14, -0.37), event_pos = (0.18, 0.42)
+robot_id = 0, distance_to_task = 0.85, time_to_target = 10.60, time_to_handle_task = 3.00, total_time = 13.60
+robot_id = 0 bid = 13.60 to task of type 0 at distance 0.85
+robot_id = 1, my_pos = (0.38, -0.14), event_pos = (0.18, 0.42)
+robot_id = 1, distance_to_task = 0.59, time_to_target = 7.40, time_to_handle_task = 3.00, total_time = 10.40
+robot_id = 1 bid = 10.40 to task of type 0 at distance 0.59
+robot_id = 2, my_pos = (-0.29, -0.43), event_pos = (0.18, 0.42)
+robot_id = 2, distance_to_task = 0.97, time_to_target = 12.12, time_to_handle_task = 9.00, total_time = 21.12
+robot_id = 2 bid = 21.12 to task of type 0 at distance 0.97
+robot_id = 3, my_pos = (0.09, -0.17), event_pos = (0.18, 0.42)
+robot_id = 3, distance_to_task = 0.59, time_to_target = 7.38, time_to_handle_task = 9.00, total_time = 16.38
+robot_id = 3 bid = 16.38 to task of type 0 at distance 0.59
+robot_id = 4, my_pos = (0.43, -0.32), event_pos = (0.18, 0.42)
+robot_id = 4, distance_to_task = 0.77, time_to_target = 9.65, time_to_handle_task = 9.00, total_time = 18.65
+robot_id = 4 bid = 18.65 to task of type 0 at distance 0.77
+robot_id = 0, my_pos = (-0.05, -0.45), event_pos = (0.12, -0.44)
+robot_id = 0, distance_to_task = 0.18, time_to_target = 2.23, time_to_handle_task = 5.00, total_time = 7.23
+robot_id = 0 bid = 7.23 to task of type 1 at distance 0.18
+robot_id = 1, my_pos = (0.46, -0.11), event_pos = (0.12, -0.44)
+robot_id = 1, distance_to_task = 0.47, time_to_target = 5.82, time_to_handle_task = 5.00, total_time = 10.82
+robot_id = 1 bid = 10.82 to task of type 1 at distance 0.47
+robot_id = 2, my_pos = (-0.26, -0.41), event_pos = (0.12, -0.44)
+robot_id = 2, distance_to_task = 0.38, time_to_target = 4.81, time_to_handle_task = 1.00, total_time = 5.81
+robot_id = 2 bid = 5.81 to task of type 1 at distance 0.38
+robot_id = 3, my_pos = (0.19, -0.22), event_pos = (0.12, -0.44)
+robot_id = 3, distance_to_task = 0.23, time_to_target = 2.83, time_to_handle_task = 1.00, total_time = 3.83
+robot_id = 3 bid = 3.83 to task of type 1 at distance 0.23
+robot_id = 4, my_pos = (0.43, -0.32), event_pos = (0.12, -0.44)
+robot_id = 4, distance_to_task = 0.32, time_to_target = 4.06, time_to_handle_task = 1.00, total_time = 5.06
+robot_id = 4 bid = 5.06 to task of type 1 at distance 0.32
+robot_id = 0, my_pos = (0.39, 0.00), event_pos = (-0.01, -0.29)
+robot_id = 0, distance_to_task = 0.50, time_to_target = 6.22, time_to_handle_task = 3.00, total_time = 9.22
+robot_id = 0 bid = 9.22 to task of type 0 at distance 0.50
+robot_id = 1, my_pos = (0.16, 0.32), event_pos = (-0.01, -0.29)
+robot_id = 1, distance_to_task = 0.63, time_to_target = 7.89, time_to_handle_task = 3.00, total_time = 10.89
+robot_id = 1 bid = 10.89 to task of type 0 at distance 0.63
+robot_id = 2, my_pos = (0.26, 0.23), event_pos = (-0.01, -0.29)
+robot_id = 2, distance_to_task = 0.58, time_to_target = 7.25, time_to_handle_task = 9.00, total_time = 16.25
+robot_id = 2 bid = 16.25 to task of type 0 at distance 0.58
+robot_id = 3, my_pos = (0.43, -0.39), event_pos = (-0.01, -0.29)
+robot_id = 3, distance_to_task = 0.45, time_to_target = 5.62, time_to_handle_task = 9.00, total_time = 14.62
+robot_id = 3 bid = 14.62 to task of type 0 at distance 0.45
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (-0.01, -0.29)
+robot_id = 4, distance_to_task = 0.47, time_to_target = 5.93, time_to_handle_task = 9.00, total_time = 14.93
+robot_id = 4 bid = 14.93 to task of type 0 at distance 0.47
+robot_id = 0, my_pos = (0.13, 0.28), event_pos = (0.28, 0.02)
+robot_id = 0, distance_to_task = 0.30, time_to_target = 3.75, time_to_handle_task = 5.00, total_time = 8.75
+robot_id = 0 bid = 8.75 to task of type 1 at distance 0.30
+robot_id = 1, my_pos = (0.16, 0.35), event_pos = (0.28, 0.02)
+robot_id = 1, distance_to_task = 0.34, time_to_target = 4.28, time_to_handle_task = 5.00, total_time = 9.28
+robot_id = 1 bid = 9.28 to task of type 1 at distance 0.34
+robot_id = 2, my_pos = (0.43, 0.44), event_pos = (0.28, 0.02)
+robot_id = 2, distance_to_task = 0.45, time_to_target = 5.63, time_to_handle_task = 1.00, total_time = 6.63
+robot_id = 2 bid = 6.63 to task of type 1 at distance 0.45
+robot_id = 3, my_pos = (0.20, -0.16), event_pos = (0.28, 0.02)
+robot_id = 3, distance_to_task = 0.20, time_to_target = 2.50, time_to_handle_task = 1.00, total_time = 3.50
+robot_id = 3 bid = 3.50 to task of type 1 at distance 0.20
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (0.28, 0.02)
+robot_id = 4, distance_to_task = 0.39, time_to_target = 4.82, time_to_handle_task = 1.00, total_time = 5.82
+robot_id = 4 bid = 5.82 to task of type 1 at distance 0.39
+robot_id = 0, my_pos = (0.24, -0.33), event_pos = (-0.39, 0.16)
+robot_id = 0, distance_to_task = 0.80, time_to_target = 9.99, time_to_handle_task = 5.00, total_time = 14.99
+robot_id = 0 bid = 14.99 to task of type 1 at distance 0.80
+robot_id = 1, my_pos = (0.16, 0.35), event_pos = (-0.39, 0.16)
+robot_id = 1, distance_to_task = 0.59, time_to_target = 7.33, time_to_handle_task = 5.00, total_time = 12.33
+robot_id = 1 bid = 12.33 to task of type 1 at distance 0.59
+robot_id = 2, my_pos = (-0.28, 0.22), event_pos = (-0.39, 0.16)
+robot_id = 2, distance_to_task = 0.12, time_to_target = 1.56, time_to_handle_task = 1.00, total_time = 2.56
+robot_id = 2 bid = 2.56 to task of type 1 at distance 0.12
+robot_id = 3, my_pos = (0.37, -0.02), event_pos = (-0.39, 0.16)
+robot_id = 3, distance_to_task = 0.78, time_to_target = 9.72, time_to_handle_task = 1.00, total_time = 10.72
+robot_id = 3 bid = 10.72 to task of type 1 at distance 0.78
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (-0.39, 0.16)
+robot_id = 4, distance_to_task = 0.98, time_to_target = 12.20, time_to_handle_task = 1.00, total_time = 13.20
+robot_id = 4 bid = 13.20 to task of type 1 at distance 0.98
+robot_id = 0, my_pos = (0.24, -0.34), event_pos = (0.27, 0.02)
+robot_id = 0, distance_to_task = 0.36, time_to_target = 4.54, time_to_handle_task = 5.00, total_time = 9.54
+robot_id = 0 bid = 9.54 to task of type 1 at distance 0.36
+robot_id = 1, my_pos = (0.16, 0.35), event_pos = (0.27, 0.02)
+robot_id = 1, distance_to_task = 0.34, time_to_target = 4.28, time_to_handle_task = 5.00, total_time = 9.28
+robot_id = 1 bid = 9.28 to task of type 1 at distance 0.34
+robot_id = 2, my_pos = (-0.28, 0.22), event_pos = (0.27, 0.02)
+robot_id = 2, distance_to_task = 0.59, time_to_target = 7.36, time_to_handle_task = 1.00, total_time = 8.36
+robot_id = 2 bid = 8.36 to task of type 1 at distance 0.59
+robot_id = 3, my_pos = (0.36, -0.03), event_pos = (0.27, 0.02)
+robot_id = 3, distance_to_task = 0.10, time_to_target = 1.31, time_to_handle_task = 1.00, total_time = 2.31
+robot_id = 3 bid = 2.31 to task of type 1 at distance 0.10
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (0.27, 0.02)
+robot_id = 4, distance_to_task = 0.39, time_to_target = 4.85, time_to_handle_task = 1.00, total_time = 5.85
+robot_id = 4 bid = 5.85 to task of type 1 at distance 0.39
+robot_id = 0, my_pos = (0.21, -0.46), event_pos = (-0.12, 0.14)
+robot_id = 0, distance_to_task = 0.68, time_to_target = 8.54, time_to_handle_task = 3.00, total_time = 11.54
+robot_id = 0 bid = 11.54 to task of type 0 at distance 0.68
+robot_id = 1, my_pos = (0.16, 0.35), event_pos = (-0.12, 0.14)
+robot_id = 1, distance_to_task = 0.35, time_to_target = 4.37, time_to_handle_task = 3.00, total_time = 7.37
+robot_id = 1 bid = 7.37 to task of type 0 at distance 0.35
+robot_id = 2, my_pos = (-0.25, 0.31), event_pos = (-0.12, 0.14)
+robot_id = 2, distance_to_task = 0.21, time_to_target = 2.65, time_to_handle_task = 9.00, total_time = 11.65
+robot_id = 2 bid = 11.65 to task of type 0 at distance 0.21
+robot_id = 3, my_pos = (0.31, -0.19), event_pos = (-0.12, 0.14)
+robot_id = 3, distance_to_task = 0.54, time_to_target = 6.70, time_to_handle_task = 9.00, total_time = 15.70
+robot_id = 3 bid = 15.70 to task of type 0 at distance 0.54
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (-0.12, 0.14)
+robot_id = 4, distance_to_task = 0.74, time_to_target = 9.25, time_to_handle_task = 9.00, total_time = 18.25
+robot_id = 4 bid = 18.25 to task of type 0 at distance 0.74
+robot_id = 0, my_pos = (0.06, -0.40), event_pos = (0.38, 0.15)
+robot_id = 0, distance_to_task = 0.63, time_to_target = 7.88, time_to_handle_task = 3.00, total_time = 10.88
+robot_id = 0 bid = 10.88 to task of type 0 at distance 0.63
+robot_id = 1, my_pos = (0.01, 0.45), event_pos = (0.38, 0.15)
+robot_id = 1, distance_to_task = 0.48, time_to_target = 6.03, time_to_handle_task = 3.00, total_time = 9.03
+robot_id = 1 bid = 9.03 to task of type 0 at distance 0.48
+robot_id = 2, my_pos = (-0.17, 0.46), event_pos = (0.38, 0.15)
+robot_id = 2, distance_to_task = 0.64, time_to_target = 8.01, time_to_handle_task = 9.00, total_time = 17.01
+robot_id = 2 bid = 17.01 to task of type 0 at distance 0.64
+robot_id = 3, my_pos = (0.27, -0.31), event_pos = (0.38, 0.15)
+robot_id = 3, distance_to_task = 0.47, time_to_target = 5.89, time_to_handle_task = 9.00, total_time = 14.89
+robot_id = 3 bid = 14.89 to task of type 0 at distance 0.47
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (0.38, 0.15)
+robot_id = 4, distance_to_task = 0.47, time_to_target = 5.86, time_to_handle_task = 9.00, total_time = 14.86
+robot_id = 4 bid = 14.86 to task of type 0 at distance 0.47
+robot_id = 0, my_pos = (0.02, -0.38), event_pos = (0.00, 0.11)
+robot_id = 0, distance_to_task = 0.49, time_to_target = 6.12, time_to_handle_task = 5.00, total_time = 11.12
+robot_id = 0 bid = 11.12 to task of type 1 at distance 0.49
+robot_id = 1, my_pos = (-0.08, 0.44), event_pos = (0.00, 0.11)
+robot_id = 1, distance_to_task = 0.34, time_to_target = 4.23, time_to_handle_task = 5.00, total_time = 9.23
+robot_id = 1 bid = 9.23 to task of type 1 at distance 0.34
+robot_id = 2, my_pos = (-0.18, 0.46), event_pos = (0.00, 0.11)
+robot_id = 2, distance_to_task = 0.39, time_to_target = 4.91, time_to_handle_task = 1.00, total_time = 5.91
+robot_id = 2 bid = 5.91 to task of type 1 at distance 0.39
+robot_id = 3, my_pos = (0.25, -0.39), event_pos = (0.00, 0.11)
+robot_id = 3, distance_to_task = 0.56, time_to_target = 7.03, time_to_handle_task = 1.00, total_time = 8.03
+robot_id = 3 bid = 8.03 to task of type 1 at distance 0.56
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (0.00, 0.11)
+robot_id = 4, distance_to_task = 0.63, time_to_target = 7.87, time_to_handle_task = 1.00, total_time = 8.87
+robot_id = 4 bid = 8.87 to task of type 1 at distance 0.63
+robot_id = 0, my_pos = (0.02, -0.38), event_pos = (-0.39, -0.32)
+robot_id = 0, distance_to_task = 0.41, time_to_target = 5.12, time_to_handle_task = 5.00, total_time = 10.12
+robot_id = 0 bid = 10.12 to task of type 1 at distance 0.41
+robot_id = 1, my_pos = (-0.16, 0.34), event_pos = (-0.39, -0.32)
+robot_id = 1, distance_to_task = 0.70, time_to_target = 8.74, time_to_handle_task = 5.00, total_time = 13.74
+robot_id = 1 bid = 13.74 to task of type 1 at distance 0.70
+robot_id = 2, my_pos = (-0.15, 0.41), event_pos = (-0.39, -0.32)
+robot_id = 2, distance_to_task = 0.76, time_to_target = 9.55, time_to_handle_task = 1.00, total_time = 10.55
+robot_id = 2 bid = 10.55 to task of type 1 at distance 0.76
+robot_id = 3, my_pos = (0.21, -0.46), event_pos = (-0.39, -0.32)
+robot_id = 3, distance_to_task = 0.61, time_to_target = 7.63, time_to_handle_task = 1.00, total_time = 8.63
+robot_id = 3 bid = 8.63 to task of type 1 at distance 0.61
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (-0.39, -0.32)
+robot_id = 4, distance_to_task = 0.85, time_to_target = 10.60, time_to_handle_task = 1.00, total_time = 11.60
+robot_id = 4 bid = 11.60 to task of type 1 at distance 0.85
+robot_id = 0, my_pos = (-0.03, -0.34), event_pos = (0.26, 0.05)
+robot_id = 0, distance_to_task = 0.49, time_to_target = 6.14, time_to_handle_task = 5.00, total_time = 11.14
+robot_id = 0 bid = 11.14 to task of type 1 at distance 0.49
+robot_id = 1, my_pos = (-0.21, 0.28), event_pos = (0.26, 0.05)
+robot_id = 1, distance_to_task = 0.51, time_to_target = 6.43, time_to_handle_task = 5.00, total_time = 11.43
+robot_id = 1 bid = 11.43 to task of type 1 at distance 0.51
+robot_id = 2, my_pos = (-0.09, 0.39), event_pos = (0.26, 0.05)
+robot_id = 2, distance_to_task = 0.48, time_to_target = 6.04, time_to_handle_task = 1.00, total_time = 7.04
+robot_id = 2 bid = 7.04 to task of type 1 at distance 0.48
+robot_id = 3, my_pos = (0.22, -0.46), event_pos = (0.26, 0.05)
+robot_id = 3, distance_to_task = 0.52, time_to_target = 6.44, time_to_handle_task = 1.00, total_time = 7.44
+robot_id = 3 bid = 7.44 to task of type 1 at distance 0.52
+robot_id = 4, my_pos = (0.46, -0.32), event_pos = (0.26, 0.05)
+robot_id = 4, distance_to_task = 0.42, time_to_target = 5.29, time_to_handle_task = 1.00, total_time = 6.29
+robot_id = 4 bid = 6.29 to task of type 1 at distance 0.42
+robot_id = 0, my_pos = (-0.34, 0.19), event_pos = (0.34, 0.08)
+robot_id = 0, distance_to_task = 0.69, time_to_target = 8.64, time_to_handle_task = 5.00, total_time = 13.64
+robot_id = 0 bid = 13.64 to task of type 1 at distance 0.69
+robot_id = 1, my_pos = (-0.03, -0.13), event_pos = (0.34, 0.08)
+robot_id = 1, distance_to_task = 0.43, time_to_target = 5.31, time_to_handle_task = 5.00, total_time = 10.31
+robot_id = 1 bid = 10.31 to task of type 1 at distance 0.43
+robot_id = 2, my_pos = (0.22, 0.36), event_pos = (0.34, 0.08)
+robot_id = 2, distance_to_task = 0.30, time_to_target = 3.78, time_to_handle_task = 1.00, total_time = 4.78
+robot_id = 2 bid = 4.78 to task of type 1 at distance 0.30
+robot_id = 3, my_pos = (-0.45, -0.25), event_pos = (0.34, 0.08)
+robot_id = 3, distance_to_task = 0.85, time_to_target = 10.68, time_to_handle_task = 1.00, total_time = 11.68
+robot_id = 3 bid = 11.68 to task of type 1 at distance 0.85
+robot_id = 4, my_pos = (-0.31, 0.32), event_pos = (0.34, 0.08)
+robot_id = 4, distance_to_task = 0.69, time_to_target = 8.68, time_to_handle_task = 1.00, total_time = 9.68
+robot_id = 4 bid = 9.68 to task of type 1 at distance 0.69
+robot_id = 0, my_pos = (-0.30, 0.46), event_pos = (0.14, 0.40)
+robot_id = 0, distance_to_task = 0.45, time_to_target = 5.57, time_to_handle_task = 5.00, total_time = 10.57
+robot_id = 0 bid = 10.57 to task of type 1 at distance 0.45
+robot_id = 1, my_pos = (0.27, -0.08), event_pos = (0.14, 0.40)
+robot_id = 1, distance_to_task = 0.49, time_to_target = 6.18, time_to_handle_task = 5.00, total_time = 11.18
+robot_id = 1 bid = 11.18 to task of type 1 at distance 0.49
+robot_id = 2, my_pos = (0.04, 0.23), event_pos = (0.14, 0.40)
+robot_id = 2, distance_to_task = 0.20, time_to_target = 2.52, time_to_handle_task = 1.00, total_time = 3.52
+robot_id = 2 bid = 3.52 to task of type 1 at distance 0.20
+robot_id = 3, my_pos = (-0.25, -0.45), event_pos = (0.14, 0.40)
+robot_id = 3, distance_to_task = 0.94, time_to_target = 11.72, time_to_handle_task = 1.00, total_time = 12.72
+robot_id = 3 bid = 12.72 to task of type 1 at distance 0.94
+robot_id = 4, my_pos = (-0.44, 0.44), event_pos = (0.14, 0.40)
+robot_id = 4, distance_to_task = 0.59, time_to_target = 7.36, time_to_handle_task = 1.00, total_time = 8.36
+robot_id = 4 bid = 8.36 to task of type 1 at distance 0.59
+robot_id = 0, my_pos = (-0.27, 0.45), event_pos = (0.05, -0.04)
+robot_id = 0, distance_to_task = 0.58, time_to_target = 7.29, time_to_handle_task = 5.00, total_time = 12.29
+robot_id = 0 bid = 12.29 to task of type 1 at distance 0.58
+robot_id = 1, my_pos = (0.37, -0.05), event_pos = (0.05, -0.04)
+robot_id = 1, distance_to_task = 0.33, time_to_target = 4.11, time_to_handle_task = 5.00, total_time = 9.11
+robot_id = 1 bid = 9.11 to task of type 1 at distance 0.33
+robot_id = 2, my_pos = (0.02, 0.21), event_pos = (0.05, -0.04)
+robot_id = 2, distance_to_task = 0.24, time_to_target = 3.04, time_to_handle_task = 1.00, total_time = 4.04
+robot_id = 2 bid = 4.04 to task of type 1 at distance 0.24
+robot_id = 3, my_pos = (-0.16, -0.44), event_pos = (0.05, -0.04)
+robot_id = 3, distance_to_task = 0.45, time_to_target = 5.67, time_to_handle_task = 1.00, total_time = 6.67
+robot_id = 3 bid = 6.67 to task of type 1 at distance 0.45
+robot_id = 4, my_pos = (-0.41, 0.46), event_pos = (0.05, -0.04)
+robot_id = 4, distance_to_task = 0.67, time_to_target = 8.40, time_to_handle_task = 1.00, total_time = 9.40
+robot_id = 4 bid = 9.40 to task of type 1 at distance 0.67
+robot_id = 0, my_pos = (0.16, 0.27), event_pos = (-0.36, 0.38)
+robot_id = 0, distance_to_task = 0.53, time_to_target = 6.68, time_to_handle_task = 5.00, total_time = 11.68
+robot_id = 0 bid = 11.68 to task of type 1 at distance 0.53
+robot_id = 1, my_pos = (0.43, 0.06), event_pos = (-0.36, 0.38)
+robot_id = 1, distance_to_task = 0.85, time_to_target = 10.59, time_to_handle_task = 5.00, total_time = 15.59
+robot_id = 1 bid = 15.59 to task of type 1 at distance 0.85
+robot_id = 2, my_pos = (-0.19, -0.21), event_pos = (-0.36, 0.38)
+robot_id = 2, distance_to_task = 0.61, time_to_target = 7.60, time_to_handle_task = 1.00, total_time = 8.60
+robot_id = 2 bid = 8.60 to task of type 1 at distance 0.61
+robot_id = 3, my_pos = (0.22, -0.16), event_pos = (-0.36, 0.38)
+robot_id = 3, distance_to_task = 0.79, time_to_target = 9.92, time_to_handle_task = 1.00, total_time = 10.92
+robot_id = 3 bid = 10.92 to task of type 1 at distance 0.79
+robot_id = 4, my_pos = (0.02, 0.28), event_pos = (-0.36, 0.38)
+robot_id = 4, distance_to_task = 0.40, time_to_target = 4.95, time_to_handle_task = 1.00, total_time = 5.95
+robot_id = 4 bid = 5.95 to task of type 1 at distance 0.40
+robot_id = 0, my_pos = (0.36, 0.24), event_pos = (-0.31, -0.42)
+robot_id = 0, distance_to_task = 0.94, time_to_target = 11.76, time_to_handle_task = 3.00, total_time = 14.76
+robot_id = 0 bid = 14.76 to task of type 0 at distance 0.94
+robot_id = 1, my_pos = (0.29, 0.18), event_pos = (-0.31, -0.42)
+robot_id = 1, distance_to_task = 0.85, time_to_target = 10.61, time_to_handle_task = 3.00, total_time = 13.61
+robot_id = 1 bid = 13.61 to task of type 0 at distance 0.85
+robot_id = 2, my_pos = (-0.25, -0.42), event_pos = (-0.31, -0.42)
+robot_id = 2, distance_to_task = 0.06, time_to_target = 0.73, time_to_handle_task = 9.00, total_time = 9.73
+robot_id = 2 bid = 9.73 to task of type 0 at distance 0.06
+robot_id = 3, my_pos = (0.33, -0.06), event_pos = (-0.31, -0.42)
+robot_id = 3, distance_to_task = 0.74, time_to_target = 9.19, time_to_handle_task = 9.00, total_time = 18.19
+robot_id = 3 bid = 18.19 to task of type 0 at distance 0.74
+robot_id = 4, my_pos = (0.24, 0.23), event_pos = (-0.31, -0.42)
+robot_id = 4, distance_to_task = 0.85, time_to_target = 10.64, time_to_handle_task = 9.00, total_time = 19.64
+robot_id = 4 bid = 19.64 to task of type 0 at distance 0.85
+robot_id = 0, my_pos = (0.22, 0.10), event_pos = (0.15, 0.14)
+robot_id = 0, distance_to_task = 0.08, time_to_target = 0.94, time_to_handle_task = 3.00, total_time = 3.94
+robot_id = 0 bid = 3.94 to task of type 0 at distance 0.08
+robot_id = 1, my_pos = (-0.03, 0.13), event_pos = (0.15, 0.14)
+robot_id = 1, distance_to_task = 0.18, time_to_target = 2.26, time_to_handle_task = 3.00, total_time = 5.26
+robot_id = 1 bid = 5.26 to task of type 0 at distance 0.18
+robot_id = 2, my_pos = (-0.26, -0.44), event_pos = (0.15, 0.14)
+robot_id = 2, distance_to_task = 0.71, time_to_target = 8.93, time_to_handle_task = 9.00, total_time = 17.93
+robot_id = 2 bid = 17.93 to task of type 0 at distance 0.71
+robot_id = 3, my_pos = (0.32, 0.24), event_pos = (0.15, 0.14)
+robot_id = 3, distance_to_task = 0.19, time_to_target = 2.33, time_to_handle_task = 9.00, total_time = 11.33
+robot_id = 3 bid = 11.33 to task of type 0 at distance 0.19
+robot_id = 4, my_pos = (0.36, 0.45), event_pos = (0.15, 0.14)
+robot_id = 4, distance_to_task = 0.37, time_to_target = 4.57, time_to_handle_task = 9.00, total_time = 13.57
+robot_id = 4 bid = 13.57 to task of type 0 at distance 0.37
+robot_id = 0, my_pos = (0.20, 0.09), event_pos = (-0.44, 0.22)
+robot_id = 0, distance_to_task = 0.65, time_to_target = 8.16, time_to_handle_task = 3.00, total_time = 11.16
+robot_id = 0 bid = 11.16 to task of type 0 at distance 0.65
+robot_id = 1, my_pos = (-0.03, 0.13), event_pos = (-0.44, 0.22)
+robot_id = 1, distance_to_task = 0.42, time_to_target = 5.29, time_to_handle_task = 3.00, total_time = 8.29
+robot_id = 1 bid = 8.29 to task of type 0 at distance 0.42
+robot_id = 2, my_pos = (-0.26, -0.44), event_pos = (-0.44, 0.22)
+robot_id = 2, distance_to_task = 0.69, time_to_target = 8.56, time_to_handle_task = 9.00, total_time = 17.56
+robot_id = 2 bid = 17.56 to task of type 0 at distance 0.69
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (-0.44, 0.22)
+robot_id = 3, distance_to_task = 0.71, time_to_target = 8.91, time_to_handle_task = 9.00, total_time = 17.91
+robot_id = 3 bid = 17.91 to task of type 0 at distance 0.71
+robot_id = 4, my_pos = (0.26, 0.39), event_pos = (-0.44, 0.22)
+robot_id = 4, distance_to_task = 0.72, time_to_target = 9.01, time_to_handle_task = 9.00, total_time = 18.01
+robot_id = 4 bid = 18.01 to task of type 0 at distance 0.72
+robot_id = 0, my_pos = (0.20, 0.09), event_pos = (0.01, 0.27)
+robot_id = 0, distance_to_task = 0.26, time_to_target = 3.25, time_to_handle_task = 5.00, total_time = 8.25
+robot_id = 0 bid = 8.25 to task of type 1 at distance 0.26
+robot_id = 1, my_pos = (-0.05, 0.12), event_pos = (0.01, 0.27)
+robot_id = 1, distance_to_task = 0.16, time_to_target = 2.00, time_to_handle_task = 5.00, total_time = 7.00
+robot_id = 1 bid = 7.00 to task of type 1 at distance 0.16
+robot_id = 2, my_pos = (-0.26, -0.46), event_pos = (0.01, 0.27)
+robot_id = 2, distance_to_task = 0.78, time_to_target = 9.69, time_to_handle_task = 1.00, total_time = 10.69
+robot_id = 2 bid = 10.69 to task of type 1 at distance 0.78
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (0.01, 0.27)
+robot_id = 3, distance_to_task = 0.26, time_to_target = 3.21, time_to_handle_task = 1.00, total_time = 4.21
+robot_id = 3 bid = 4.21 to task of type 1 at distance 0.26
+robot_id = 4, my_pos = (0.23, 0.37), event_pos = (0.01, 0.27)
+robot_id = 4, distance_to_task = 0.23, time_to_target = 2.90, time_to_handle_task = 1.00, total_time = 3.90
+robot_id = 4 bid = 3.90 to task of type 1 at distance 0.23
+robot_id = 0, my_pos = (0.20, 0.09), event_pos = (-0.31, -0.10)
+robot_id = 0, distance_to_task = 0.54, time_to_target = 6.76, time_to_handle_task = 5.00, total_time = 11.76
+robot_id = 0 bid = 11.76 to task of type 1 at distance 0.54
+robot_id = 1, my_pos = (-0.14, 0.11), event_pos = (-0.31, -0.10)
+robot_id = 1, distance_to_task = 0.26, time_to_target = 3.27, time_to_handle_task = 5.00, total_time = 8.27
+robot_id = 1 bid = 8.27 to task of type 1 at distance 0.26
+robot_id = 2, my_pos = (-0.29, -0.46), event_pos = (-0.31, -0.10)
+robot_id = 2, distance_to_task = 0.36, time_to_target = 4.51, time_to_handle_task = 1.00, total_time = 5.51
+robot_id = 2 bid = 5.51 to task of type 1 at distance 0.36
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (-0.31, -0.10)
+robot_id = 3, distance_to_task = 0.70, time_to_target = 8.73, time_to_handle_task = 1.00, total_time = 9.73
+robot_id = 3 bid = 9.73 to task of type 1 at distance 0.70
+robot_id = 4, my_pos = (0.15, 0.32), event_pos = (-0.31, -0.10)
+robot_id = 4, distance_to_task = 0.61, time_to_target = 7.69, time_to_handle_task = 1.00, total_time = 8.69
+robot_id = 4 bid = 8.69 to task of type 1 at distance 0.61
+robot_id = 0, my_pos = (0.10, 0.01), event_pos = (-0.18, 0.29)
+robot_id = 0, distance_to_task = 0.40, time_to_target = 4.96, time_to_handle_task = 5.00, total_time = 9.96
+robot_id = 0 bid = 9.96 to task of type 1 at distance 0.40
+robot_id = 1, my_pos = (-0.27, 0.08), event_pos = (-0.18, 0.29)
+robot_id = 1, distance_to_task = 0.23, time_to_target = 2.86, time_to_handle_task = 5.00, total_time = 7.86
+robot_id = 1 bid = 7.86 to task of type 1 at distance 0.23
+robot_id = 2, my_pos = (-0.39, -0.40), event_pos = (-0.18, 0.29)
+robot_id = 2, distance_to_task = 0.72, time_to_target = 9.00, time_to_handle_task = 1.00, total_time = 10.00
+robot_id = 2 bid = 10.00 to task of type 1 at distance 0.72
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (-0.18, 0.29)
+robot_id = 3, distance_to_task = 0.45, time_to_target = 5.62, time_to_handle_task = 1.00, total_time = 6.62
+robot_id = 3 bid = 6.62 to task of type 1 at distance 0.45
+robot_id = 4, my_pos = (0.10, 0.29), event_pos = (-0.18, 0.29)
+robot_id = 4, distance_to_task = 0.28, time_to_target = 3.55, time_to_handle_task = 1.00, total_time = 4.55
+robot_id = 4 bid = 4.55 to task of type 1 at distance 0.28
+robot_id = 0, my_pos = (0.03, -0.06), event_pos = (0.19, 0.32)
+robot_id = 0, distance_to_task = 0.40, time_to_target = 5.05, time_to_handle_task = 5.00, total_time = 10.05
+robot_id = 0 bid = 10.05 to task of type 1 at distance 0.40
+robot_id = 1, my_pos = (-0.44, -0.04), event_pos = (0.19, 0.32)
+robot_id = 1, distance_to_task = 0.73, time_to_target = 9.11, time_to_handle_task = 5.00, total_time = 14.11
+robot_id = 1 bid = 14.11 to task of type 1 at distance 0.73
+robot_id = 2, my_pos = (-0.40, -0.21), event_pos = (0.19, 0.32)
+robot_id = 2, distance_to_task = 0.79, time_to_target = 9.86, time_to_handle_task = 1.00, total_time = 10.86
+robot_id = 2 bid = 10.86 to task of type 1 at distance 0.79
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (0.19, 0.32)
+robot_id = 3, distance_to_task = 0.08, time_to_target = 1.01, time_to_handle_task = 1.00, total_time = 2.01
+robot_id = 3 bid = 2.01 to task of type 1 at distance 0.08
+robot_id = 4, my_pos = (-0.10, 0.05), event_pos = (0.19, 0.32)
+robot_id = 4, distance_to_task = 0.39, time_to_target = 4.93, time_to_handle_task = 1.00, total_time = 5.93
+robot_id = 4 bid = 5.93 to task of type 1 at distance 0.39
+robot_id = 0, my_pos = (0.03, -0.06), event_pos = (-0.20, 0.28)
+robot_id = 0, distance_to_task = 0.41, time_to_target = 5.14, time_to_handle_task = 5.00, total_time = 10.14
+robot_id = 0 bid = 10.14 to task of type 1 at distance 0.41
+robot_id = 1, my_pos = (-0.40, -0.11), event_pos = (-0.20, 0.28)
+robot_id = 1, distance_to_task = 0.43, time_to_target = 5.43, time_to_handle_task = 5.00, total_time = 10.43
+robot_id = 1 bid = 10.43 to task of type 1 at distance 0.43
+robot_id = 2, my_pos = (-0.37, -0.17), event_pos = (-0.20, 0.28)
+robot_id = 2, distance_to_task = 0.49, time_to_target = 6.07, time_to_handle_task = 1.00, total_time = 7.07
+robot_id = 2 bid = 7.07 to task of type 1 at distance 0.49
+robot_id = 3, my_pos = (0.27, 0.30), event_pos = (-0.20, 0.28)
+robot_id = 3, distance_to_task = 0.47, time_to_target = 5.87, time_to_handle_task = 1.00, total_time = 6.87
+robot_id = 3 bid = 6.87 to task of type 1 at distance 0.47
+robot_id = 4, my_pos = (-0.16, -0.03), event_pos = (-0.20, 0.28)
+robot_id = 4, distance_to_task = 0.31, time_to_target = 3.89, time_to_handle_task = 1.00, total_time = 4.89
+robot_id = 4 bid = 4.89 to task of type 1 at distance 0.31
+robot_id = 0, my_pos = (0.01, -0.25), event_pos = (0.19, -0.23)
+robot_id = 0, distance_to_task = 0.18, time_to_target = 2.21, time_to_handle_task = 5.00, total_time = 7.21
+robot_id = 0 bid = 7.21 to task of type 1 at distance 0.18
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.19, -0.23)
+robot_id = 1, distance_to_task = 0.20, time_to_target = 2.49, time_to_handle_task = 5.00, total_time = 7.49
+robot_id = 1 bid = 7.49 to task of type 1 at distance 0.20
+robot_id = 2, my_pos = (-0.04, 0.11), event_pos = (0.19, -0.23)
+robot_id = 2, distance_to_task = 0.42, time_to_target = 5.20, time_to_handle_task = 1.00, total_time = 6.20
+robot_id = 2 bid = 6.20 to task of type 1 at distance 0.42
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.19, -0.23)
+robot_id = 3, distance_to_task = 0.43, time_to_target = 5.35, time_to_handle_task = 1.00, total_time = 6.35
+robot_id = 3 bid = 6.35 to task of type 1 at distance 0.43
+robot_id = 4, my_pos = (-0.02, 0.06), event_pos = (0.19, -0.23)
+robot_id = 4, distance_to_task = 0.37, time_to_target = 4.58, time_to_handle_task = 1.00, total_time = 5.58
+robot_id = 4 bid = 5.58 to task of type 1 at distance 0.37
+robot_id = 0, my_pos = (0.01, -0.25), event_pos = (0.41, -0.11)
+robot_id = 0, distance_to_task = 0.42, time_to_target = 5.28, time_to_handle_task = 5.00, total_time = 10.28
+robot_id = 0 bid = 10.28 to task of type 1 at distance 0.42
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.41, -0.11)
+robot_id = 2, my_pos = (-0.04, 0.11), event_pos = (0.41, -0.11)
+robot_id = 1, distance_to_task = 0.25, time_to_target = 3.06, time_to_handle_task = 5.00, total_time = 8.06
+robot_id = 2, distance_to_task = 0.51, time_to_target = 6.35, time_to_handle_task = 1.00, total_time = 7.35
+robot_id = 1 bid = 8.06 to task of type 1 at distance 0.25
+robot_id = 2 bid = 7.35 to task of type 1 at distance 0.51
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.41, -0.11)
+robot_id = 3, distance_to_task = 0.67, time_to_target = 8.42, time_to_handle_task = 1.00, total_time = 9.42
+robot_id = 3 bid = 9.42 to task of type 1 at distance 0.67
+robot_id = 4, my_pos = (-0.02, 0.06), event_pos = (0.41, -0.11)
+robot_id = 4, distance_to_task = 0.47, time_to_target = 5.87, time_to_handle_task = 1.00, total_time = 6.87
+robot_id = 4 bid = 6.87 to task of type 1 at distance 0.47
+robot_id = 0, my_pos = (0.01, -0.25), event_pos = (0.04, -0.40)
+robot_id = 0, distance_to_task = 0.15, time_to_target = 1.88, time_to_handle_task = 3.00, total_time = 4.88
+robot_id = 0 bid = 4.88 to task of type 0 at distance 0.15
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.04, -0.40)
+robot_id = 1, distance_to_task = 0.39, time_to_target = 4.85, time_to_handle_task = 3.00, total_time = 7.85
+robot_id = 1 bid = 7.85 to task of type 0 at distance 0.39
+robot_id = 2, my_pos = (-0.04, 0.11), event_pos = (0.04, -0.40)
+robot_id = 2, distance_to_task = 0.51, time_to_target = 6.43, time_to_handle_task = 9.00, total_time = 15.43
+robot_id = 2 bid = 15.43 to task of type 0 at distance 0.51
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.04, -0.40)
+robot_id = 3, distance_to_task = 0.29, time_to_target = 3.58, time_to_handle_task = 9.00, total_time = 12.58
+robot_id = 3 bid = 12.58 to task of type 0 at distance 0.29
+robot_id = 4, my_pos = (-0.01, 0.06), event_pos = (0.04, -0.40)
+robot_id = 4, distance_to_task = 0.46, time_to_target = 5.75, time_to_handle_task = 9.00, total_time = 14.75
+robot_id = 4 bid = 14.75 to task of type 0 at distance 0.46
+robot_id = 0, my_pos = (0.02, -0.25), event_pos = (-0.25, 0.41)
+robot_id = 0, distance_to_task = 0.71, time_to_target = 8.82, time_to_handle_task = 5.00, total_time = 13.82
+robot_id = 0 bid = 13.82 to task of type 1 at distance 0.71
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (-0.25, 0.41)
+robot_id = 1, distance_to_task = 0.62, time_to_target = 7.69, time_to_handle_task = 5.00, total_time = 12.69
+robot_id = 1 bid = 12.69 to task of type 1 at distance 0.62
+robot_id = 2, my_pos = (-0.05, 0.11), event_pos = (-0.25, 0.41)
+robot_id = 2, distance_to_task = 0.35, time_to_target = 4.41, time_to_handle_task = 1.00, total_time = 5.41
+robot_id = 2 bid = 5.41 to task of type 1 at distance 0.35
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (-0.25, 0.41)
+robot_id = 3, distance_to_task = 0.71, time_to_target = 8.93, time_to_handle_task = 1.00, total_time = 9.93
+robot_id = 3 bid = 9.93 to task of type 1 at distance 0.71
+robot_id = 4, my_pos = (0.01, 0.05), event_pos = (-0.25, 0.41)
+robot_id = 4, distance_to_task = 0.44, time_to_target = 5.52, time_to_handle_task = 1.00, total_time = 6.52
+robot_id = 4 bid = 6.52 to task of type 1 at distance 0.44
+robot_id = 0, my_pos = (0.03, -0.25), event_pos = (0.31, 0.19)
+robot_id = 0, distance_to_task = 0.52, time_to_target = 6.50, time_to_handle_task = 5.00, total_time = 11.50
+robot_id = 0 bid = 11.50 to task of type 1 at distance 0.52
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.31, 0.19)
+robot_id = 1, distance_to_task = 0.26, time_to_target = 3.20, time_to_handle_task = 5.00, total_time = 8.20
+robot_id = 1 bid = 8.20 to task of type 1 at distance 0.26
+robot_id = 2, my_pos = (-0.05, 0.12), event_pos = (0.31, 0.19)
+robot_id = 2, distance_to_task = 0.37, time_to_target = 4.62, time_to_handle_task = 1.00, total_time = 5.62
+robot_id = 2 bid = 5.62 to task of type 1 at distance 0.37
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.31, 0.19)
+robot_id = 3, distance_to_task = 0.73, time_to_target = 9.16, time_to_handle_task = 1.00, total_time = 10.16
+robot_id = 3 bid = 10.16 to task of type 1 at distance 0.73
+robot_id = 4, my_pos = (0.02, 0.04), event_pos = (0.31, 0.19)
+robot_id = 4, distance_to_task = 0.32, time_to_target = 3.99, time_to_handle_task = 1.00, total_time = 4.99
+robot_id = 4 bid = 4.99 to task of type 1 at distance 0.32
+robot_id = 0, my_pos = (0.04, -0.25), event_pos = (0.28, 0.24)
+robot_id = 0, distance_to_task = 0.55, time_to_target = 6.83, time_to_handle_task = 5.00, total_time = 11.83
+robot_id = 0 bid = 11.83 to task of type 1 at distance 0.55
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.28, 0.24)
+robot_id = 1, distance_to_task = 0.29, time_to_target = 3.63, time_to_handle_task = 5.00, total_time = 8.63
+robot_id = 1 bid = 8.63 to task of type 1 at distance 0.29
+robot_id = 2, my_pos = (-0.04, 0.11), event_pos = (0.28, 0.24)
+robot_id = 2, distance_to_task = 0.34, time_to_target = 4.27, time_to_handle_task = 1.00, total_time = 5.27
+robot_id = 2 bid = 5.27 to task of type 1 at distance 0.34
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.28, 0.24)
+robot_id = 3, distance_to_task = 0.75, time_to_target = 9.36, time_to_handle_task = 1.00, total_time = 10.36
+robot_id = 3 bid = 10.36 to task of type 1 at distance 0.75
+robot_id = 4, my_pos = (0.04, 0.04), event_pos = (0.28, 0.24)
+robot_id = 4, distance_to_task = 0.31, time_to_target = 3.91, time_to_handle_task = 1.00, total_time = 4.91
+robot_id = 4 bid = 4.91 to task of type 1 at distance 0.31
+robot_id = 0, my_pos = (0.05, -0.25), event_pos = (-0.08, -0.38)
+robot_id = 0, distance_to_task = 0.18, time_to_target = 2.30, time_to_handle_task = 5.00, total_time = 7.30
+robot_id = 0 bid = 7.30 to task of type 1 at distance 0.18
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (-0.08, -0.38)
+robot_id = 1, distance_to_task = 0.44, time_to_target = 5.44, time_to_handle_task = 5.00, total_time = 10.44
+robot_id = 1 bid = 10.44 to task of type 1 at distance 0.44
+robot_id = 2, my_pos = (-0.03, 0.11), event_pos = (-0.08, -0.38)
+robot_id = 2, distance_to_task = 0.50, time_to_target = 6.23, time_to_handle_task = 1.00, total_time = 7.23
+robot_id = 2 bid = 7.23 to task of type 1 at distance 0.50
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (-0.08, -0.38)
+robot_id = 3, distance_to_task = 0.17, time_to_target = 2.11, time_to_handle_task = 1.00, total_time = 3.11
+robot_id = 3 bid = 3.11 to task of type 1 at distance 0.17
+robot_id = 4, my_pos = (0.05, 0.04), event_pos = (-0.08, -0.38)
+robot_id = 4, distance_to_task = 0.44, time_to_target = 5.50, time_to_handle_task = 1.00, total_time = 6.50
+robot_id = 4 bid = 6.50 to task of type 1 at distance 0.44
+robot_id = 0, my_pos = (0.07, -0.26), event_pos = (0.45, 0.37)
+robot_id = 0, distance_to_task = 0.73, time_to_target = 9.16, time_to_handle_task = 5.00, total_time = 14.16
+robot_id = 0 bid = 14.16 to task of type 1 at distance 0.73
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.45, 0.37)
+robot_id = 1, distance_to_task = 0.48, time_to_target = 6.04, time_to_handle_task = 5.00, total_time = 11.04
+robot_id = 1 bid = 11.04 to task of type 1 at distance 0.48
+robot_id = 2, my_pos = (-0.01, 0.11), event_pos = (0.45, 0.37)
+robot_id = 2, distance_to_task = 0.53, time_to_target = 6.58, time_to_handle_task = 1.00, total_time = 7.58
+robot_id = 2 bid = 7.58 to task of type 1 at distance 0.53
+robot_id = 3, my_pos = (-0.23, -0.31), event_pos = (0.45, 0.37)
+robot_id = 3, distance_to_task = 0.96, time_to_target = 11.94, time_to_handle_task = 1.00, total_time = 12.94
+robot_id = 3 bid = 12.94 to task of type 1 at distance 0.96
+robot_id = 4, my_pos = (0.07, 0.03), event_pos = (0.45, 0.37)
+robot_id = 4, distance_to_task = 0.51, time_to_target = 6.34, time_to_handle_task = 1.00, total_time = 7.34
+robot_id = 4 bid = 7.34 to task of type 1 at distance 0.51
+robot_id = 0, my_pos = (0.08, -0.26), event_pos = (0.24, 0.19)
+robot_id = 0, distance_to_task = 0.47, time_to_target = 5.92, time_to_handle_task = 3.00, total_time = 8.92
+robot_id = 0 bid = 8.92 to task of type 0 at distance 0.47
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.24, 0.19)
+robot_id = 1, distance_to_task = 0.23, time_to_target = 2.86, time_to_handle_task = 3.00, total_time = 5.86
+robot_id = 1 bid = 5.86 to task of type 0 at distance 0.23
+robot_id = 2, my_pos = (0.00, 0.11), event_pos = (0.24, 0.19)
+robot_id = 2, distance_to_task = 0.25, time_to_target = 3.14, time_to_handle_task = 9.00, total_time = 12.14
+robot_id = 2 bid = 12.14 to task of type 0 at distance 0.25
+robot_id = 3, my_pos = (-0.22, -0.31), event_pos = (0.24, 0.19)
+robot_id = 3, distance_to_task = 0.68, time_to_target = 8.44, time_to_handle_task = 9.00, total_time = 17.44
+robot_id = 3 bid = 17.44 to task of type 0 at distance 0.68
+robot_id = 4, my_pos = (0.08, 0.03), event_pos = (0.24, 0.19)
+robot_id = 4, distance_to_task = 0.22, time_to_target = 2.80, time_to_handle_task = 9.00, total_time = 11.80
+robot_id = 4 bid = 11.80 to task of type 0 at distance 0.22
+robot_id = 0, my_pos = (0.10, -0.26), event_pos = (0.42, 0.21)
+robot_id = 0, distance_to_task = 0.57, time_to_target = 7.07, time_to_handle_task = 3.00, total_time = 10.07
+robot_id = 0 bid = 10.07 to task of type 0 at distance 0.57
+robot_id = 1, my_pos = (0.18, -0.03), event_pos = (0.42, 0.21)
+robot_id = 1, distance_to_task = 0.33, time_to_target = 4.18, time_to_handle_task = 3.00, total_time = 7.18
+robot_id = 1 bid = 7.18 to task of type 0 at distance 0.33
+robot_id = 2, my_pos = (0.02, 0.11), event_pos = (0.42, 0.21)
+robot_id = 2, distance_to_task = 0.41, time_to_target = 5.15, time_to_handle_task = 9.00, total_time = 14.15
+robot_id = 2 bid = 14.15 to task of type 0 at distance 0.41
+robot_id = 3, my_pos = (-0.20, -0.31), event_pos = (0.42, 0.21)
+robot_id = 3, distance_to_task = 0.81, time_to_target = 10.07, time_to_handle_task = 9.00, total_time = 19.07
+robot_id = 3 bid = 19.07 to task of type 0 at distance 0.81
+robot_id = 4, my_pos = (0.10, 0.03), event_pos = (0.42, 0.21)
+robot_id = 4, distance_to_task = 0.37, time_to_target = 4.60, time_to_handle_task = 9.00, total_time = 13.60
+robot_id = 4 bid = 13.60 to task of type 0 at distance 0.37
+robot_id = 0, my_pos = (0.23, -0.27), event_pos = (-0.24, -0.20)
+robot_id = 0, distance_to_task = 0.48, time_to_target = 5.94, time_to_handle_task = 5.00, total_time = 10.94
+robot_id = 0 bid = 10.94 to task of type 1 at distance 0.48
+robot_id = 1, my_pos = (0.31, -0.01), event_pos = (-0.24, -0.20)
+robot_id = 1, distance_to_task = 0.58, time_to_target = 7.31, time_to_handle_task = 5.00, total_time = 12.31
+robot_id = 1 bid = 12.31 to task of type 1 at distance 0.58
+robot_id = 2, my_pos = (0.15, 0.11), event_pos = (-0.24, -0.20)
+robot_id = 2, distance_to_task = 0.50, time_to_target = 6.27, time_to_handle_task = 1.00, total_time = 7.27
+robot_id = 2 bid = 7.27 to task of type 1 at distance 0.50
+robot_id = 3, my_pos = (-0.14, -0.31), event_pos = (-0.24, -0.20)
+robot_id = 3, distance_to_task = 0.14, time_to_target = 1.80, time_to_handle_task = 1.00, total_time = 2.80
+robot_id = 3 bid = 2.80 to task of type 1 at distance 0.14
+robot_id = 4, my_pos = (0.23, 0.01), event_pos = (-0.24, -0.20)
+robot_id = 4, distance_to_task = 0.51, time_to_target = 6.38, time_to_handle_task = 1.00, total_time = 7.38
+robot_id = 4 bid = 7.38 to task of type 1 at distance 0.51
+robot_id = 0, my_pos = (0.44, -0.22), event_pos = (-0.04, 0.14)
+robot_id = 0, distance_to_task = 0.60, time_to_target = 7.46, time_to_handle_task = 3.00, total_time = 10.46
+robot_id = 0 bid = 10.46 to task of type 0 at distance 0.60
+robot_id = 1, my_pos = (0.42, 0.11), event_pos = (-0.04, 0.14)
+robot_id = 1, distance_to_task = 0.46, time_to_target = 5.71, time_to_handle_task = 3.00, total_time = 8.71
+robot_id = 1 bid = 8.71 to task of type 0 at distance 0.46
+robot_id = 2, my_pos = (0.46, 0.18), event_pos = (-0.04, 0.14)
+robot_id = 2, distance_to_task = 0.50, time_to_target = 6.25, time_to_handle_task = 9.00, total_time = 15.25
+robot_id = 2 bid = 15.25 to task of type 0 at distance 0.50
+robot_id = 3, my_pos = (0.23, -0.24), event_pos = (-0.04, 0.14)
+robot_id = 3, distance_to_task = 0.46, time_to_target = 5.75, time_to_handle_task = 9.00, total_time = 14.75
+robot_id = 3 bid = 14.75 to task of type 0 at distance 0.46
+robot_id = 4, my_pos = (0.46, -0.03), event_pos = (-0.04, 0.14)
+robot_id = 4, distance_to_task = 0.52, time_to_target = 6.52, time_to_handle_task = 9.00, total_time = 15.52
+robot_id = 4 bid = 15.52 to task of type 0 at distance 0.52
+robot_id = 0, my_pos = (0.31, -0.07), event_pos = (0.42, 0.27)
+robot_id = 0, distance_to_task = 0.35, time_to_target = 4.39, time_to_handle_task = 5.00, total_time = 9.39
+robot_id = 0 bid = 9.39 to task of type 1 at distance 0.35
+robot_id = 1, my_pos = (0.42, 0.11), event_pos = (0.42, 0.27)
+robot_id = 1, distance_to_task = 0.16, time_to_target = 1.96, time_to_handle_task = 5.00, total_time = 6.96
+robot_id = 1 bid = 6.96 to task of type 1 at distance 0.16
+robot_id = 2, my_pos = (0.37, 0.34), event_pos = (0.42, 0.27)
+robot_id = 2, distance_to_task = 0.09, time_to_target = 1.13, time_to_handle_task = 1.00, total_time = 2.13
+robot_id = 2 bid = 2.13 to task of type 1 at distance 0.09
+robot_id = 3, my_pos = (0.43, -0.20), event_pos = (0.42, 0.27)
+robot_id = 3, distance_to_task = 0.47, time_to_target = 5.81, time_to_handle_task = 1.00, total_time = 6.81
+robot_id = 3 bid = 6.81 to task of type 1 at distance 0.47
+robot_id = 4, my_pos = (0.42, -0.16), event_pos = (0.42, 0.27)
+robot_id = 4, distance_to_task = 0.43, time_to_target = 5.34, time_to_handle_task = 1.00, total_time = 6.34
+robot_id = 4 bid = 6.34 to task of type 1 at distance 0.43
+robot_id = 0, my_pos = (0.07, 0.16), event_pos = (0.17, -0.34)
+robot_id = 0, distance_to_task = 0.52, time_to_target = 6.45, time_to_handle_task = 3.00, total_time = 9.45
+robot_id = 0 bid = 9.45 to task of type 0 at distance 0.52
+robot_id = 1, my_pos = (0.33, 0.17), event_pos = (0.17, -0.34)
+robot_id = 1, distance_to_task = 0.54, time_to_target = 6.70, time_to_handle_task = 3.00, total_time = 9.70
+robot_id = 1 bid = 9.70 to task of type 0 at distance 0.54
+robot_id = 2, my_pos = (0.15, 0.41), event_pos = (0.17, -0.34)
+robot_id = 2, distance_to_task = 0.75, time_to_target = 9.41, time_to_handle_task = 9.00, total_time = 18.41
+robot_id = 2 bid = 18.41 to task of type 0 at distance 0.75
+robot_id = 3, my_pos = (0.37, -0.09), event_pos = (0.17, -0.34)
+robot_id = 3, distance_to_task = 0.32, time_to_target = 4.05, time_to_handle_task = 9.00, total_time = 13.05
+robot_id = 3 bid = 13.05 to task of type 0 at distance 0.32
+robot_id = 4, my_pos = (0.29, -0.33), event_pos = (0.17, -0.34)
+robot_id = 4, distance_to_task = 0.13, time_to_target = 1.58, time_to_handle_task = 9.00, total_time = 10.58
+robot_id = 4 bid = 10.58 to task of type 0 at distance 0.13
+robot_id = 0, my_pos = (0.39, -0.15), event_pos = (0.23, 0.24)
+robot_id = 0, distance_to_task = 0.42, time_to_target = 5.24, time_to_handle_task = 3.00, total_time = 8.24
+robot_id = 0 bid = 8.24 to task of type 0 at distance 0.42
+robot_id = 1, my_pos = (0.43, 0.26), event_pos = (0.23, 0.24)
+robot_id = 1, distance_to_task = 0.20, time_to_target = 2.48, time_to_handle_task = 3.00, total_time = 5.48
+robot_id = 1 bid = 5.48 to task of type 0 at distance 0.20
+robot_id = 2, my_pos = (0.37, -0.19), event_pos = (0.23, 0.24)
+robot_id = 2, distance_to_task = 0.46, time_to_target = 5.69, time_to_handle_task = 9.00, total_time = 14.69
+robot_id = 2 bid = 14.69 to task of type 0 at distance 0.46
+robot_id = 3, my_pos = (0.03, -0.31), event_pos = (0.23, 0.24)
+robot_id = 3, distance_to_task = 0.59, time_to_target = 7.37, time_to_handle_task = 9.00, total_time = 16.37
+robot_id = 3 bid = 16.37 to task of type 0 at distance 0.59
+robot_id = 4, my_pos = (0.28, 0.10), event_pos = (0.23, 0.24)
+robot_id = 4, distance_to_task = 0.15, time_to_target = 1.91, time_to_handle_task = 9.00, total_time = 10.91
+robot_id = 4 bid = 10.91 to task of type 0 at distance 0.15
+robot_id = 0, my_pos = (0.24, -0.14), event_pos = (0.28, 0.04)
+robot_id = 0, distance_to_task = 0.18, time_to_target = 2.30, time_to_handle_task = 3.00, total_time = 5.30
+robot_id = 0 bid = 5.30 to task of type 0 at distance 0.18
+robot_id = 1, my_pos = (0.46, 0.28), event_pos = (0.28, 0.04)
+robot_id = 1, distance_to_task = 0.30, time_to_target = 3.75, time_to_handle_task = 3.00, total_time = 6.75
+robot_id = 1 bid = 6.75 to task of type 0 at distance 0.30
+robot_id = 2, my_pos = (0.22, -0.20), event_pos = (0.28, 0.04)
+robot_id = 2, distance_to_task = 0.24, time_to_target = 3.06, time_to_handle_task = 9.00, total_time = 12.06
+robot_id = 2 bid = 12.06 to task of type 0 at distance 0.24
+robot_id = 3, my_pos = (0.16, -0.41), event_pos = (0.28, 0.04)
+robot_id = 3, distance_to_task = 0.46, time_to_target = 5.78, time_to_handle_task = 9.00, total_time = 14.78
+robot_id = 3 bid = 14.78 to task of type 0 at distance 0.46
+robot_id = 4, my_pos = (0.33, 0.15), event_pos = (0.28, 0.04)
+robot_id = 4, distance_to_task = 0.13, time_to_target = 1.57, time_to_handle_task = 9.00, total_time = 10.57
+robot_id = 4 bid = 10.57 to task of type 0 at distance 0.13
+robot_id = 0, my_pos = (0.01, -0.10), event_pos = (0.03, -0.21)
+robot_id = 0, distance_to_task = 0.11, time_to_target = 1.38, time_to_handle_task = 5.00, total_time = 6.38
+robot_id = 0 bid = 6.38 to task of type 1 at distance 0.11
+robot_id = 1, my_pos = (0.34, 0.46), event_pos = (0.03, -0.21)
+robot_id = 1, distance_to_task = 0.74, time_to_target = 9.20, time_to_handle_task = 5.00, total_time = 14.20
+robot_id = 1 bid = 14.20 to task of type 1 at distance 0.74
+robot_id = 2, my_pos = (-0.02, -0.21), event_pos = (0.03, -0.21)
+robot_id = 2, distance_to_task = 0.05, time_to_target = 0.58, time_to_handle_task = 1.00, total_time = 1.58
+robot_id = 2 bid = 1.58 to task of type 1 at distance 0.05
+robot_id = 3, my_pos = (0.38, -0.41), event_pos = (0.03, -0.21)
+robot_id = 3, distance_to_task = 0.41, time_to_target = 5.10, time_to_handle_task = 1.00, total_time = 6.10
+robot_id = 3 bid = 6.10 to task of type 1 at distance 0.41
+robot_id = 4, my_pos = (0.42, 0.28), event_pos = (0.03, -0.21)
+robot_id = 4, distance_to_task = 0.63, time_to_target = 7.87, time_to_handle_task = 1.00, total_time = 8.87
+robot_id = 4 bid = 8.87 to task of type 1 at distance 0.63
+robot_id = 0, my_pos = (-0.09, -0.08), event_pos = (-0.15, 0.17)
+robot_id = 0, distance_to_task = 0.26, time_to_target = 3.23, time_to_handle_task = 3.00, total_time = 6.23
+robot_id = 0 bid = 6.23 to task of type 0 at distance 0.26
+robot_id = 1, my_pos = (0.30, 0.45), event_pos = (-0.15, 0.17)
+robot_id = 1, distance_to_task = 0.53, time_to_target = 6.62, time_to_handle_task = 3.00, total_time = 9.62
+robot_id = 1 bid = 9.62 to task of type 0 at distance 0.53
+robot_id = 2, my_pos = (-0.04, -0.21), event_pos = (-0.15, 0.17)
+robot_id = 2, distance_to_task = 0.39, time_to_target = 4.92, time_to_handle_task = 9.00, total_time = 13.92
+robot_id = 2 bid = 13.92 to task of type 0 at distance 0.39
+robot_id = 3, my_pos = (0.46, -0.36), event_pos = (-0.15, 0.17)
+robot_id = 3, distance_to_task = 0.81, time_to_target = 10.09, time_to_handle_task = 9.00, total_time = 19.09
+robot_id = 3 bid = 19.09 to task of type 0 at distance 0.81
+robot_id = 4, my_pos = (0.46, 0.35), event_pos = (-0.15, 0.17)
+robot_id = 4, distance_to_task = 0.63, time_to_target = 7.89, time_to_handle_task = 9.00, total_time = 16.89
+robot_id = 4 bid = 16.89 to task of type 0 at distance 0.63
+robot_id = 0, my_pos = (-0.41, -0.17), event_pos = (-0.03, 0.06)
+robot_id = 0, distance_to_task = 0.44, time_to_target = 5.48, time_to_handle_task = 5.00, total_time = 10.48
+robot_id = 0 bid = 10.48 to task of type 1 at distance 0.44
+robot_id = 1, my_pos = (-0.02, 0.23), event_pos = (-0.03, 0.06)
+robot_id = 1, distance_to_task = 0.17, time_to_target = 2.08, time_to_handle_task = 5.00, total_time = 7.08
+robot_id = 1 bid = 7.08 to task of type 1 at distance 0.17
+robot_id = 2, my_pos = (-0.43, -0.28), event_pos = (-0.03, 0.06)
+robot_id = 2, distance_to_task = 0.53, time_to_target = 6.58, time_to_handle_task = 1.00, total_time = 7.58
+robot_id = 2 bid = 7.58 to task of type 1 at distance 0.53
+robot_id = 3, my_pos = (0.15, 0.10), event_pos = (-0.03, 0.06)
+robot_id = 3, distance_to_task = 0.19, time_to_target = 2.37, time_to_handle_task = 1.00, total_time = 3.37
+robot_id = 3 bid = 3.37 to task of type 1 at distance 0.19
+robot_id = 4, my_pos = (0.06, 0.22), event_pos = (-0.03, 0.06)
+robot_id = 4, distance_to_task = 0.18, time_to_target = 2.30, time_to_handle_task = 1.00, total_time = 3.30
+robot_id = 4 bid = 3.30 to task of type 1 at distance 0.18
+robot_id = 0, my_pos = (-0.30, -0.31), event_pos = (0.14, 0.38)
+robot_id = 0, distance_to_task = 0.82, time_to_target = 10.29, time_to_handle_task = 3.00, total_time = 13.29
+robot_id = 0 bid = 13.29 to task of type 0 at distance 0.82
+robot_id = 1, my_pos = (-0.13, 0.10), event_pos = (0.14, 0.38)
+robot_id = 1, distance_to_task = 0.39, time_to_target = 4.86, time_to_handle_task = 3.00, total_time = 7.86
+robot_id = 1 bid = 7.86 to task of type 0 at distance 0.39
+robot_id = 2, my_pos = (-0.33, -0.43), event_pos = (0.14, 0.38)
+robot_id = 2, distance_to_task = 0.94, time_to_target = 11.72, time_to_handle_task = 9.00, total_time = 20.72
+robot_id = 2 bid = 20.72 to task of type 0 at distance 0.94
+robot_id = 3, my_pos = (0.03, 0.23), event_pos = (0.14, 0.38)
+robot_id = 3, distance_to_task = 0.18, time_to_target = 2.31, time_to_handle_task = 9.00, total_time = 11.31
+robot_id = 3 bid = 11.31 to task of type 0 at distance 0.18
+robot_id = 4, my_pos = (-0.00, 0.15), event_pos = (0.14, 0.38)
+robot_id = 4, distance_to_task = 0.27, time_to_target = 3.39, time_to_handle_task = 9.00, total_time = 12.39
+robot_id = 4 bid = 12.39 to task of type 0 at distance 0.27
+robot_id = 0, my_pos = (-0.04, -0.44), event_pos = (-0.29, 0.11)
+robot_id = 0, distance_to_task = 0.61, time_to_target = 7.56, time_to_handle_task = 5.00, total_time = 12.56
+robot_id = 0 bid = 12.56 to task of type 1 at distance 0.61
+robot_id = 1, my_pos = (-0.38, -0.39), event_pos = (-0.29, 0.11)
+robot_id = 1, distance_to_task = 0.51, time_to_target = 6.33, time_to_handle_task = 5.00, total_time = 11.33
+robot_id = 1 bid = 11.33 to task of type 1 at distance 0.51
+robot_id = 2, my_pos = (-0.00, -0.21), event_pos = (-0.29, 0.11)
+robot_id = 2, distance_to_task = 0.43, time_to_target = 5.37, time_to_handle_task = 1.00, total_time = 6.37
+robot_id = 2 bid = 6.37 to task of type 1 at distance 0.43
+robot_id = 3, my_pos = (-0.37, 0.37), event_pos = (-0.29, 0.11)
+robot_id = 3, distance_to_task = 0.28, time_to_target = 3.44, time_to_handle_task = 1.00, total_time = 4.44
+robot_id = 3 bid = 4.44 to task of type 1 at distance 0.28
+robot_id = 4, my_pos = (-0.17, -0.33), event_pos = (-0.29, 0.11)
+robot_id = 4, distance_to_task = 0.45, time_to_target = 5.67, time_to_handle_task = 1.00, total_time = 6.67
+robot_id = 4 bid = 6.67 to task of type 1 at distance 0.45
+robot_id = 0, my_pos = (0.09, -0.38), event_pos = (-0.45, 0.33)
+robot_id = 0, distance_to_task = 0.89, time_to_target = 11.11, time_to_handle_task = 3.00, total_time = 14.11
+robot_id = 0 bid = 14.11 to task of type 0 at distance 0.89
+robot_id = 2, my_pos = (0.25, 0.06), event_pos = (-0.45, 0.33)
+robot_id = 2, distance_to_task = 0.74, time_to_target = 9.31, time_to_handle_task = 9.00, total_time = 18.31
+robot_id = 2 bid = 18.31 to task of type 0 at distance 0.74
+robot_id = 1, my_pos = (-0.44, -0.38), event_pos = (-0.45, 0.33)
+robot_id = 1, distance_to_task = 0.71, time_to_target = 8.88, time_to_handle_task = 3.00, total_time = 11.88
+robot_id = 1 bid = 11.88 to task of type 0 at distance 0.71
+robot_id = 3, my_pos = (-0.38, 0.14), event_pos = (-0.45, 0.33)
+robot_id = 3, distance_to_task = 0.20, time_to_target = 2.45, time_to_handle_task = 9.00, total_time = 11.45
+robot_id = 3 bid = 11.45 to task of type 0 at distance 0.20
+robot_id = 4, my_pos = (-0.33, -0.40), event_pos = (-0.45, 0.33)
+robot_id = 4, distance_to_task = 0.74, time_to_target = 9.28, time_to_handle_task = 9.00, total_time = 18.28
+robot_id = 4 bid = 18.28 to task of type 0 at distance 0.74

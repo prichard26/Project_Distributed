@@ -215,6 +215,7 @@ static void receive_updates()
             double time_to_target = distance_to_task*10000 / MAX_SPEED;
             Event_type event_type = msg.event_type;
             double time_to_handle_task = 0;
+            
             // Debug print for event and robot position
             log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
                         robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
