@@ -469,14 +469,13 @@ void run(int ms)
         }
     }
     log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
-
+    
+    // Get info from supervisor
+    receive_updates();
     if (energy_level > 0){
         if (state == GO_TO_GOAL || state == OBSTACLE_AVOID || state == HANDLING_TASK) {
             energy_level -= ms; // Decrement energy by timestep
         }
-        // Get info from supervisor
-        receive_updates();
-
         // State may change because of obstacles
         update_state(sum_distances);
 
