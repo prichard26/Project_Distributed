@@ -70,6 +70,8 @@ typedef enum {
 // NOTE: Weights from reynolds2.h
 int Interconn[16] = {17,29,34,10,8,-38,-56,-76,-72,-58,-36,8,10,36,28,18};
 
+double energy_level;       // Energy level of the robot
+const double max_energy = 2 * 60 * 1000; // 2 minutes in milliseconds
 
 // The state variables
 int clock;
@@ -290,12 +292,12 @@ void reset(void)
 {
     wb_robot_init();
     int i;
-
-  //get motor
-  left_motor = wb_robot_get_device("left wheel motor");
-  right_motor = wb_robot_get_device("right wheel motor");
-  wb_motor_set_position(left_motor, INFINITY);
-  wb_motor_set_position(right_motor, INFINITY);
+    energy_level = max_energy; 
+    //get motor
+    left_motor = wb_robot_get_device("left wheel motor");
+    right_motor = wb_robot_get_device("right wheel motor");
+    wb_motor_set_position(left_motor, INFINITY);
+    wb_motor_set_position(right_motor, INFINITY);
   
     char s[4] = "ps0";
     for(i=0; i<NB_SENSORS;i++) 
@@ -468,49 +470,59 @@ void run(int ms)
     }
     log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
 
-    // Get info from supervisor
-    receive_updates();
+    if (energy_level > 0){
+        if (state == GO_TO_GOAL || state == OBSTACLE_AVOID || state == HANDLING_TASK) {
+            energy_level -= ms; // Decrement energy by timestep
+        }
+        // Get info from supervisor
+        receive_updates();
 
-    // State may change because of obstacles
-    update_state(sum_distances);
+        // State may change because of obstacles
+        update_state(sum_distances);
 
-    // Set wheel speeds depending on state
-    switch (state) {
-        case STAY:
-            msl = 0;
-            msr = 0;
-            break;
+        // Set wheel speeds depending on state
+        switch (state) {
+            case STAY:
+                msl = 0;
+                msr = 0;
+                break;
 
-        case HANDLING_TASK:
-            msl = 0;
-            msr = 0;
-            break;
+            case HANDLING_TASK:
+                msl = 0;
+                msr = 0;
+                break;
 
-        case GO_TO_GOAL:
-            compute_go_to_goal(&msl, &msr);
-            break;
+            case GO_TO_GOAL:
+                compute_go_to_goal(&msl, &msr);
+                break;
 
-        case OBSTACLE_AVOID:
-            compute_avoid_obstacle(&msl, &msr, distances);
-            break;
+            case OBSTACLE_AVOID:
+                compute_avoid_obstacle(&msl, &msr, distances);
+                break;
 
-        case RANDOM_WALK:
-            msl = 400;
-            msr = 400;
-            break;
+            case RANDOM_WALK:
+                msl = 400;
+                msr = 400;
+                break;
 
-        default:
-            printf("Invalid state: robot_id %d \n", robot_id);
+            default:
+                printf("Invalid state: robot_id %d \n", robot_id);
+        }
+        // Set the speed
+        msl_w = msl*MAX_SPEED_WEB/1000;
+        msr_w = msr*MAX_SPEED_WEB/1000;
+        wb_motor_set_velocity(left_motor, msl_w);
+        wb_motor_set_velocity(right_motor, msr_w);
+        update_self_motion(msl, msr);
+
+        // Update clock
+        clock += ms;
+    } else {
+        // Stop movement when out of energy
+        wb_motor_set_velocity(left_motor, 0);
+        wb_motor_set_velocity(right_motor, 0);
+        log_message("robot_id=%d has no energy left!", robot_id);
     }
-    // Set the speed
-    msl_w = msl*MAX_SPEED_WEB/1000;
-    msr_w = msr*MAX_SPEED_WEB/1000;
-    wb_motor_set_velocity(left_motor, msl_w);
-    wb_motor_set_velocity(right_motor, msr_w);
-    update_self_motion(msl, msr);
-
-    // Update clock
-    clock += ms;
 }
 
 // MAIN
