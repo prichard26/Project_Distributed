@@ -203,7 +203,7 @@ static void receive_updates()
             target_list_length = target_list_length+1;
         }
         // check if new event is being auctioned
-        else if(msg.event_state == MSG_EVENT_NEW)
+        else if(msg.event_state == MSG_EVENT_NEW && state == STAY)
         {                
 
             indx = target_list_length;
@@ -483,8 +483,8 @@ void run(int ms)
             break;
 
         case RANDOM_WALK:
-            msl = 400;
-            msr = 400;
+            msl = 0;
+            msr = 0;
             break;
 
         default:

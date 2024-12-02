@@ -18,6 +18,8 @@
 #include <vector>
 #include <memory>
 #include <time.h>       /* time_t, struct tm, difftime, time, mktime */
+#include <algorithm>  // For std::sort
+#include <set>        // For std::set
 
 using namespace std;
 
@@ -54,6 +56,8 @@ struct RobotState {
   bool state;         // 0: idle or going to goal   |   1: handling task
   int counter; 
 };
+
+std::vector<std::tuple<uint16_t, uint16_t, double>> bid_list; // Vector containing current bid for unalloacted tasks
 
 WbNodeRef g_event_nodes[MAX_EVENTS];
 vector<WbNodeRef> g_event_nodes_free;
@@ -339,36 +343,81 @@ private:
   void handleAuctionEvents(event_queue_t& event_queue) {
     // For each unassigned event
     for (auto& event : events_) {
-      if (event->is_assigned()) continue;
+      if (event->is_assigned() || event->was_announced()) continue;
 
-      // Send announce, if new
-      // IMPL DETAIL: Only allow one auction at a time.
-      if (!event->was_announced() && !auction) {
+      // Send announce, if new and allow multiple auction at a time
+      if (!event->was_announced()) {
         event->t_announced_ = clock_;
         event_queue.emplace_back(event.get(), MSG_EVENT_NEW); 
-        auction = event.get();
         printf("[EVENT] An event %d announced\n", event->id_);
 
       // End early or restart, if timed out
       } else if (clock_ - event->t_announced_ > EVENT_TIMEOUT) {
-        // End early if we have any bids at all
+        // End early if we have bids
         if (event->has_bids()) {
-          // IMPLEMENTATION DETAIL: If about to time out, assign to
-          // the highest bidder or restart the auction if there is none.
+          //If about to time out, assign to highest bidder 
           event->assigned_to_ = event->best_bidder_;
           event_queue.emplace_back(event.get(), MSG_EVENT_WON); // FIXME?
-          auction = NULL;
           printf("[EVENT] Robot %d won event %d\n", event->assigned_to_, event->id_);
 
-        // Restart (incl. announce) if no bids
+        // Restart if no bids and reannounced in next iteration
         } else {
-          // (reannounced in next iteration)
           event->restartAuction();
-          if (auction == event.get())
-            auction = NULL;
         }
       }
     }
+  }
+  void allocateTasks(event_queue_t& event_queue) {
+    // Print the bid list
+    printf("Bid list before sorting:\n");
+    for (const auto& bid : bid_list) {
+        uint16_t robot_id = std::get<0>(bid);
+        uint16_t task_id = std::get<1>(bid);
+        double bid_value = std::get<2>(bid);
+        printf("  Robot %d -> Task %d with bid %.2f\n", robot_id, task_id, bid_value);
+    }
+    // Sort bids by bid value (ascending order)
+    std::sort(bid_list.begin(), bid_list.end(),
+              [](const auto& a, const auto& b) {
+                  return std::get<2>(a) < std::get<2>(b); // Compare bid values
+              });
+    
+    // Print the bid list
+    printf("Bid list after sorting:\n");
+    for (const auto& bid : bid_list) {
+        uint16_t robot_id = std::get<0>(bid);
+        uint16_t task_id = std::get<1>(bid);
+        double bid_value = std::get<2>(bid);
+        printf("  Robot %d -> Task %d with bid %.2f\n", robot_id, task_id, bid_value);
+    }
+    std::set<uint16_t> assigned_robots; // Track assigned robots
+    std::set<uint16_t> assigned_tasks; // Track assigned tasks
+
+    for (const auto& bid : bid_list) {
+        uint16_t robot_id = std::get<0>(bid);
+        uint16_t task_id = std::get<1>(bid);
+        double bid_value = std::get<2>(bid);
+
+        // Skip if the robot or task is already assigned
+        if (assigned_robots.count(robot_id) || assigned_tasks.count(task_id))
+            continue;
+
+        // Assign task to robot
+        Event* event = events_.at(task_id).get();
+        event->assigned_to_ = robot_id;
+        printf("[ALLOCATE] Assigning task %d to robot %d with bid %.2f\n",
+               task_id, robot_id, bid_value);
+
+        // Add to the event queue for publishing
+        event_queue.emplace_back(event, MSG_EVENT_WON);
+
+        // Mark robot and task as assigned
+        assigned_robots.insert(robot_id);
+        assigned_tasks.insert(task_id);
+    }
+
+    // Clear the bid list for the next round
+    bid_list.clear();
   }
 
   // Calculate total distance travelled by robots
@@ -437,7 +486,7 @@ public:
 
   //Do a step
   bool step(uint64_t step_size) {
-    
+    printf("Step function called at clock = %ld\n", clock_);
     clock_ += step_size;
 
     // Events that will be announced next or that have just been assigned/done
@@ -446,34 +495,31 @@ public:
     markEventsDone(event_queue);
 
     handleAuctionEvents(event_queue);
- 
+  
+    bid_list.clear();
+
     // Send and receive messages
-    bid_t* pbid; // inbound
-    for (int i=0;i<NUM_ROBOTS;i++) {
-      // Check if we're receiving data
-      if (wb_receiver_get_queue_length(receivers_[i]) > 0) {
-        assert(wb_receiver_get_queue_length(receivers_[i]) > 0);
-        assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
-        
-        pbid = (bid_t*) wb_receiver_get_data(receivers_[i]); 
-        assert(pbid->robot_id == i);
+    bid_t* pbid; 
 
-        Event* event = events_.at(pbid->event_id).get();
-        printf("[AUCTION] robot %d placed a bid of %f on event %d\n ", pbid->robot_id, pbid->value, pbid->event_index);
-
-        event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
-
-        if (event->is_assigned()) {
-          event_queue.emplace_back(event, MSG_EVENT_WON);
-          auction = NULL;
-          printf("[AUCTION] robot %d won event %d\n", event->assigned_to_, event->id_);
+    for (auto& event : events_) {
+      if (!event->is_assigned() && event->was_announced()) {
+        // Loop through each robot and collect bids for this event
+        for (int i = 0; i < NUM_ROBOTS; ++i) {
+            if (wb_receiver_get_queue_length(receivers_[i]) > 0) {
+              assert(wb_receiver_get_queue_length(receivers_[i]) > 0);
+              assert(wb_receiver_get_data_size(receivers_[i]) == sizeof(bid_t));
+              
+              // Get bid of all free robot 
+              pbid = (bid_t*) wb_receiver_get_data(receivers_[i]); 
+              assert(pbid->robot_id == i);
+              bid_list.emplace_back(pbid->robot_id,  pbid->event_id, pbid->value);
+              printf("[BID] Robot %d placed a bid of %.2f on event %d\n", i, pbid->value, event->id_);
+          }
         }
-
-        wb_receiver_next_packet(receivers_[i]);
       }
     }
+    allocateTasks(event_queue);
 
-    // outbound
     message_t msg;
     bool is_gps_tick = false;
 
