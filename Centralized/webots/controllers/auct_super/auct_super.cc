@@ -50,6 +50,10 @@ using namespace std;
 #define TOTAL_EVENTS_TO_HANDLE  50   // Events after which simulation stops or...
 #define MAX_RUNTIME (3*60*1000)      // ...total runtime after which simulation stops
 
+#define WALL_MARGIN 0.01  // Collision margin from the wall
+#define ARENA_WIDTH 1.0  // Arena width in meters
+#define ARENA_HEIGHT 1.0 // Arena height in meters
+
 struct RobotState {
   bool state;         // 0: idle or going to goal   |   1: handling task
   int counter; 
@@ -218,6 +222,11 @@ private:
   double stat_total_distance_;  // total distance traveled
   double stat_robot_prev_pos_[NUM_ROBOTS][2];
 
+  uint64_t total_active_time_[NUM_ROBOTS] = {0}; // Total active time for each robot
+  uint64_t total_collisions_ = 0;                // Total number of collisions
+  uint64_t total_simulation_time_ = 0;           // Total simulation time
+  uint64_t stat_total_time_handeling_tasks_ = 0;
+  
   WbNodeRef robots_[NUM_ROBOTS];
   WbDeviceTag emitter_;
   WbDeviceTag receivers_[NUM_ROBOTS];
@@ -371,19 +380,54 @@ private:
     }
   }
 
-  // Calculate total distance travelled by robots
-  void statTotalDistance() {
-    for (int i=0; i<NUM_ROBOTS; ++i) {
-      const double *robot_pos = getRobotPos(i);
-      double delta[2] = {
-        robot_pos[0] - stat_robot_prev_pos_[i][0],
-        robot_pos[1] - stat_robot_prev_pos_[i][1]
-      };
-      stat_total_distance_ += sqrt(delta[0]*delta[0] + delta[1]*delta[1]);
-      stat_robot_prev_pos_[i][0] = robot_pos[0];
-      stat_robot_prev_pos_[i][1] = robot_pos[1];
+void updateMetricsAndDistance() {
+  // Increment simulation time
+  total_simulation_time_ += STEP_SIZE;
+
+  for (int i = 0; i < NUM_ROBOTS; ++i) {
+    // Get current robot position
+    const double *robot_pos = getRobotPos(i);
+
+    // Calculate distance traveled
+    double delta[2] = {
+      robot_pos[0] - stat_robot_prev_pos_[i][0],
+      robot_pos[1] - stat_robot_prev_pos_[i][1]
+    };
+    double distance = sqrt(delta[0]*delta[0] + delta[1]*delta[1]);
+    stat_total_distance_ += distance;
+
+    // Update previous position
+    stat_robot_prev_pos_[i][0] = robot_pos[0];
+    stat_robot_prev_pos_[i][1] = robot_pos[1];
+
+    // Update time metrics
+    if (robotStates[i].state == 1) { // Robot is handling a task
+      total_active_time_[i] += STEP_SIZE;
+      stat_total_time_handeling_tasks_ += STEP_SIZE;
+    } else if (robotStates[i].state == 0 && distance > 0.00001) { // Robot is traveling
+      total_active_time_[i]+= STEP_SIZE;
+    }
+
+    // Check for collision with walls
+    if (robot_pos[0] > ARENA_WIDTH - WALL_MARGIN || robot_pos[1] > ARENA_HEIGHT - WALL_MARGIN) {
+      total_collisions_++;
+      printf("[COLLISION] Robot %d collided with the wall\n", i);
     }
   }
+
+  // Collision detection logic
+  for (int i = 0; i < NUM_ROBOTS; ++i) {
+    for (int j = i + 1; j < NUM_ROBOTS; ++j) {
+      const double *pos1 = getRobotPos(i);
+      const double *pos2 = getRobotPos(j);
+
+      double distance = sqrt(pow(pos1[0] - pos2[0], 2) + pow(pos1[1] - pos2[1], 2));
+      if (distance < EVENT_RANGE) { // Collision detected
+        total_collisions_++;
+      }
+    }
+  }
+}
 
 // Public fucntions
 public:
@@ -511,22 +555,30 @@ public:
     }
 
     // Keep track of distance travelled by all robots
-    statTotalDistance();
+    updateMetricsAndDistance(); 
 
     // Time to end the experiment?
     if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE ||(MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
+      printf("\n");
+      printf("===== End of Simulation: Key metrics ======\n");
+      printf("\n");
       for(int i=0;i<NUM_ROBOTS;i++){
           buildMessage(i, NULL, MSG_QUIT, &msg);
           wb_emitter_set_channel(emitter_, i+1);
           wb_emitter_send(emitter_, &msg, sizeof(message_t));
+
+          double active_percentage = (double)total_active_time_[i] / total_simulation_time_ * 100.0;
+          printf("Robot %d: Average activation time = %.2f%%\n", i, active_percentage);
       }
       double clock_s = ((double) clock_) / 1000.0;
       double ehr = ((double) num_events_handled_) / clock_s;
-      double perf = ((double) num_events_handled_) / stat_total_distance_;
-      
+      double total_time_handeling_task = stat_total_time_handeling_tasks_;
+      printf("Total collisions = %lu\n", total_collisions_);
+      printf("Total distance travelled = %f\n", stat_total_distance_);
+      printf("Total time handeling task = %f\n", total_time_handeling_task/1000);
       printf("Handled %d events in %d seconds, events handled per second = %.2f\n",
              num_events_handled_, (int) clock_ / 1000, ehr);
-      printf("Performance: %f\n", perf);
+      
       return false;
     } 
     else { return true;} //continue

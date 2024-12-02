@@ -5,7 +5,7 @@ sceneTreePerspectives: 000000ff0000000100000002000000c0000000fc01000000020100000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 1 "controllers/auct_super/auct_super.cc" "controllers/epuck_crown/epuck_crown.c"
+textFiles: 0 "controllers/auct_super/auct_super.cc" "controllers/epuck_crown/epuck_crown.c"
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck0:camera;1;1;0;0
 renderingDevicePerspectives: e-puck1:camera;1;1;0;0

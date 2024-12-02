@@ -48,7 +48,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Collective decision parameters */
 
-#define STATECHANGE_DIST  650   // minimum value of all sensor inputs combined to change to obstacle avoidance mode
+#define STATECHANGE_DIST  555  // minimum value of all sensor inputs combined to change to obstacle avoidance mode
 
 typedef enum {
     STAY            = 1,
