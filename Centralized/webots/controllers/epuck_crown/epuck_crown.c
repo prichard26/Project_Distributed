@@ -48,7 +48,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Collective decision parameters */
 
-#define STATECHANGE_DIST 500   // minimum value of all sensor inputs combined to change to obstacle avoidance mode
+#define STATECHANGE_DIST  650   // minimum value of all sensor inputs combined to change to obstacle avoidance mode
 
 typedef enum {
     STAY            = 1,
@@ -170,6 +170,8 @@ static void receive_updates()
         else if(msg.event_state == MSG_EVENT_DONE)
         {
             state = STAY;
+            log_message("BACK TO STAY");
+
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
             {
@@ -205,48 +207,48 @@ static void receive_updates()
         // check if new event is being auctioned
         else if(msg.event_state == MSG_EVENT_NEW)
         {                
+            if (state != 10) {
+                indx = target_list_length;
+                
+                double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+                double time_to_target = distance_to_task*10000 / MAX_SPEED;
+                Event_type event_type = msg.event_type;
+                double time_to_handle_task = 0;
+                
+                // Debug print for event and robot position
+                //log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
+                //            robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
-            indx = target_list_length;
-            // msg.event_type et le robot connait son numero donc son type 
-            //double d = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-            //const bid_t my_bid = {robot_id, msg.event_id, d, indx};
-
-            double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-            double time_to_target = distance_to_task*10000 / MAX_SPEED;
-            Event_type event_type = msg.event_type;
-            double time_to_handle_task = 0;
-            
-            // Debug print for event and robot position
-            log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
-                        robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-
-            if (robot_id < 2){              // robot of type A
-                if (event_type == A){
-                time_to_handle_task = 3;    //[ms]
+                if (robot_id < 2){              // robot of type A
+                    if (event_type == A){
+                    time_to_handle_task = 3;    //[ms]
+                    }
+                    else{
+                    time_to_handle_task = 5;
+                    }
+                }else{                          // robot of type B
+                    if (event_type == A){
+                    time_to_handle_task = 9;
+                    }
+                    else{
+                    time_to_handle_task = 1;
+                    }
                 }
-                else{
-                time_to_handle_task = 5;
-                }
-            }else{                          // robot of type B
-                if (event_type == A){
-                time_to_handle_task = 9;
-                }
-                else{
-                time_to_handle_task = 1;
-                }
-            }
-            double total_time = time_to_target + time_to_handle_task;
+                double total_time = time_to_target + time_to_handle_task;
 
-            // Debug print for calculated values
-            log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
-                        robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
+                // Debug print for calculated values
+                //log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
+                //            robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
 
-            const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
-            log_message("robot_id = %d bid = %.2f to task of type %d at distance %.2f", 
-                        robot_id, total_time, event_type, distance_to_task);
+                const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
+                log_message("robot_id = %d bid = %.2f to task %d", 
+                            robot_id, total_time, msg.event_id);
+                log_message("robot_id = %d has the state %d", 
+                            robot_id, state);
 
-            wb_emitter_set_channel(emitter_tag, robot_id+1);
-            wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));            
+                wb_emitter_set_channel(emitter_tag, robot_id+1);
+                wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
+            }          
         }
     }
 
@@ -289,7 +291,7 @@ void reset(void)
     wb_robot_init();
     int i;
 
-  //get motors
+  //get motor
   left_motor = wb_robot_get_device("left wheel motor");
   right_motor = wb_robot_get_device("right wheel motor");
   wb_motor_set_position(left_motor, INFINITY);
@@ -413,29 +415,36 @@ void compute_avoid_obstacle(int *msl, int *msr, int distances[])
 // Computes wheel speed to go towards a goal
 void compute_go_to_goal(int *msl, int *msr) 
 {
-    // // Compute vector to goal
+    // Compute vector to goal
     float a = target[0][0] - my_pos[0];
     float b = target[0][1] - my_pos[1];
-    // Compute wanted position from event position and current location
-    float x =  a*cosf(my_pos[2]) - b*sinf(my_pos[2]); // x in robot coordinates
-    float y =  a*sinf(my_pos[2]) + b*cosf(my_pos[2]); // y in robot coordinates
 
+    // Compute wanted position from event position and current location
+    float x =  a * cosf(my_pos[2]) - b * sinf(my_pos[2]); // x in robot coordinates
+    float y =  a * sinf(my_pos[2]) + b * cosf(my_pos[2]); // y in robot coordinates
+
+    // Control coefficients
     float Ku = 0.2;   // Forward control coefficient
-    float Kw = 10.0;  // Rotational control coefficient
-    float range = 1; //sqrtf(x*x + y*y);   // Distance to the wanted position
+    float Kw = 5.0;   // Rotational control coefficient
+
+    // Range and bearing
+    float range = sqrtf(x*x + y*y);   // Distance to the wanted position
     float bearing = atan2(y, x);     // Orientation of the wanted position
-    
+
     // Compute forward control
-    float u = Ku*range*cosf(bearing);
+    float u = Ku * range * cosf(bearing);
     // Compute rotational control
-    float w = Kw*range*sinf(bearing);
-    
-    // Convert to wheel speeds!
-    *msl = 50*(u - AXLE_LENGTH*w/2.0) / WHEEL_RADIUS;
-    *msr = 50*(u + AXLE_LENGTH*w/2.0) / WHEEL_RADIUS;
-    limit(msl,MAX_SPEED);
-    limit(msr,MAX_SPEED);
+    float w = Kw * range * sinf(bearing);
+
+    // Convert to wheel speeds
+    *msl = (int)(50 * (u - AXLE_LENGTH * w / 2.0) / WHEEL_RADIUS);
+    *msr = (int)(50 * (u + AXLE_LENGTH * w / 2.0) / WHEEL_RADIUS);
+
+    // Limit speeds
+    limit(msl, MAX_SPEED);
+    limit(msr, MAX_SPEED);
 }
+
 
 // RUN e-puck
 void run(int ms)
@@ -452,9 +461,12 @@ void run(int ms)
     // Add the weighted sensors values
     for(sensor_nb=0;sensor_nb<NB_SENSORS;sensor_nb++)
     {  
-        distances[sensor_nb] = wb_distance_sensor_get_value(ds[sensor_nb]);
-        sum_distances += distances[sensor_nb];
+        if (sensor_nb != 3 || sensor_nb != 4){  // don't look at the sensor of the back
+            distances[sensor_nb] = wb_distance_sensor_get_value(ds[sensor_nb]);
+            sum_distances += distances[sensor_nb];
+        }
     }
+    log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
 
     // Get info from supervisor
     receive_updates();

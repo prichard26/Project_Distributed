@@ -36,7 +36,7 @@ using namespace std;
 #define MAX_EVENTS 10
 
 #define STEP_SIZE 64            // simulation step size
-#define AUCTION_TIMEOUT 1000    // number of steps after which an auction stops
+#define AUCTION_TIMEOUT 128    // number of steps after which an auction stops
 
 #define EVENT_RANGE (0.1)       // distance within which a robot must come to do event
 #define EVENT_TIMEOUT (10000)   // ticks until an event auction runs out
@@ -311,8 +311,8 @@ private:
       double dist = event->pos_.Distance(robot_pos_pt);
 
       if (dist <= EVENT_RANGE) {
-        printf("[REACHED] Robot %d reached event %d which is of type %s\n", event->assigned_to_,
-                event->id_, (event->type_ == A) ? "A" : "B");
+        //printf("[REACHED] Robot %d reached event %d which is of type %s\n", event->assigned_to_,
+        //        event->id_, (event->type_ == A) ? "A" : "B");
 
         if (robotStates[event->assigned_to_].state == 0){     // robot arrives in range but is not handling the task yet 
           robotStates[event->assigned_to_].state = 1;         // starts handling the task  
@@ -459,7 +459,7 @@ public:
         assert(pbid->robot_id == i);
 
         Event* event = events_.at(pbid->event_id).get();
-        printf("[AUCTION] robot %d placed a bid of %f on event %d\n ", pbid->robot_id, pbid->value, pbid->event_index);
+        printf("[AUCTION] robot %d placed a bid of %f on event %d\n ", pbid->robot_id, pbid->value, pbid->event_id);
 
         event->updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
 
