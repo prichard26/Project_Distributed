@@ -18,7 +18,7 @@
 #include <vector>
 #include <memory>
 #include <time.h>       /* time_t, struct tm, difftime, time, mktime */
-
+#include <algorithm>
 using namespace std;
 
 #include "Point2d.h"
@@ -226,7 +226,9 @@ private:
   uint64_t total_collisions_ = 0;                // Total number of collisions
   uint64_t total_simulation_time_ = 0;           // Total simulation time
   uint64_t stat_total_time_handeling_tasks_ = 0;
-  
+
+  std::vector<std::pair<int, int>> active_collisions_; // List of active collisions
+
   WbNodeRef robots_[NUM_ROBOTS];
   WbDeviceTag emitter_;
   WbDeviceTag receivers_[NUM_ROBOTS];
@@ -411,10 +413,11 @@ void updateMetricsAndDistance() {
     // Check for collision with walls
     if (robot_pos[0] > ARENA_WIDTH - WALL_MARGIN || robot_pos[1] > ARENA_HEIGHT - WALL_MARGIN) {
       total_collisions_++;
-      printf("[COLLISION] Robot %d collided with the wall\n", i);
     }
   }
 
+  std::vector<std::pair<int, int>> new_collisions;
+  
   // Collision detection logic
   for (int i = 0; i < NUM_ROBOTS; ++i) {
     for (int j = i + 1; j < NUM_ROBOTS; ++j) {
@@ -422,11 +425,34 @@ void updateMetricsAndDistance() {
       const double *pos2 = getRobotPos(j);
 
       double distance = sqrt(pow(pos1[0] - pos2[0], 2) + pow(pos1[1] - pos2[1], 2));
-      if (distance < EVENT_RANGE) { // Collision detected
-        total_collisions_++;
+      if (distance < 0.081) { // Collision detected
+        // Add to new collisions if not already present
+        if (std::find(active_collisions_.begin(), active_collisions_.end(),
+                      std::make_pair(i, j)) == active_collisions_.end()) {
+          new_collisions.push_back(std::make_pair(i, j));
+        }
       }
     }
   }
+  // Count new collisions
+  for (const auto &collision : new_collisions) {
+    active_collisions_.push_back(collision);
+    total_collisions_++;
+    printf("[COLLISION] Robots %d and %d collided\n", collision.first, collision.second);
+  }
+
+  // Remove resolved collisions
+  active_collisions_.erase(
+      std::remove_if(active_collisions_.begin(), active_collisions_.end(),
+                     [&](const std::pair<int, int> &collision) {
+                       const double *pos1 = getRobotPos(collision.first);
+                       const double *pos2 = getRobotPos(collision.second);
+                       double distance =
+                           sqrt(pow(pos1[0] - pos2[0], 2) +
+                                pow(pos1[1] - pos2[1], 2));
+                       return distance >= EVENT_RANGE;
+                     }),
+      active_collisions_.end());
 }
 
 // Public fucntions
