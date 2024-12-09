@@ -1119,7 +1119,7 @@ Robot {
     DEF EPUCK_EMITTER Emitter {
       channel IS emitter_channel
       range 2
-      maxRange 2
+      maxRange 2;
     }
     DEF EPUCK_SPEAKER Speaker {
     }

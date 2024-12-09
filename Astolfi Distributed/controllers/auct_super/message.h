@@ -37,6 +37,11 @@ typedef struct {
 } bid_t;
 
 typedef struct {
+    int finished_task_id;
+    int new_task_id;
+} task_update_message_t;
+
+typedef struct {
   uint16_t robot_id;
   uint16_t task_id;
   double bid_values[5];

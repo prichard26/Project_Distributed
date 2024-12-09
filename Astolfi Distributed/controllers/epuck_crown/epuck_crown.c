@@ -39,8 +39,9 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 #define SPEED_UNIT_RADS     0.00628 // Conversion factor from speed unit to radian per second
 #define WHEEL_RADIUS        0.0205  // Wheel radius (meters)
 #define DELTA_T             TIME_STEP/1000   // Timestep (seconds)
-#define MAX_SPEED         800     // Maximum speed
-#define MAX_VELOCITY      0.5 
+#define MAX_SPEED           800     // Maximum speed
+#define MAX_VELOCITY        0.5 
+#define MAX_MOTOR_SPEED     24.39   // Max motor speed in rad/s
 
 #define INVALID          -999
 #define BREAK            -999 //for physics plugin
@@ -49,6 +50,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 #define NUM_ROBOTS 5 // Change this also in the supervisor!
 #define NUM_TASKS 10
 #define SR_COM_RANGE 0.3
+#define TASK_COMPLETION_RANGE 0.1
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -106,6 +108,7 @@ typedef struct {
     double task_x, task_y;
     Event_type task_type;
     int is_completed;
+    int in_active;
     //uint16_t assigned_to;   // Id of the robot to which the task is assigned
 } task_t;
 
@@ -148,28 +151,20 @@ double dist(double x0, double y0, double x1, double y1) {
     return sqrt((x0-x1)*(x0-x1) + (y0-y1)*(y0-y1));
 }
 
-int find_last_non_empty_task_id() {
-    for (int i = 98; i >= 0; i--) { // Start from the last index
-        if (all_tasks[i].task_id != INVALID && all_tasks[i].is_completed == 0) {
-            return all_tasks[i].task_id; // Return the task ID of the first valid task found
-        }
-    }
-    return -1; // Return -1 if no valid task is found
-}
-
 double compute_heading(const double *pos, double *prev_pos, double prev_heading) {
-    double x = 0, y = 0;
+    double x = pos[0] - prev_pos[0];
+    double y = pos[1] - prev_pos[1];
 
-    if ((prev_pos[0] != 0) && (prev_pos[1] != 0)) {
-        x = pos[0] - prev_pos[0];
-        y = pos[1] - prev_pos[1];
+    // If the robot hasn't moved, retain the previous heading
+    if (fabs(x) < 1e-3 && fabs(y) < 1e-3) {
+        return prev_heading;
     }
 
     if ((x == 0) && (y == 0)) return prev_heading;
 
     double heading =  atan2(y, x);
-    if (heading > 2*M_PI) heading -= 2.0*M_PI;
-    if (heading < 0) heading += 2.0*M_PI;
+    if (heading > M_PI) heading -= 2.0*M_PI;
+    if (heading < -M_PI) heading += 2.0*M_PI;
     return heading;
 }
 
@@ -226,19 +221,104 @@ void print_task_table() {
     printf("--------------------------------------------------------------------------------\n");
 }
 
+void print_all_tasks() {
+    printf("---------------------------------------------------------------------------\n");
+    printf("| Task ID | Task Type |   X Coord   |   Y Coord   | Completed | In Active |\n");
+    printf("---------------------------------------------------------------------------\n");
+
+    for (int i = 0; i < 99; i++) { // Adjust size to match your `all_tasks` array length
+        // Stop printing at the first empty component
+        if (all_tasks[i].task_id == INF) {
+            break;
+        }
+
+        printf("|   %3d   |     %1d     |   %8.2f |   %8.2f |     %1d     | %1d |\n",
+               all_tasks[i].task_id,
+               all_tasks[i].task_type,
+               all_tasks[i].task_x,
+               all_tasks[i].task_y,
+               all_tasks[i].is_completed,
+               all_tasks[i].in_active);
+    }
+
+    printf("--------------------------------------------------------------------\n");
+}
+
+void print_active_tasks() {
+    printf("---------------------------------------------------------------\n");
+    printf("| Task ID | Task Type |   X Coord   |   Y Coord   | Completed |\n");
+    printf("---------------------------------------------------------------\n");
+
+    for (int i = 0; i < NUM_TASKS; i++) { // Adjust size to match your `all_tasks` array length
+        // Stop printing at the first empty component
+        if (active_tasks[i].task_id == INF) {
+            break;
+        }
+
+        printf("|   %3d   |     %1d     |   %8.2f |   %8.2f |     %1d    |\n",
+               active_tasks[i].task_id,
+               active_tasks[i].task_type,
+               active_tasks[i].task_x,
+               active_tasks[i].task_y,
+               active_tasks[i].is_completed);
+    }
+
+    printf("--------------------------------------------------------------------\n");
+}
+
+int find_first_new_task_index()
+{
+    for (int i=0; i<99; i++) {
+        if ((all_tasks[i].is_completed == 0) && (all_tasks[i].in_active == 0)) {
+            return i;
+        }
+    }
+    return INVALID;
+}
+
+void first_update_active_tasks()
+{
+   for (int j=0; j<NUM_TASKS; j++) {
+        active_tasks[j].task_id = all_tasks[j].task_id;
+        active_tasks[j].task_x = all_tasks[j].task_x;
+        active_tasks[j].task_y = all_tasks[j].task_y;
+        active_tasks[j].task_type = all_tasks[j].task_type;
+        active_tasks[j].is_completed = all_tasks[j].is_completed;
+        active_tasks[j].best_bid_robot = INF;
+        active_tasks[j].best_bid_value = INFINITY;
+        all_tasks[j].in_active = 1;
+    }
+    printf("Active tasks successfully initialized\n");
+}
+
+void update_active_tasks()
+{
+    for (int j=0; j<99; j++) {
+        all_tasks[j].in_active = 0;
+    }
+    int k=0;
+    while (k<10) {
+        for (int j=0; j<99; j++) {
+            if ((all_tasks[j].is_completed == 0) && (all_tasks[j].in_active == 0)) {
+                active_tasks[k].task_id = all_tasks[j].task_id;
+                active_tasks[k].task_x = all_tasks[j].task_x;
+                active_tasks[k].task_y = all_tasks[j].task_y;
+                active_tasks[k].task_type = all_tasks[j].task_type;
+                active_tasks[k].is_completed = all_tasks[j].is_completed;
+                active_tasks[k].best_bid_robot = INF;
+                active_tasks[k].best_bid_value = INFINITY;
+                all_tasks[j].in_active = 1;
+                break;
+            }
+        }
+        k += 1;
+    }
+}
+
 // Update the list of active tasks
-void update_active_tasks() {
+void update_new_active_task(int new_task_index) {
     for (int j=0; j<NUM_TASKS; j++) {
-        if (active_tasks[j].is_completed == INVALID) {
-            active_tasks[j].task_id = all_tasks[j].task_id;
-            active_tasks[j].task_x = all_tasks[j].task_x;
-            active_tasks[j].task_y = all_tasks[j].task_y;
-            active_tasks[j].task_type = all_tasks[j].task_type;
-            active_tasks[j].is_completed = all_tasks[j].is_completed;
-            active_tasks[j].best_bid_robot = INF;
-            active_tasks[j].best_bid_value = INFINITY;
-        } else if (active_tasks[j].is_completed == 1) {
-            int new_task_index = find_last_non_empty_task_id();
+        if (active_tasks[j].is_completed == 1) {
             active_tasks[j].task_id = all_tasks[new_task_index].task_id;
             active_tasks[j].task_x = all_tasks[new_task_index].task_x;
             active_tasks[j].task_y = all_tasks[new_task_index].task_y;
@@ -248,22 +328,19 @@ void update_active_tasks() {
             active_tasks[j].best_bid_value = INFINITY;
         }
     }
+    all_tasks[new_task_index].in_active = 1;
 }
-
 
 // Check if we received a message and extract information
 static void receive_updates() 
 {
    //printf("Robot %d receiving updates now.\n", robot_id);
     message_t msg;
-    int target_list_length = 0;
+    task_update_message_t task_msg;
+    //int target_list_length = 0;
     //int i;
     //printf("There are %d messages in the queue for robot %d.\n", wb_receiver_get_queue_length(receiver_tag), robot_id);
-    while (wb_receiver_get_queue_length(receiver_tag) > 0) {
-
-        const message_t *pmsg = wb_receiver_get_data(receiver_tag);
-        //assert(wb_receiver_get_data_size(receiver_tag) == sizeof(message_t));
-        
+    while (wb_receiver_get_queue_length(receiver_tag) > 0) {        
         /*
         printf("Raw message %d bytes: ", sizeof(message_t));
         for (size_t k = 0; k < sizeof(message_t); k++) {
@@ -272,33 +349,50 @@ static void receive_updates()
         printf("\n");
         */
 
-        // save a copy, cause wb_receiver_next_packet invalidates the pointer
-        memcpy(&msg, pmsg, sizeof(message_t));
-        wb_receiver_next_packet(receiver_tag);
-        
-        // double check this message is for me
-        // communication should be on specific channel per robot
-        // channel = robot_id + 1, channel 0 reserved for physics plguin
-        if(msg.robot_id != robot_id) {
-            fprintf(stderr, "Invalid message: robot_id %d "  "doesn't match receiver %d\n", msg.robot_id, robot_id);
-            //return;
-            exit(1);
+        if (wb_receiver_get_data_size(receiver_tag) == sizeof(message_t)) {
+            const message_t *pmsg = wb_receiver_get_data(receiver_tag);
+
+            memcpy(&msg, pmsg, sizeof(message_t));
+            wb_receiver_next_packet(receiver_tag);
+
+            if (msg.event_state == MSG_QUIT) {
+                wb_motor_set_velocity(left_motor, 0);
+                wb_motor_set_velocity(right_motor, 0);
+                wb_robot_step(TIME_STEP);
+                exit(0);
+            }
+
+            if(msg.robot_id != robot_id) {
+                fprintf(stderr, "Invalid message: robot_id %d "  "doesn't match receiver %d\n", msg.robot_id, robot_id);
+                exit(1);
+            }
+            
+            all_tasks[msg.event_id].task_id = msg.event_id;
+            all_tasks[msg.event_id].task_x = msg.event_x;
+            all_tasks[msg.event_id].task_y = msg.event_y;
+            all_tasks[msg.event_id].task_type = msg.event_type; 
+            all_tasks[msg.event_id].is_completed = msg.event_finished;  
+        } else if (wb_receiver_get_data_size(receiver_tag) == sizeof(task_update_message_t)) {
+            const task_update_message_t *tmsg = wb_receiver_get_data(receiver_tag);
+
+            memcpy(&task_msg, tmsg, sizeof(task_update_message_t));
+            wb_receiver_next_packet(receiver_tag);
+
+            all_tasks[task_msg.finished_task_id].is_completed = 1;
+            for (int i=0; i<NUM_TASKS; i++) {
+                if (active_tasks[i].task_id == task_msg.finished_task_id) {
+                    active_tasks[i].is_completed = 1;
+                }
+            }
+            all_tasks[task_msg.new_task_id].in_active = 0;
+            // if (all_tasks[task_msg.finished_task_id].is_completed) {
+            //     printf("Task state was changed successfully.\n");
+            // }
+            // printf("Receiving info from the supervisor that task %d was finished.\n", task_msg.finished_task_id);
+            //update_new_active_task(task_msg.new_task_id);
         }
-        
-        all_tasks[msg.event_id].task_id = msg.event_id;
-        all_tasks[msg.event_id].task_x = msg.event_x;
-        all_tasks[msg.event_id].task_y = msg.event_y;
-        all_tasks[msg.event_id].task_type = msg.event_type; 
-        all_tasks[msg.event_id].is_completed = msg.event_finished;
     }
 
-    // Find target list length
-    for (int i=0; i<99; i++) {
-        if (all_tasks[i].is_completed == 0) {
-            target_list_length += 1;
-        }
-    }
-    //printf("TARGET LIST LENGTH : %d\n", target_list_length);
     update_active_tasks();
 }
 
@@ -336,9 +430,10 @@ void reset(void)
     for(int i=0; i<99; i++){ 
         all_tasks[i].task_x = 0;
         all_tasks[i].task_y = 0;
-        all_tasks[i].task_id = INVALID;
+        all_tasks[i].task_id = INF;
         all_tasks[i].task_type = INVALID;
         all_tasks[i].is_completed = INVALID;
+        all_tasks[i].in_active = INVALID;
     }
 
     // Init active tas positions to "INVALID"
@@ -413,57 +508,59 @@ void build_message(active_task_t task, robot_robot_message_t* msg)
     msg->is_completed = task.is_completed;
 }
 
-// Send task information to every robot in range that is not me
-void send_task_info()
-{
+void send_task_info() {
+    static int last_broadcast_time = 0;
+    if (clock - last_broadcast_time < 200) return; // Broadcast every 200ms
+
     robot_robot_message_t msg;
-    for (int i=0; i<NUM_ROBOTS; i++) {
+    for (int i = 0; i < NUM_ROBOTS; i++) {
         if (i != robot_id) {
-            while (wb_emitter_get_channel(sr_emitter_tag) != i+NUM_ROBOTS+1) {
-                wb_emitter_set_channel(sr_emitter_tag, i+NUM_ROBOTS+1);
+            while (wb_emitter_get_channel(sr_emitter_tag) != i + NUM_ROBOTS + 1) {
+                wb_emitter_set_channel(sr_emitter_tag, i + NUM_ROBOTS + 1);
             }
-            for (int j=0; j<NUM_TASKS; j++) {
+            for (int j = 0; j < NUM_TASKS; j++) {
                 build_message(active_tasks[j], &msg);
                 wb_emitter_send(sr_emitter_tag, &msg, sizeof(robot_robot_message_t));
             }
         }
     }
+
+    last_broadcast_time = clock;
 }
 
-// Receive task information from every robot in range that is not me
 void receive_task_info() {
     robot_robot_message_t msg;
-    //printf("There are %d messages in the queue for robot %d.\n", wb_receiver_get_queue_length(sr_receiver_tag), robot_id);
-    while (wb_receiver_get_queue_length(sr_receiver_tag) > 0) {
+    int processed_messages = 0;
+    
+    while (wb_receiver_get_queue_length(sr_receiver_tag) > 0 && processed_messages < 10) { // Limit messages processed
+        processed_messages++;
+        
         if (wb_receiver_get_data_size(sr_receiver_tag) != sizeof(robot_robot_message_t)) {
-            //printf("Error: Message size mismatch for robot %d. Expected %lu, got %d.\n",
-            //    robot_id, sizeof(robot_robot_message_t), wb_receiver_get_data_size(sr_receiver_tag));
-            wb_receiver_next_packet(sr_receiver_tag);  // Skip this packet
+            printf("Error: Unexpected message size. Skipping packet.\n");
+            wb_receiver_next_packet(sr_receiver_tag);
             continue;
         }
-        const message_t *rmsg = wb_receiver_get_data(sr_receiver_tag);
 
-        // Make a copy of the message
+        const message_t *rmsg = wb_receiver_get_data(sr_receiver_tag);
         memcpy(&msg, rmsg, sizeof(robot_robot_message_t));
         wb_receiver_next_packet(sr_receiver_tag);
 
-        //printf("Message received : task id=%d, robot id=%d, bid value=%d.\n", msg->task_id, msg->robot_id, msg->bid_value);
-        for (int j = 0; j < NUM_ROBOTS; j++) {
-            if (msg.bid_values[j] != INF) {  // Valid bid value
-                // Update only if the new bid is better (lower value)
-                //if (active_tasks[msg.task_id].bid_values[j] == INF ||
-                //    msg.bid_values[j] < active_tasks[msg.task_id].bid_values[j]) {
-                    active_tasks[msg.task_id].bid_values[j] = msg.bid_values[j];
-                    //printf("Updated Task %d: Robot %d bid value %.2f.\n",
-                    //       msg->task_id, j, msg->bid_values[j]);
-                //}
-            }
-            all_tasks[msg.task_id].is_completed = msg.is_completed;
+        if (msg.task_id < 0 || msg.task_id >= 99) {
+            printf("Error: Received invalid task ID %d.\n", msg.task_id);
+            continue;
         }
-    }  
-    update_active_tasks;
-}
 
+        for (int j = 0; j < NUM_ROBOTS; j++) {
+            if (msg.bid_values[j] != INF) {
+                for (int k = 0; k < NUM_TASKS; k++) {
+                    if (all_tasks[msg.task_id].task_id == active_tasks[k].task_id) {
+                        active_tasks[k].bid_values[j] = msg.bid_values[j];
+                    }
+                }
+            }
+        }
+    }
+}
 
 // Compare the bids of the robots on every task
 void compare_bids()
@@ -531,7 +628,7 @@ void update_finished_task_state(task_t task)
     }
 }
 
-void update_state(int _sum_distances, task_t task, int handling_time)
+void update_state(int _sum_distances, task_t task, int handling_time, int moving_time)
 {
     static int handle_time_counter = 0;
     //printf("The sum of the sensors of robot %d is equal to %d\n", robot_id, _sum_distances); 
@@ -540,18 +637,23 @@ void update_state(int _sum_distances, task_t task, int handling_time)
     //printf("Robot %d is %.4f from task %d\n", robot_id, dist(task.task_x, task.task_y, my_pos[0], my_pos[1]), task.task_id);
     if (state == GO_TO_GOAL && _sum_distances > STATECHANGE_DIST){
         state = OBSTACLE_AVOID;
+        moving_time += TIME_STEP;
     }
     else if (state == OBSTACLE_AVOID && _sum_distances > STATECHANGE_DIST) {
         state = OBSTACLE_AVOID;
+        moving_time += TIME_STEP;
     }
     else if(state == OBSTACLE_AVOID && _sum_distances < STATECHANGE_DIST && target_valid){
         state = GO_TO_GOAL;
+        moving_time += TIME_STEP;
     }
     else if(state == STAY && target_valid){
         state = GO_TO_GOAL;
+        moving_time += TIME_STEP;
     }
     else if (state == GO_TO_GOAL && dist(task.task_x, task.task_y, my_pos[0], my_pos[1]) < 0.1) {
         state = HANDLING_TASK;
+        moving_time += TIME_STEP;
     } 
     else if (state == FINISHED_TASK) {
         state = STAY;
@@ -559,6 +661,7 @@ void update_state(int _sum_distances, task_t task, int handling_time)
     else if (state == HANDLING_TASK && handle_time_counter < handling_time) {
         state = HANDLING_TASK;
         handle_time_counter += TIME_STEP;
+        moving_time += TIME_STEP;
     } else if (state == HANDLING_TASK && handle_time_counter > handling_time) {
         state = FINISHED_TASK;
         printf("Finished the task in %d ms\n", handle_time_counter);
@@ -590,8 +693,8 @@ void update_self_motion(int msl, int msr) {
     my_heading -= dtheta;
     
     // Keep orientation within 0, 2pi
-    if (my_heading > 2*M_PI) my_heading -= 2.0*M_PI;
-    if (my_heading < 0) my_heading += 2.0*M_PI;
+    if (my_heading > M_PI) my_heading -= 2.0*M_PI;
+    if (my_heading < -M_PI) my_heading += 2.0*M_PI;
 
     // Keep track of highest velocity for modelling
     double velocity = du * 1000.0 / (double) TIME_STEP;
@@ -621,27 +724,29 @@ void compute_avoid_obstacle(int *msl, int *msr, int distances[])
 
 void astolfi_control(task_t goal_task, int *msl, int *msr) 
 {
-    float Kp = 10;  // > 0
-    float Ka = 20;  // > Kp
+    float Kp = 15;  // > 0
+    float Ka = 40;  // > Kp
+    //float Kb = -5;  // < 0
 
     double delta_x = goal_task.task_x - my_pos[0];
     double delta_y = goal_task.task_y - my_pos[1];
-    double reference_angle = atan2(delta_x, delta_y);
+    double reference_angle = atan2(delta_y, delta_x);
 
-    double rho = sqrt(delta_x*delta_x + delta_y*delta_y);
+    //double rho = sqrt(delta_x * delta_x + delta_y * delta_y);
     double alpha = reference_angle - my_heading;
 
-    // Keep orientation within 0, 2pi
-    if (alpha > 2*M_PI) alpha -= 2.0*M_PI;
-    if (alpha < 0) alpha += 2.0*M_PI;
+    // Keep orientation within [-π, π]
+    if (alpha > M_PI) alpha -= 2.0 * M_PI;
+    if (alpha < -M_PI) alpha += 2.0 * M_PI;
 
-    double power = 0.25;
-    //double K_power = 12 / (pow(goal_radius, power));
-    double v = Kp;//* K_power * pow(rho, power);
-    double omega = Ka * alpha;
+    //double beta = - my_heading - alpha;
 
-    *msr = (int) ((AXLE_LENGTH/2) * omega + v) / WHEEL_RADIUS;
-    *msl = (int) (v - (AXLE_LENGTH/2) * omega) / WHEEL_RADIUS;
+    double v = Kp; // Linear velocity
+    double omega = Ka * alpha ;//+ Kb * beta; // Angular velocity
+
+    // Convert to wheel speeds
+    *msr = (int)((AXLE_LENGTH / 2) * omega + v) / WHEEL_RADIUS;
+    *msl = (int)(v - (AXLE_LENGTH / 2) * omega) / WHEEL_RADIUS;
 }
 
 // Compute wheel speeds to go towards a task
@@ -709,6 +814,9 @@ void run(int ms)
     static double prev_heading = 0.0;       // Store previous heading 	
 
     static int handling_time = 0;           // Store the handling time of a task
+    static int moving_time = 0;
+
+    static int active_task_init = 0;
 
     // Other variables
     int sensor_nb;
@@ -723,14 +831,23 @@ void run(int ms)
     // Get info from supervisor
     receive_updates();
 
+    if (active_task_init <= 2) {
+        first_update_active_tasks();
+        active_task_init += 1;
+    }
+
     /* get current position */
     const double *gps_pos = wb_gps_get_values(gps);
     my_pos[0] = gps_pos[0];
     my_pos[1] = gps_pos[1];
     /* get current heading */
-    my_heading = compute_heading(my_pos, prev_pos, prev_heading);
-    //printf("Robot %d previously at (%.6f, %.6f, %.6f).\n", robot_id, prev_pos[0], prev_pos[1], prev_heading);
-    //printf("Robot %d at (%.6f, %.6f, %.6f).\n", robot_id, my_pos[0], my_pos[1], my_heading);  
+    if (clock > 2*TIME_STEP) {
+        my_heading = compute_heading(my_pos, prev_pos, prev_heading);
+    } else {
+        my_heading = 0;
+    }
+    //printf("Robot %d previously at (%.6f, %.6f, %.6f).\n", robot_id, prev_pos[0], prev_pos[1], 180*prev_heading/M_PI);
+    //printf("Robot %d at (%.6f, %.6f, %.6f).\n", robot_id, my_pos[0], my_pos[1], 180*my_heading/M_PI);  
 
     compute_bid();
     
@@ -754,7 +871,7 @@ void run(int ms)
         else handling_time = 9000;
     } 
 
-    update_state(sum_distances, goal_task, handling_time);
+    update_state(sum_distances, goal_task, handling_time, moving_time);
 
     printf("Robot %d currently in state %d.\n", robot_id, state);
 
@@ -799,7 +916,16 @@ void run(int ms)
     msr_w = msr*MAX_SPEED_WEB/1000;
     wb_motor_set_velocity(left_motor, msl_w);
     wb_motor_set_velocity(right_motor, msr_w);
-    update_self_motion(msl, msr);
+
+    if (moving_time > 120000) {
+        wb_motor_set_velocity(left_motor, 0);
+        wb_motor_set_velocity(right_motor, 0);
+        wb_robot_step(TIME_STEP);
+        printf("Robot %d has no energy left.\n", robot_id);
+        exit(0);
+    }
+
+    //update_self_motion(msl, msr);
 
     // Update the previous pose
     prev_pos[0] = my_pos[0];
@@ -810,6 +936,8 @@ void run(int ms)
 
     // Print the task table summary
     print_task_table();
+
+    //print_all_tasks();
 
     // Update clock
     clock += ms;

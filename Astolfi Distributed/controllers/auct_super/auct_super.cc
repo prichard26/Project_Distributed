@@ -50,7 +50,7 @@ using namespace std;
 // Parameters that can be changed
 #define NUM_ROBOTS 5                 // Change this also in the epuck_crown.c!
 #define NUM_ACTIVE_EVENTS 10           // number of active events
-#define TOTAL_EVENTS_TO_HANDLE  50   // Events after which simulation stops or...
+#define TOTAL_EVENTS_TO_HANDLE  200   // Events after which simulation stops or...
 #define MAX_RUNTIME (3*60*1000)      // ...total runtime after which simulation stops
 //
 
@@ -252,7 +252,6 @@ private:
     printf("------------------------------------------------------------\n");
   }
 
-  
   void addEvent() {
     events_.push_back(unique_ptr<Event>(new Event{next_event_id_++})); // add to list
     assert(num_active_events_ < NUM_ACTIVE_EVENTS); // check max. active events not reached
@@ -339,6 +338,7 @@ private:
         printf("Marked Event %d as DONE.\n", event->id_);
         event->processed_ = 1;
         event_queue.emplace_back(event.get(), MSG_EVENT_DONE);
+        event->markDone(clock_);
         if (num_active_events_ < NUM_ACTIVE_EVENTS) {
           addEvent();
         }
@@ -469,7 +469,6 @@ public:
 
     // outbound
     message_t msg;
-    bool is_gps_tick = false;
 
     for (int i=0;i<NUM_ROBOTS;i++) {
       // Send updates to the robot
@@ -503,6 +502,16 @@ public:
           sent_tasks.insert({i, event->id_});
         }
       } 
+      for (const auto& event : events_) {
+        if ((event->finished_) && (!event->processed_)) {
+          task_update_message_t task_msg;
+          task_msg.finished_task_id = event->id_;
+          task_msg.new_task_id = next_event_id_;
+          while(wb_emitter_get_channel(emitter_) != i+1) wb_emitter_set_channel(emitter_, i+1);
+          wb_emitter_send(emitter_, &task_msg, sizeof(task_update_message_t));
+          //event->processed_ = 1;
+        }
+      }
     }
 
     // Print the events table 
