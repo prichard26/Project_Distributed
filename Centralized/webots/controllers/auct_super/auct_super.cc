@@ -39,7 +39,7 @@ using namespace std;
 #define AUCTION_TIMEOUT 128    // number of steps after which an auction stops
 
 #define EVENT_RANGE (0.1)       // distance within which a robot must come to do event
-#define EVENT_TIMEOUT (10000)   // ticks until an event auction runs out
+#define EVENT_TIMEOUT (5000)   // ticks until an event auction runs out
 #define EVENT_GENERATION_DELAY (1000) // average time between events ms (expo distribution)
 
 #define GPS_INTERVAL (500)
@@ -217,8 +217,7 @@ public:
   uint16_t best_bidder_;        //id of the robot that had the best bid so far
   double best_bid_;             //value of the best bid (lower is better)
   uint64_t t_done_;             //time at which the assigned robot completed the bundle
-  int bidder_index;             //index at which the bidder will put bundle in tasklist (not sur I'm gonna keep it)
-
+  int bidder_arrangement_[3];      //arrangement that will be used by the bidder to complete the tasks.
 // Public functions
 public:
   // Bundle creation
@@ -231,15 +230,33 @@ public:
   bool has_bids() const { return best_bidder_ != (uint16_t) -1; }
   bool is_done() const { return t_done_ != (uint64_t) -1; }
 
+  void reset(){
+
+    event_list.clear();
+
+    assigned_to_ = -1;
+    t_announced_ = -1;
+    bids_in_ = 0;
+    best_bidder_ = -1;
+    best_bid_ = -1;
+    t_done_ = -1;
+
+    for (int i = 0; i < 3; i++){
+      bidder_arrangement_[i] = 0;
+    }
+  }
+
   // Check if bundle can be assigned // RIGHT NOW IT WAITS FOR ALL ROBOT TO BID
-  void updateAuction(uint16_t bidder, double bid, int index) {
+  void updateAuction(uint16_t bidder, double bid, int arrangement[3]) {
     if (bid >= 0.0 && (!has_bids() || bid < best_bid_)) {
       best_bidder_ = bidder;
       best_bid_ = bid;
-      bidder_index = index;  
+      for (int i = 0; i < 3; ++i) {
+            bidder_arrangement_[i] = arrangement[i];
+      }
     }
     bids_in_.set(bidder);
-    if (bids_in_.all()) assigned_to_ = best_bidder_;
+    if (bids_in_.all()) assigned_to_ = best_bidder_;    //wait for all bidders
   }
 
   void restartAuction() {
@@ -254,6 +271,7 @@ public:
   void markDone(uint64_t clk) {
     t_done_ = clk;
   }
+
 };
 
 Bundle bundle;
@@ -421,31 +439,47 @@ private:
     }
   }
 
-  void handleAuctionBundle(bundle_queue_t& bundle_queue) {
+  void handleAuctionBundle(bundle_queue_t& bundle_queue, event_queue_t& event_queue) {
     // For each unassigned event
     for (auto& event : events_) {
       if (event->is_assigned()){
         continue;
       }
-      else if (bundle.event_list.size() < 3){
-        // if bundle is not complete, add an event to it
+      else if (bundle.event_list.size() < 3 && find(bundle.event_list.begin(), bundle.event_list.end(), event.get()) == bundle.event_list.end()){
+        // if bundle is not complete and the current event is not in the list
         bundle.event_list.push_back(event.get());
+        printf("...creating bundle...\n");
       }
     }
       
-    if (bundle.event_list.size() > 3 && !auction){
+    if (bundle.event_list.size() >= 3 && !auction){
       // if the bundle is complete and no auction is taking place, announce the bundle for an auction
+      printf("Bundle is complete ! Starting auction !\n");
       bundle.t_announced_ = clock_;
       auction = true;
-      printf("[BUNDLE] An bundle with task %d, %d and %d was announced\n", bundle.event_list[0]->id_, bundle.event_list[1]->id_, bundle.event_list[1]->id_);
+      bundle_queue.emplace_back(bundle, MSG_BUNDLE_NEW);
+      printf("[BUNDLE] An bundle with task %d, %d and %d was announced\n", bundle.event_list[0]->id_, bundle.event_list[1]->id_, bundle.event_list[2]->id_);
     } 
-    else if (bundle.event_list.size() > 3 && clock_ - bundle.t_announced_ > EVENT_TIMEOUT){
+    else if (bundle.event_list.size() >= 3 && clock_ - bundle.t_announced_ > EVENT_TIMEOUT){
       // if not all robot have bid something and that EVENT_TIMEOUT time has passed out, give the bundle to the highest bidder
+      printf("bundle has bids %s\n", bundle.has_bids() ? "true" : "false");
       if (bundle.has_bids()){
         bundle.assigned_to_ = bundle.best_bidder_;
         bundle_queue.emplace_back(bundle, MSG_BUNDLE_WON);
         auction = false;
-        printf("[BUNDLE] Robot %d won the bundle", bundle.assigned_to_);
+
+        // assign the events in the best order
+        for (int m = 0; m < 3; m++) {
+            int index = bundle.bidder_arrangement_[m];
+            Event* event = bundle.event_list[index];
+            event->assigned_to_ = bundle.assigned_to_;
+            event->bidder_index = m;
+            event_queue.emplace_back(event, MSG_EVENT_WON);
+        }
+
+        printf("[AUCTION] Robot %d won the bundle\n", bundle.assigned_to_);
+        bundle.reset();
+        
       } else {
           // (reannounced the bundle in next iteration)
           bundle.restartAuction();
@@ -510,7 +544,7 @@ void updateMetricsAndDistance() {
   for (const auto &collision : new_collisions) {
     active_collisions_.push_back(collision);
     total_collisions_++;
-    printf("[COLLISION] Robots %d and %d collided\n", collision.first, collision.second);
+    //printf("[COLLISION] Robots %d and %d collided\n", collision.first, collision.second);
   }
 
   // Remove resolved collisions
@@ -589,11 +623,12 @@ public:
 
     markEventsDone(event_queue);
 
-    handleAuctionBundle(bundle_queue);
+    handleAuctionBundle(bundle_queue, event_queue);
  
     // Send and receive messages
     bid_t* pbid; // inbound
     for (int i=0;i<NUM_ROBOTS;i++) {
+      //printf("YOOOOOOOOOOOOOOO\n");
       // Check if we're receiving data
       if (wb_receiver_get_queue_length(receivers_[i]) > 0) {
         assert(wb_receiver_get_queue_length(receivers_[i]) > 0);
@@ -604,12 +639,24 @@ public:
 
         printf("[AUCTION] robot %d placed a bid of %f on the bundle\n ", pbid->robot_id, pbid->value);
 
-        bundle.updateAuction(pbid->robot_id, pbid->value, pbid->event_index);
+        bundle.updateAuction(pbid->robot_id, pbid->value, pbid->arrangement);
 
         if (bundle.is_assigned()) {
           bundle_queue.emplace_back(bundle, MSG_BUNDLE_WON);
           auction = false;
-          printf("[AUCTION] robot %d won event the bundle\n", bundle.assigned_to_);
+          
+          // send the tasks in the right order the tasks to the winner
+          for (int m = 0; m < 3; m++) {
+              int index = bundle.bidder_arrangement_[m];
+              Event* event = bundle.event_list[index];
+              event->assigned_to_ = bundle.assigned_to_;
+              event->bidder_index = m;
+              event_queue.emplace_back(event, MSG_EVENT_WON);
+          }
+
+          printf("[AUCTION] robot %d won the bundle\n", bundle.assigned_to_);
+
+          bundle.reset();
         }
 
         wb_receiver_next_packet(receivers_[i]);
@@ -642,6 +689,8 @@ public:
         const Event* event = e_es_tuple.first;
         const message_event_state_t event_state = e_es_tuple.second;
         if (event->is_assigned() && event->assigned_to_ != i) continue;
+        // if the event is not assigned, send a message about anouncing and stuff
+        // if the event is assigned and the robot is assigned to, is the good one, send the message that it was won  
 
         buildMessage(i, event, event_state, &msg);
         while (wb_emitter_get_channel(emitter_) != i+1)

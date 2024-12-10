@@ -9,7 +9,11 @@ typedef enum {
   MSG_EVENT_WON,
   MSG_EVENT_DONE,
   MSG_QUIT,
-  MSG_EVENT_BEING_HANDLED
+  MSG_EVENT_BEING_HANDLED,
+  MSG_BUNDLE_NEW,
+  MSG_BUNDLE_WON,
+  MSG_BUNDLE_DONE,
+  MSG_BUNDLE_BEING_HANDLED
 } message_event_state_t;
 
 typedef enum {A = 0, B = 1} Event_type;
@@ -28,14 +32,24 @@ typedef struct {
 
   // ]]
   int event_index;
+
+  double a1_x;
+  double a1_y;
+  Event_type a1_type;
+  double a2_x;
+  double a2_y;
+  Event_type a2_type;
+  double a3_x;
+  double a3_y;
+  Event_type a3_type;
+
 } message_t;
 
 // A message sent from a robot to the supervisor
 typedef struct {
   uint16_t robot_id; // id of the sender
-  uint16_t event_id; // id of the event the bid is for
-  double value; // value of the bid (estimated distance)
-  int event_index;
+  double value; // value of the bid
+  int arrangement[3];
 } bid_t;
 
 void log_message(const char *format, ...) {

@@ -23,7 +23,8 @@
   
 #include <webots/supervisor.h> 
 
-#include "../auct_super/message.h" 
+#include "../auct_super/message.h"
+
 #define MAX_SPEED_WEB      6.28    // Maximum speed webots
 WbDeviceTag left_motor; //handler for left wheel of the robot
 WbDeviceTag right_motor; //handler for the right wheel of the robot
@@ -38,6 +39,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 #define WHEEL_RADIUS        0.0205              // Wheel radius (meters)
 #define DELTA_T             TIME_STEP/1000      // Timestep (seconds)
 #define MAX_SPEED           800                 // Maximum speed
+#define AVG_SPEED           0.01425             // in [m/s]
 
 #define INVALID             -999
 #define BREAK               -999                //for physics plugin
@@ -57,6 +59,12 @@ typedef enum {
     RANDOM_WALK     = 4,
     HANDLING_TASK   = 5,
 } robot_state_t;
+
+typedef struct {
+    float x;
+    float y;
+    Event_type type;
+} event_data;
 
 #define DEFAULT_STATE (STAY)
 
@@ -96,6 +104,44 @@ static WbDeviceTag ds[NB_SENSORS];  // Handle for the infrared distance sensors
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* helper functions */
+
+float compute_dist(event_data e1, event_data e2){
+    return sqrt((e2.x - e1.x)*(e2.x - e1.x) + (e2.y - e1.y)*(e2.y - e1.y));
+}
+
+float compute_delay(event_data e, uint16_t robot_id){
+    if (robot_id < 2){              // robot is type A
+        if (e.type == A){
+            return 3000;    //[ms]
+        }
+        else{
+            return 5000;
+        }
+    }else{                          // robot is type B
+        if (e.type == A){
+            return 9000;
+        }
+        else{
+            return 1000;
+        }
+    }
+}
+
+float compute_cost(event_data event_data_list[3], int i, int j, int k){
+    float cost = 0.0;
+    event_data my_position = {my_pos[0], my_pos[1], 0};
+    int indices[3] = {i, j, k}; 
+
+    cost += compute_dist(my_position, event_data_list[indices[0]]) / AVG_SPEED;
+    cost += compute_delay(event_data_list[indices[0]], robot_id);
+
+    for (int m = 1; m < 3; m++){
+        cost += compute_dist(event_data_list[indices[m-1]], event_data_list[indices[m]]) / AVG_SPEED;
+        cost += compute_delay(event_data_list[indices[m]], robot_id);
+    }
+
+    return cost;
+}
 
 // Generate random number in [0,1]
 double rnd(void) {
@@ -206,51 +252,56 @@ static void receive_updates()
             target_valid = 1; //used in general state machine
             target_list_length = target_list_length+1;
         }
-        // check if new event is being auctioned
-        else if(msg.event_state == MSG_EVENT_NEW)
-        {                
-            if (state != 10) {
-                indx = target_list_length;
-                
-                double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-                double time_to_target = distance_to_task*10000 / MAX_SPEED;
-                Event_type event_type = msg.event_type;
-                double time_to_handle_task = 0;
-                
-                // Debug print for event and robot position
-                //log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
-                //            robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+        // check if new bundle is being auctioned
+        else if(msg.event_state == MSG_BUNDLE_NEW)
+        {
+            
+            if (target_list_length == 0){     //  CAREFULL MIGHT CAUSE AN ERROR
+                event_data event_data_list[3];
+                event_data_list[0] = (event_data){msg.a1_x, msg.a1_y, msg.a1_type};
+                event_data_list[1] = (event_data){msg.a2_x, msg.a2_y, msg.a2_type};
+                event_data_list[2] = (event_data){msg.a3_x, msg.a3_y, msg.a3_type};
 
-                if (robot_id < 2){              // robot of type A
-                    if (event_type == A){
-                    time_to_handle_task = 3;    //[ms]
-                    }
-                    else{
-                    time_to_handle_task = 5;
-                    }
-                }else{                          // robot of type B
-                    if (event_type == A){
-                    time_to_handle_task = 9;
-                    }
-                    else{
-                    time_to_handle_task = 1;
+                float cost = 0.0;
+                float best_cost = -1.0;
+
+                int best_arrangement[3] = {0, 0, 0};
+
+            
+                for (int i = 0; i < 3; ++i) {
+                    for (int j = 0; j < 3; ++j) {
+                        if (j != i) {
+                            for (int k = 0; k < 3; ++k) {
+                                if (k != i && k != j) {
+                                    cost = compute_cost(event_data_list, i, j, k); 
+                                    if (best_cost == -1.0 || cost < best_cost){
+                                        
+                                        best_cost = cost;
+                                        best_arrangement[0] = i;
+                                        best_arrangement[1] = j;
+                                        best_arrangement[2] = k;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                double total_time = time_to_target + time_to_handle_task;
+              
+                const bid_t my_bid = {robot_id, best_cost, {best_arrangement[0], best_arrangement[1], best_arrangement[2]}};
+                wb_emitter_set_channel(emitter_tag, robot_id+1);
+                wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
 
                 // Debug print for calculated values
                 //log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
                 //            robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
 
-                const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
-                log_message("robot_id = %d bid = %.2f to task %d", 
-                            robot_id, total_time, msg.event_id);
-                log_message("robot_id = %d has the state %d", 
-                            robot_id, state);
+                // const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
+                // log_message("robot_id = %d bid = %.2f to task %d", 
+                //             robot_id, total_time, msg.event_id);
+                // log_message("robot_id = %d has the state %d", 
+                //             robot_id, state);  
 
-                wb_emitter_set_channel(emitter_tag, robot_id+1);
-                wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
-            }          
+            }
         }
     }
 
@@ -451,6 +502,10 @@ void compute_go_to_goal(int *msl, int *msr)
 // RUN e-puck
 void run(int ms)
 {
+    for (int i = 0; i<5; i++){
+        log_message("robot %d: target %d: x = %f, z = %f \n", robot_id, i, target[i][0], target[i][1]);
+    }
+
     float msl_w, msr_w;
     // Motor speed and sensor variables	
     int msl=0,msr=0;            // motor speed left and right
@@ -468,7 +523,7 @@ void run(int ms)
             sum_distances += distances[sensor_nb];
         }
     }
-    log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
+    //log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
     
     // Get info from supervisor
     receive_updates();
