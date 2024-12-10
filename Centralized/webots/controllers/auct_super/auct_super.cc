@@ -63,6 +63,8 @@ WbNodeRef g_event_nodes[MAX_EVENTS];
 vector<WbNodeRef> g_event_nodes_free;
 map<uint16_t, RobotState> robotStates;
 
+
+
 double gauss(void) 
 {
   double x1, x2, w;
@@ -311,6 +313,16 @@ private:
 
 // Private functions
 private:
+
+  bool isRobotAssignedToEvent(uint16_t robot_id) {
+    for (const auto& event : events_) {
+        if (event->is_assigned() && !event->is_done() && event->assigned_to_ == robot_id) {
+            return true;
+        }
+    }
+    return false;
+  }
+
   void addEvent() {
     events_.push_back(unique_ptr<Event>(new Event{next_event_id_++})); // add to list
     assert(num_active_events_ < NUM_ACTIVE_EVENTS); // check max. active events not reached
@@ -479,7 +491,7 @@ private:
 
         printf("[AUCTION] Robot %d won the bundle\n", bundle.assigned_to_);
         bundle.reset();
-        
+
       } else {
           // (reannounced the bundle in next iteration)
           bundle.restartAuction();
@@ -510,11 +522,14 @@ void updateMetricsAndDistance() {
 
     // Update time metrics
     if (robotStates[i].state == 1) { // Robot is handling a task
-      total_active_time_[i] += STEP_SIZE;
-      stat_total_time_handeling_tasks_ += STEP_SIZE;
-    } else if (robotStates[i].state == 0 && distance > 0.00001) { // Robot is traveling
-      total_active_time_[i]+= STEP_SIZE;
+        total_active_time_[i] += STEP_SIZE;
+        stat_total_time_handeling_tasks_ += STEP_SIZE;
+    } else if (isRobotAssignedToEvent(i)) {
+        if (distance > 0.0001) { // Robot is moving towards an event
+            total_active_time_[i] += STEP_SIZE;
+        }
     }
+
 
     // Check for collision with walls
     if (robot_pos[0] > ARENA_WIDTH - WALL_MARGIN || robot_pos[1] > ARENA_HEIGHT - WALL_MARGIN) {
@@ -719,7 +734,7 @@ public:
     updateMetricsAndDistance(); 
 
     // Time to end the experiment?
-    if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE ||(MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
+    if (MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME) {
       printf("\n");
       printf("===== End of Simulation: Key metrics ======\n");
       printf("\n");

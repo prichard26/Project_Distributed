@@ -52,14 +52,6 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 
 #define STATECHANGE_DIST  555  // minimum value of all sensor inputs combined to change to obstacle avoidance mode
 
-typedef enum {
-    STAY            = 1,
-    GO_TO_GOAL      = 2,                    // Initial state aliases
-    OBSTACLE_AVOID  = 3,
-    RANDOM_WALK     = 4,
-    HANDLING_TASK   = 5,
-} robot_state_t;
-
 typedef struct {
     float x;
     float y;
@@ -286,12 +278,17 @@ static void receive_updates()
                         }
                     }
                 }
-              
-                const bid_t my_bid = {robot_id, best_cost, {best_arrangement[0], best_arrangement[1], best_arrangement[2]}};
-                wb_emitter_set_channel(emitter_tag, robot_id+1);
-                wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
 
-                // Debug print for calculated values
+                // Total energy required to reach and handle the task + 20% safety margin
+                double required_energy = best_cost * 1.2;
+
+                if (energy_level >= required_energy) {
+                    const bid_t my_bid = {robot_id, best_cost, {best_arrangement[0], best_arrangement[1], best_arrangement[2]}};
+                    wb_emitter_set_channel(emitter_tag, robot_id+1);
+                    wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
+                }
+
+                // Debug print for calculated values    
                 //log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
                 //            robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
 
@@ -552,11 +549,6 @@ void run(int ms)
 
             case OBSTACLE_AVOID:
                 compute_avoid_obstacle(&msl, &msr, distances);
-                break;
-
-            case RANDOM_WALK:
-                msl = 400;
-                msr = 400;
                 break;
 
             default:

@@ -18,6 +18,15 @@ typedef enum {
 
 typedef enum {A = 0, B = 1} Event_type;
 
+typedef enum {
+    STAY            = 1,
+    GO_TO_GOAL      = 2,                    // Initial state aliases
+    OBSTACLE_AVOID  = 3,
+    RANDOM_WALK     = 4,
+    HANDLING_TASK   = 5,
+} robot_state_t;
+
+
 typedef struct {
   uint16_t robot_id; // id of the intended receiver
   double robot_x;
