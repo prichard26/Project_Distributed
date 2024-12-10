@@ -85,9 +85,6 @@ int indx;                   // Event index to be sent to the supervisor
 
 float buff[99];             // Buffer for physics plugin
 
-double stat_max_velocity;
-
-
 // Proximity and radio handles
 WbDeviceTag emitter_tag, receiver_tag;
 static WbDeviceTag ds[NB_SENSORS];  // Handle for the infrared distance sensors
@@ -145,10 +142,6 @@ static void receive_updates()
         
         if(target_list_length == 0) target_valid = 0; 
 
-        // DEEEEEBUUUUUUUUUUUUUUUG
-        //log_message("robot n %d: msg.event_state = %d", robot_id, msg.event_state);
-        //log_message("robot n %d, state of the robot: %d", robot_id, state);
-
         // Event state machine
         if(msg.event_state == MSG_EVENT_GPS_ONLY)
         {
@@ -167,12 +160,10 @@ static void receive_updates()
         }
         else if (msg.event_state == MSG_EVENT_BEING_HANDLED ){    
             state = HANDLING_TASK;
-            //log_message("robot_id = %d took the state %d", robot_id, HANDLING_TASK); // pour print dans un fichier txt 
         }
         else if(msg.event_state == MSG_EVENT_DONE)
         {
             state = STAY;
-            // log_message("BACK TO STAY");
 
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
@@ -216,10 +207,6 @@ static void receive_updates()
             double time_to_target = distance_to_task*10000 / MAX_SPEED;
             Event_type event_type = msg.event_type;
             double time_to_handle_task = 0;
-            
-            // Debug print for event and robot position
-            //log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
-            //            robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
             if (robot_id < 2){              // robot of type A
                 if (event_type == A){
@@ -248,12 +235,9 @@ static void receive_updates()
 
                 wb_emitter_set_channel(emitter_tag, robot_id+1);
                 wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
-            } else {
-               log_message("Robot %d does not have enough energy to bid on event %d", robot_id, msg.event_id);
-            }    
+            }
         }
     }
-
     
     // Communication with physics plugin (channel 0)            
     i = 0; k = 1;
@@ -348,8 +332,6 @@ void reset(void)
     // Seed random generator
     srand(getpid());
 
-    // Reset stats
-    stat_max_velocity = 0.0;
 }
 
 void update_state(int _sum_distances)
@@ -389,10 +371,9 @@ void update_self_motion(int msl, int msr) {
     if (my_pos[2] > 2*M_PI) my_pos[2] -= 2.0*M_PI;
     if (my_pos[2] < 0) my_pos[2] += 2.0*M_PI;
 
-    // Keep track of highest velocity for modelling
-    double velocity = du * 1000.0 / (double) TIME_STEP;
-    if (state == GO_TO_GOAL && velocity > stat_max_velocity)
-        stat_max_velocity = velocity;
+    // Log robot position
+    log_message("time = %d, robot_id = %d, x = %.2f, y = %.2f, theta = %.2f",
+                clock, robot_id, my_pos[0], my_pos[1], my_pos[2]);
 }
 
 
@@ -469,14 +450,12 @@ void run(int ms)
             sum_distances += distances[sensor_nb];
         }
     }
-    // log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
     
     // Get info from supervisor
     receive_updates();
     if (energy_level > 0){
         if (state == GO_TO_GOAL || state == OBSTACLE_AVOID || state == HANDLING_TASK) {
             energy_level -= ms; // Decrement energy by timestep
-            log_message("Robot = %d has the following energy left  %d", robot_id, energy_level );
         }
         // State may change because of obstacles
         update_state(sum_distances);
@@ -522,7 +501,6 @@ void run(int ms)
         // Stop movement when out of energy
         wb_motor_set_velocity(left_motor, 0);
         wb_motor_set_velocity(right_motor, 0);
-        log_message("robot_id=%d has no energy left!", robot_id);
     }
 
 }
@@ -531,13 +509,7 @@ void run(int ms)
 int main(int argc, char **argv) 
 {
     reset();
-    log_message("[INIT] Robot = %d has the following energy left  %d", robot_id, energy_level);
-
-    // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {run(TIME_STEP);}
-    log_message("Robot = %d has the following energy left  %d", robot_id, energy_level );
-
     wb_robot_cleanup();
-
     return 0;
 }
