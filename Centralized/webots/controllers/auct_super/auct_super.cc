@@ -47,7 +47,6 @@ using namespace std;
 // Parameters that can be changed
 #define NUM_ROBOTS 5                 // Change this also in the epuck_crown.c!
 #define NUM_ACTIVE_EVENTS 10         // number of active events
-#define TOTAL_EVENTS_TO_HANDLE  50   // Events after which simulation stops or...
 #define MAX_RUNTIME (3*60*1000)      // ...total runtime after which simulation stops
 
 #define WALL_MARGIN 0.01  // Collision margin from the wall
@@ -381,6 +380,15 @@ private:
       }
     }
   }
+  
+bool isRobotAssignedToEvent(uint16_t robot_id){
+  for(const auto& event: events_){
+    if (event->is_assigned() && !event->is_done()&& event->assigned_to_ == robot_id){
+      return true;
+    }
+  }
+  return false;
+}
 
 void updateMetricsAndDistance() {
   // Increment simulation time
@@ -406,7 +414,7 @@ void updateMetricsAndDistance() {
     if (robotStates[i].state == 1) { // Robot is handling a task
       total_active_time_[i] += STEP_SIZE;
       stat_total_time_handeling_tasks_ += STEP_SIZE;
-    } else if (robotStates[i].state == 0 && distance > 0.00001) { // Robot is traveling
+    } else if (isRobotAssignedToEvent(i) && distance > 0.00001) { // Robot is traveling
       total_active_time_[i]+= STEP_SIZE;
     }
 
@@ -425,7 +433,7 @@ void updateMetricsAndDistance() {
       const double *pos2 = getRobotPos(j);
 
       double distance = sqrt(pow(pos1[0] - pos2[0], 2) + pow(pos1[1] - pos2[1], 2));
-      if (distance < 0.081) { // Collision detected
+      if (distance < 0.081) { // Collision detected (size of robot plus 1 cm)
         // Add to new collisions if not already present
         if (std::find(active_collisions_.begin(), active_collisions_.end(),
                       std::make_pair(i, j)) == active_collisions_.end()) {
@@ -584,7 +592,7 @@ public:
     updateMetricsAndDistance(); 
 
     // Time to end the experiment?
-    if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE ||(MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
+    if (MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME){
       printf("\n");
       printf("===== End of Simulation: Key metrics ======\n");
       printf("\n");

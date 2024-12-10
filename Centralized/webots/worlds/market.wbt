@@ -116,7 +116,7 @@ DEF e-puck3 E-puck {
   rotation 0.682725681247687 -0.7306747868661172 -1.7424514968735983e-06 3.578578181166109e-09
   name "e-puck3"
   controller "epuck_crown"
-  emitter_channel 0
+  emitter_channel 4
   receiver_channel 4
 }
 DEF e-puck4 E-puck {
@@ -124,7 +124,7 @@ DEF e-puck4 E-puck {
   rotation 0.6827253339456953 -0.7306751113787674 -6.038461811196375e-07 3.5785772366067095e-09
   name "e-puck4"
   controller "epuck_crown"
-  emitter_channel 0
+  emitter_channel 5
   receiver_channel 5
 }
 DEF e0 Transform {
@@ -134,7 +134,7 @@ DEF e0 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -151,7 +151,7 @@ DEF e1 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -169,7 +169,7 @@ DEF e2 Transform {
       appearance Appearance {
         material Material {
           ambientIntensity 0.5
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
           shininess 0.5
         }
       }
@@ -187,7 +187,7 @@ DEF e3 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -204,7 +204,7 @@ DEF e4 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -221,7 +221,7 @@ DEF e5 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -238,7 +238,7 @@ DEF e6 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -255,7 +255,7 @@ DEF e7 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -272,7 +272,7 @@ DEF e8 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -289,7 +289,7 @@ DEF e9 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {

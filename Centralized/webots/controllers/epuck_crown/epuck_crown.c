@@ -70,8 +70,8 @@ typedef enum {
 // NOTE: Weights from reynolds2.h
 int Interconn[16] = {17,29,34,10,8,-38,-56,-76,-72,-58,-36,8,10,36,28,18};
 
-double energy_level;       // Energy level of the robot
-const double max_energy = 2 * 60 * 1000; // 2 minutes in milliseconds
+int energy_level=0;       // Energy level of the robot
+const int max_energy = 2 * 60 * 1000; // 2 minutes in milliseconds
 
 // The state variables
 int clock;
@@ -172,7 +172,7 @@ static void receive_updates()
         else if(msg.event_state == MSG_EVENT_DONE)
         {
             state = STAY;
-            log_message("BACK TO STAY");
+            // log_message("BACK TO STAY");
 
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
@@ -209,48 +209,48 @@ static void receive_updates()
         // check if new event is being auctioned
         else if(msg.event_state == MSG_EVENT_NEW)
         {                
-            if (state != 10) {
-                indx = target_list_length;
-                
-                double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
-                double time_to_target = distance_to_task*10000 / MAX_SPEED;
-                Event_type event_type = msg.event_type;
-                double time_to_handle_task = 0;
-                
-                // Debug print for event and robot position
-                //log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
-                //            robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
 
-                if (robot_id < 2){              // robot of type A
-                    if (event_type == A){
-                    time_to_handle_task = 3;    //[ms]
-                    }
-                    else{
-                    time_to_handle_task = 5;
-                    }
-                }else{                          // robot of type B
-                    if (event_type == A){
-                    time_to_handle_task = 9;
-                    }
-                    else{
-                    time_to_handle_task = 1;
-                    }
+            indx = target_list_length;
+            
+            double distance_to_task = dist(my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+            double time_to_target = distance_to_task*10000 / MAX_SPEED;
+            Event_type event_type = msg.event_type;
+            double time_to_handle_task = 0;
+            
+            // Debug print for event and robot position
+            //log_message("robot_id = %d, my_pos = (%.2f, %.2f), event_pos = (%.2f, %.2f)", 
+            //            robot_id, my_pos[0], my_pos[1], msg.event_x, msg.event_y);
+
+            if (robot_id < 2){              // robot of type A
+                if (event_type == A){
+                time_to_handle_task = 3;    //[ms]
                 }
-                double total_time = time_to_target + time_to_handle_task;
+                else{
+                time_to_handle_task = 5;
+                }
+            }else{                          // robot of type B
+                if (event_type == A){
+                time_to_handle_task = 9;
+                }
+                else{
+                time_to_handle_task = 1;
+                }
+            }
 
-                // Debug print for calculated values
-                //log_message("robot_id = %d, distance_to_task = %.2f, time_to_target = %.2f, time_to_handle_task = %.2f, total_time = %.2f", 
-                //            robot_id, distance_to_task, time_to_target, time_to_handle_task, total_time);
 
+            double total_time = time_to_target + time_to_handle_task;
+
+            // Total energy required to reach and handle the task + 20% buffer
+            double required_energy = total_time * 1200;
+            if (energy_level >= required_energy) {
+   
                 const bid_t my_bid = {robot_id, msg.event_id, total_time, indx};
-                log_message("robot_id = %d bid = %.2f to task %d", 
-                            robot_id, total_time, msg.event_id);
-                log_message("robot_id = %d has the state %d", 
-                            robot_id, state);
 
                 wb_emitter_set_channel(emitter_tag, robot_id+1);
                 wb_emitter_send(emitter_tag, &my_bid, sizeof(bid_t));  
-            }          
+            } else {
+               log_message("Robot %d does not have enough energy to bid on event %d", robot_id, msg.event_id);
+            }    
         }
     }
 
@@ -293,6 +293,7 @@ void reset(void)
     wb_robot_init();
     int i;
     energy_level = max_energy; 
+
     //get motor
     left_motor = wb_robot_get_device("left wheel motor");
     right_motor = wb_robot_get_device("right wheel motor");
@@ -426,8 +427,8 @@ void compute_go_to_goal(int *msl, int *msr)
     float y =  a * sinf(my_pos[2]) + b * cosf(my_pos[2]); // y in robot coordinates
 
     // Control coefficients
-    float Ku = 0.2;   // Forward control coefficient
-    float Kw = 5.0;   // Rotational control coefficient
+    float Ku = 1.0;    // Forward control coefficient
+    float Kw = 20.0;   // Rotational control coefficient
 
     // Range and bearing
     float range = sqrtf(x*x + y*y);   // Distance to the wanted position
@@ -468,13 +469,14 @@ void run(int ms)
             sum_distances += distances[sensor_nb];
         }
     }
-    log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
+    // log_message("sum distance = %d for robot %d" , sum_distances, robot_id);
     
     // Get info from supervisor
     receive_updates();
     if (energy_level > 0){
         if (state == GO_TO_GOAL || state == OBSTACLE_AVOID || state == HANDLING_TASK) {
             energy_level -= ms; // Decrement energy by timestep
+            log_message("Robot = %d has the following energy left  %d", robot_id, energy_level );
         }
         // State may change because of obstacles
         update_state(sum_distances);
@@ -493,6 +495,7 @@ void run(int ms)
 
             case GO_TO_GOAL:
                 compute_go_to_goal(&msl, &msr);
+                //astolfi_control(&msl, &msr);
                 break;
 
             case OBSTACLE_AVOID:
@@ -513,7 +516,6 @@ void run(int ms)
         wb_motor_set_velocity(left_motor, msl_w);
         wb_motor_set_velocity(right_motor, msr_w);
         update_self_motion(msl, msr);
-
         // Update clock
         clock += ms;
     } else {
@@ -522,14 +524,19 @@ void run(int ms)
         wb_motor_set_velocity(right_motor, 0);
         log_message("robot_id=%d has no energy left!", robot_id);
     }
+
 }
 
 // MAIN
 int main(int argc, char **argv) 
 {
     reset();
+    log_message("[INIT] Robot = %d has the following energy left  %d", robot_id, energy_level);
+
     // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {run(TIME_STEP);}
+    log_message("Robot = %d has the following energy left  %d", robot_id, energy_level );
+
     wb_robot_cleanup();
 
     return 0;
