@@ -20,6 +20,7 @@
 #include <vector>
 #include <memory>
 #include <time.h>       /* time_t, struct tm, difftime, time, mktime */
+#include <algorithm>  
 
 using namespace std;
 
@@ -40,6 +41,8 @@ using namespace std;
 #define STEP_SIZE 64            // simulation step size
 #define RX_PERIOD 2
 #define AUCTION_TIMEOUT 1000    // number of steps after which an auction stops
+#define ARENA_WIDTH 1.0
+#define WALL_MARGIN 0.01
 
 #define EVENT_RANGE (0.1)      // distance within which a robot must come to do event
 #define EVENT_TIMEOUT (10000)   // ticks until an event auction runs out
@@ -193,6 +196,10 @@ private:
   double stat_total_distance_;  // total distance traveled
   double stat_robot_prev_pos_[NUM_ROBOTS][2];
 
+  uint64_t total_collisions_ = 0;
+
+  std::vector<std::pair<int, int>> active_collisions_;
+
   WbNodeRef robots_[NUM_ROBOTS];
   WbDeviceTag emitter_;
   WbDeviceTag receivers_[NUM_ROBOTS];
@@ -255,11 +262,11 @@ private:
   void addEvent() {
     events_.push_back(unique_ptr<Event>(new Event{next_event_id_++})); // add to list
     assert(num_active_events_ < NUM_ACTIVE_EVENTS); // check max. active events not reached
-    printf("Added Event %d (Type: %s) at Position (%.2f, %.2f).\n",
-            next_event_id_-1, 
-            events_.back()->type_ == A ? "A" : "B",
-            events_.back()->pos_.x, 
-            events_.back()->pos_.y);
+    //printf("Added Event %d (Type: %s) at Position (%.2f, %.2f).\n",
+            // next_event_id_-1, 
+            // events_.back()->type_ == A ? "A" : "B",
+            // events_.back()->pos_.x, 
+            // events_.back()->pos_.y);
     num_active_events_++;
     t_next_event_ = clock_ + expovariate(EVENT_GENERATION_DELAY);
   } 
@@ -369,6 +376,62 @@ private:
     }
   }
 
+  void updateMetricsAndDistance()
+  {
+    for (int i=0; i<NUM_ROBOTS; i++) {
+      const double *robot_pos = getRobotPos(i);
+      double delta[2] = {
+        robot_pos[0] - stat_robot_prev_pos_[i][0],
+        robot_pos[1] - stat_robot_prev_pos_[i][1]
+      };
+      stat_total_distance_ += sqrt(delta[0]*delta[0] + delta[1]*delta[1]);
+      stat_robot_prev_pos_[i][0] = robot_pos[0];
+      stat_robot_prev_pos_[i][1] = robot_pos[1];
+
+      // Check for collision with walls
+      if (robot_pos[0] > ARENA_WIDTH - WALL_MARGIN || robot_pos[1] > ARENA_WIDTH - WALL_MARGIN) {
+        total_collisions_++;
+      }
+    }
+
+    std::vector<std::pair<int, int>> new_collisions;
+
+    // Collision detection logic
+    for (int i=0; i<NUM_ROBOTS; i++) {
+      for (int j=0; j<NUM_ROBOTS; j++) {
+        if (i!=j) {
+          const double *pos1 = getRobotPos(i);
+          const double *pos2 = getRobotPos(j);
+
+          double distance = sqrt(pow(pos1[0]-pos2[0], 2) + pow(pos1[1] - pos2[1], 2));
+          if (distance < 0.081) {
+            // Add to new collisions if not already present
+            if (std::find(active_collisions_.begin(), active_collisions_.end(), 
+                std::make_pair(i,j)) == active_collisions_.end()) {
+              new_collisions.push_back(std::make_pair(i,j));
+            }
+          }
+        }
+      }
+    }
+    // Count new collisions
+    for (const auto &collision : new_collisions) {
+      active_collisions_.push_back(collision);
+      total_collisions_++;
+      printf("[COLLISION] robots %d and %d collided.\n", collision.first, collision.second);
+    }
+    // Remove resolved collisions
+    active_collisions_.erase(
+      std::remove_if(active_collisions_.begin(), active_collisions_.end(),
+                      [&](const std::pair<int, int> &collision) {
+                        const double *pos1 = getRobotPos(collision.first);
+                        const double *pos2 = getRobotPos(collision.second);
+                        double distance = sqrt(pow(pos1[0]-pos2[0], 2) + pow(pos1[1]-pos2[1], 2));
+                        return distance >= EVENT_RANGE;
+                      }),
+      active_collisions_.end());
+  }
+
 // Public fucntions
 public:
   Supervisor() : events_(MAX_EVENTS){}
@@ -382,7 +445,7 @@ public:
       robotStates[i].state = 0;
       robotStates[i].counter = 0;
 
-      printf("robot %d has state %d and counter %d\n", i, robotStates[i].state, robotStates[i].counter);
+      //printf("robot %d has state %d and counter %d\n", i, robotStates[i].state, robotStates[i].counter);
     }
 
     // initialize & link events
@@ -399,7 +462,7 @@ public:
     for (int i=0; i<NUM_ACTIVE_EVENTS; ++i) {
       addEvent();
     }
-    printf("There are %d active events.\n", num_active_events_);
+    //printf("There are %d active events.\n", num_active_events_);
 
     // link & initialize robots
     for (int i=0;i<NUM_ROBOTS;i++) {
@@ -459,11 +522,11 @@ public:
 
         event->finished_ = r_msg.finished;
 
-        if (r_msg.finished) {
-          //event->finished_ = r_msg->finished;
-          printf("Event %d was finished.\n", event->id_);
-          //markEventsDone(event_queue, processed_events);
-        }
+        // if (r_msg.finished) {
+        //   event->finished_ = r_msg->finished;
+        //   printf("Event %d was finished.\n", event->id_);
+        //   markEventsDone(event_queue, processed_events);
+        // }
       }
     }
 
@@ -492,11 +555,11 @@ public:
           
           buildMessage(i, event, event_state, &msg);
           while (wb_emitter_get_channel(emitter_) != i+1) wb_emitter_set_channel(emitter_, i+1);
-          printf("Sending message to channel %d\n", wb_emitter_get_channel(emitter_));
+          //printf("Sending message to channel %d\n", wb_emitter_get_channel(emitter_));
           //printf("Sending robot position to Robot %d : [x=%d, y=%d, heading=%d]\n", msg.robot_id, msg.robot_x, msg.robot_y, msg.heading);
-          printf("Sending Event message to Robot %d: [Event ID=%d, Event X=%.2f, Event Y=%.2f, Event Type=%s]\n",
-                msg.robot_id, msg.event_id, msg.event_x, msg.event_y,
-                msg.event_type == A ? "A" : "B");
+          //printf("Sending Event message to Robot %d: [Event ID=%d, Event X=%.2f, Event Y=%.2f, Event Type=%s]\n",
+          //      msg.robot_id, msg.event_id, msg.event_x, msg.event_y,
+          //      msg.event_type == A ? "A" : "B");
           wb_emitter_send(emitter_, &msg, sizeof(message_t));
           // Mark this task as sent
           sent_tasks.insert({i, event->id_});
@@ -515,13 +578,14 @@ public:
     }
 
     // Print the events table 
-    printEventTable();
+    //printEventTable();
 
     // Print the event queue
     //printEventQueue(event_queue);
 
     // Keep track of distance travelled by all robots
-    statTotalDistance();
+    //statTotalDistance();
+    updateMetricsAndDistance();
 
     // Time to end the experiment?
     if (num_events_handled_ >= TOTAL_EVENTS_TO_HANDLE ||(MAX_RUNTIME > 0 && clock_ >= MAX_RUNTIME)) {
@@ -536,6 +600,8 @@ public:
       
       printf("Handled %d events in %d seconds, events handled per second = %.2f\n",
              num_events_handled_, (int) clock_ / 1000, ehr);
+      printf("Total collisions = %llu\n", total_collisions_/2);
+      printf("Total distance travelled = %.2f\n", stat_total_distance_);
       printf("Performance: %f\n", perf);
       return false;
     } 
@@ -558,7 +624,6 @@ void link_event_nodes() {
       exit(1); // Fail fast if a node is missing
     }
   }
-  printf("Every event node was linked successfully.\n");
 }
 
 // MAIN LOOP (does steps)
@@ -577,7 +642,7 @@ int main(void)
   // start the controller
   while (wb_robot_step(STEP_SIZE) != -1)
   {
-    printf("SUPERVISOR LOOP\n");
+    //printf("SUPERVISOR LOOP\n");
     if (!supervisor.step(STEP_SIZE)) break; //break at return = false
   }
   //wb_supervisor_simulation_reset_physics();

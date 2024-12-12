@@ -628,7 +628,7 @@ void update_finished_task_state(task_t task)
     }
 }
 
-void update_state(int _sum_distances, task_t task, int handling_time, int moving_time)
+void update_state(int _sum_distances, task_t task, int handling_time)
 {
     static int handle_time_counter = 0;
     //printf("The sum of the sensors of robot %d is equal to %d\n", robot_id, _sum_distances); 
@@ -637,23 +637,18 @@ void update_state(int _sum_distances, task_t task, int handling_time, int moving
     //printf("Robot %d is %.4f from task %d\n", robot_id, dist(task.task_x, task.task_y, my_pos[0], my_pos[1]), task.task_id);
     if (state == GO_TO_GOAL && _sum_distances > STATECHANGE_DIST){
         state = OBSTACLE_AVOID;
-        moving_time += TIME_STEP;
     }
     else if (state == OBSTACLE_AVOID && _sum_distances > STATECHANGE_DIST) {
         state = OBSTACLE_AVOID;
-        moving_time += TIME_STEP;
     }
     else if(state == OBSTACLE_AVOID && _sum_distances < STATECHANGE_DIST && target_valid){
         state = GO_TO_GOAL;
-        moving_time += TIME_STEP;
     }
     else if(state == STAY && target_valid){
         state = GO_TO_GOAL;
-        moving_time += TIME_STEP;
     }
     else if (state == GO_TO_GOAL && dist(task.task_x, task.task_y, my_pos[0], my_pos[1]) < 0.1) {
         state = HANDLING_TASK;
-        moving_time += TIME_STEP;
     } 
     else if (state == FINISHED_TASK) {
         state = STAY;
@@ -661,7 +656,6 @@ void update_state(int _sum_distances, task_t task, int handling_time, int moving
     else if (state == HANDLING_TASK && handle_time_counter < handling_time) {
         state = HANDLING_TASK;
         handle_time_counter += TIME_STEP;
-        moving_time += TIME_STEP;
     } else if (state == HANDLING_TASK && handle_time_counter > handling_time) {
         state = FINISHED_TASK;
         printf("Finished the task in %d ms\n", handle_time_counter);
@@ -725,7 +719,7 @@ void compute_avoid_obstacle(int *msl, int *msr, int distances[])
 void astolfi_control(task_t goal_task, int *msl, int *msr) 
 {
     float Kp = 15;  // > 0
-    float Ka = 40;  // > Kp
+    float Ka = 45;  // > Kp
     //float Kb = -5;  // < 0
 
     double delta_x = goal_task.task_x - my_pos[0];
@@ -766,6 +760,10 @@ void compute_go_to_task(task_t task, int *msl, int *msr)
     // Range and bearing
     float range = sqrtf(x*x + y*y);   // Distance to the wanted position
     float bearing = atan2(y, x);     // Orientation of the wanted position
+
+    // Keep bearing between pi and -pi
+    if (bearing > M_PI) bearing -= 2.0 * M_PI;
+    if (bearing < -M_PI) bearing += 2.0 * M_PI;
 
     float Ku = 1.0;  // Higher gain for larger distances
     float Kw = 10.0; // Lower gain near the target
@@ -814,7 +812,7 @@ void run(int ms)
     static double prev_heading = 0.0;       // Store previous heading 	
 
     static int handling_time = 0;           // Store the handling time of a task
-    static int moving_time = 0;
+    static double active_time = 0;             // Store the time a robot is active for
 
     static int active_task_init = 0;
 
@@ -871,9 +869,9 @@ void run(int ms)
         else handling_time = 9000;
     } 
 
-    update_state(sum_distances, goal_task, handling_time, moving_time);
+    update_state(sum_distances, goal_task, handling_time);
 
-    printf("Robot %d currently in state %d.\n", robot_id, state);
+    //printf("Robot %d currently in state %d.\n", robot_id, state);
 
     // Set wheel speeds depending on state
     switch (state) {
@@ -917,15 +915,19 @@ void run(int ms)
     wb_motor_set_velocity(left_motor, msl_w);
     wb_motor_set_velocity(right_motor, msr_w);
 
-    if (moving_time > 120000) {
+    if (state != STAY) {
+        active_time += (double) TIME_STEP/1000;
+        //printf("Robot %d active for %.2f s\n", robot_id, active_time);
+    }
+
+    //printf("Robot %d active time : %d", robot_id, active_time);
+    if (active_time >= 120) {
         wb_motor_set_velocity(left_motor, 0);
-        wb_motor_set_velocity(right_motor, 0);
+        wb_motor_set_velocity(right_motor, 0);  
         wb_robot_step(TIME_STEP);
         printf("Robot %d has no energy left.\n", robot_id);
         exit(0);
     }
-
-    //update_self_motion(msl, msr);
 
     // Update the previous pose
     prev_pos[0] = my_pos[0];
@@ -935,7 +937,7 @@ void run(int ms)
     update_task_info_for_supervisor(goal_task);
 
     // Print the task table summary
-    print_task_table();
+    //print_task_table();
 
     //print_all_tasks();
 
@@ -949,7 +951,7 @@ int main(int argc, char **argv)
     reset();
     // RUN THE MAIN ALGORIHM
     while (wb_robot_step(TIME_STEP) != -1) {
-        printf("ROBOT LOOP\n");
+        //printf("ROBOT LOOP\n");
         run(TIME_STEP);
     }
     wb_robot_cleanup();
