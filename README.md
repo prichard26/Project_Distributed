@@ -32,17 +32,18 @@ For exact guideline please refer to `DIS_24-25_course_project_assignment.pdf`
 
 ## Methods Implemented
 ### 1. Centralized Algorithm  
-A supervisor assigns tasks to robots using a **centralized market-based strategy**. The supervisor calculates costs and selects the best robot for each task sequentially.
+A supervisor assigns tasks to robots using a **centralized market-based strategy**. The supervisor calculates costs and selects the best robot for each task sequentially. The code for this algorithm is in the *Centralized* folder.
 
 ### 2. Distributed Algorithm  
-Robots bid for tasks autonomously. Each robot calculates the cost of performing a task and competes to minimize its individual time while maximizing overall efficiency.
+Robots bid for tasks autonomously. Each robot calculates the cost of performing a task and competes to minimize its individual time while maximizing overall efficiency. The code for this algorithm is in the *Distributed* folder.
 
 ### 3. Multi-Step Planning  
 Both strategies include a **three-step task planning** mechanism:  
    - Robots plan up to **3 tasks** in advance to optimize task execution.  
    - The system evaluates the total cost of task assignments for better efficiency.
    - For exact implementation or results please refer to `report_slides.pdf`
-    
+   - The code for the centralized algorithm is in the *Centralized_bundle* folder.
+   - The code for the distributed algorithm is in the *Distributed_planning* folder.
 ---
 
 ## Metrics  
