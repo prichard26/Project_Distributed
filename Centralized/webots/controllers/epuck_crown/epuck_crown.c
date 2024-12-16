@@ -408,8 +408,8 @@ void compute_go_to_goal(int *msl, int *msr)
     float y =  a * sinf(my_pos[2]) + b * cosf(my_pos[2]); // y in robot coordinates
 
     // Control coefficients
-    float Ku = 1.0;    // Forward control coefficient
-    float Kw = 20.0;   // Rotational control coefficient
+    float Ku = 0.2;    // Forward control coefficient
+    float Kw = 2.0;   // Rotational control coefficient
 
     // Range and bearing
     float range = sqrtf(x*x + y*y);   // Distance to the wanted position

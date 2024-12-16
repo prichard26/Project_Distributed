@@ -1,0 +1,50 @@
+===== End of Simulation: Key metrics ======
+Robot 0: Average activation time = 66.09%
+Robot 1: Average activation time = 63.03%
+Robot 2: Average activation time = 44.90%
+Robot 3: Average activation time = 39.99%
+Robot 4: Average activation time = 50.20%
+Total collisions = 4
+Total distance travelled = 16.221414
+Total time handeling task = 177.152000
+Handled 91 events in 180 seconds, events handled per second = 0.51
+===== End of Simulation: Key metrics ======
+Robot 0: Average activation time = 59.90%
+Robot 1: Average activation time = 61.68%
+Robot 2: Average activation time = 44.51%
+Robot 3: Average activation time = 56.84%
+Robot 4: Average activation time = 60.47%
+Total collisions = 5
+Total distance travelled = 19.671274
+Total time handeling task = 160.320000
+Handled 99 events in 180 seconds, events handled per second = 0.55
+===== End of Simulation: Key metrics ======
+Robot 0: Average activation time = 27.69%
+Robot 1: Average activation time = 66.05%
+Robot 2: Average activation time = 38.46%
+Robot 3: Average activation time = 52.44%
+Robot 4: Average activation time = 56.59%
+Total collisions = 7
+Total distance travelled = 15.222709
+Total time handeling task = 142.208000
+Handled 80 events in 180 seconds, events handled per second = 0.44
+===== End of Simulation: Key metrics ======
+Robot 0: Average activation time = 50.34%
+Robot 1: Average activation time = 67.12%
+Robot 2: Average activation time = 14.61%
+Robot 3: Average activation time = 56.27%
+Robot 4: Average activation time = 58.37%
+Total collisions = 5
+Total distance travelled = 15.049835
+Total time handeling task = 168.256000
+Handled 94 events in 180 seconds, events handled per second = 0.52
+===== End of Simulation: Key metrics ======
+Robot 0: Average activation time = 56.59%
+Robot 1: Average activation time = 66.26%
+Robot 2: Average activation time = 52.54%
+Robot 3: Average activation time = 66.05%
+Robot 4: Average activation time = 62.85%
+Total collisions = 9
+Total distance travelled = 23.900235
+Total time handeling task = 163.968000
+Handled 89 events in 180 seconds, events handled per second = 0.49

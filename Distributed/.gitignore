@@ -1,0 +1,11 @@
+# Ignore executable files
+*.exe
+
+# Ignore object files and other temporary build artifacts
+*.o
+*.obj
+*.log
+*.tmp
+
+# Ignore Visual Studio Code settings
+.vscode/
