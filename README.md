@@ -42,8 +42,9 @@ Both strategies include a **three-step task planning** mechanism:
    - Robots plan up to **3 tasks** in advance to optimize task execution.  
    - The system evaluates the total cost of task assignments for better efficiency.
    - For exact implementation or results please refer to `report_slides.pdf`
-   - The code for the centralized algorithm is in the *Centralized_bundle* folder.
-   - The code for the distributed algorithm is in the *Distributed_planning* folder.
+     - The code for the centralized algorithm is in the *Centralized_bundle* folder.
+     - The code for the distributed algorithm is in the *Distributed_planning* folder.
+     - An attempt to make another centralized planning strategy is contained in the *[Unachieved] Centralized planning optimized* folder.
 ---
 
 ## Metrics  
