@@ -510,7 +510,7 @@ void build_message(active_task_t task, robot_robot_message_t* msg)
 
 void send_task_info() {
     static int last_broadcast_time = 0;
-    if (clock - last_broadcast_time < 200) return; // Broadcast every 200ms
+    if (clock - last_broadcast_time < 500) return; // Broadcast every 200ms
 
     robot_robot_message_t msg;
     for (int i = 0; i < NUM_ROBOTS; i++) {

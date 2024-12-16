@@ -725,7 +725,6 @@ void update_self_motion(int msl, int msr) {
         stat_max_velocity = velocity;
 }
 
-
 // Compute wheel speed to avoid obstacles
 void compute_avoid_obstacle(int *msl, int *msr, int distances[]) 
 {
@@ -781,10 +780,6 @@ void compute_go_to_task(task_t task, int *msl, int *msr)
     // Compute wanted position from task position and current location
     float x = a*cosf(my_heading) - b*sinf(my_heading);
     float y = a*sinf(my_heading) + b*cosf(my_heading);
-
-    //float Ku = 0.5 ;     // Forward control gain
-    //float Kw = 20.0;    // Rotation control gain
-    //float range = 1;
 
     // Range and bearing
     float range = sqrtf(x*x + y*y);   // Distance to the wanted position
@@ -932,7 +927,6 @@ task_t three_step_plan()
             won_count += 1;
         }
     }
-    //printf("Robot %d has the best bid on %d tasks.\n", robot_id, won_count);
 
     // Select up to 3 tasks with the lowest bids
     int num_selected = (won_count < 3) ? won_count : 3;
@@ -952,10 +946,6 @@ task_t three_step_plan()
                     }
                 } else {
                     // Select the next smallest bid greater than the previous one
-                    // printf("Best bid value < dummy_bid : %d, best bid value > previous best bid value : %d.\n", 
-                    //         won_tasks[j].best_bid_value < dummy_bid,
-                    //         won_tasks[j].best_bid_value > selected_tasks[i - 1].best_bid_value);    
-                    //printf("Dummy bid : %.3f, Previous best bid value : %.3f.\n", dummy_bid, selected_tasks[i-1].best_bid_value);
                     if (won_tasks[j].best_bid_value < dummy_bid &&
                         won_tasks[j].best_bid_value > selected_tasks[i - 1].best_bid_value) {
                         best_index = j;
