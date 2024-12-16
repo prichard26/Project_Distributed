@@ -5,7 +5,7 @@ This project focuses on implementing **market-based task allocation** strategies
 1. **Centralized Strategy**: A supervisor assigns tasks to robots.
 2. **Distributed Strategy**: Robots autonomously bid and organize task allocation.
 
-For each method, the project incorporates a **three-step task planning** approach to optimize task scheduling.
+For each method, the project also incorporates a **three-step task planning** approach to optimize task scheduling.
 
 ---
 
@@ -63,6 +63,13 @@ In the presentation, the following aspects are covered:
 
 ---
 
-## Non fixed issue
+## Non fixed issues
 
-- In centralized algorithms, the reported activation time in the supervisor may occasionally exceed 66.66%. This is not an actual error in the robot's behavior but rather a reporting error. A robot is considered 'activated' when it is either traveling to a goal or handeling a task. However, if the robot stops during one of these actions (due to the lack of energy), the activation counter continues to increment, leading to an overestimation of the activation time. Importantly, the robot cannot move without sufficient energy.
+- In the centralized algorithms, the reported activation time in the supervisor may occasionally exceed 66.66%. This is not an actual error in the robot's behavior but rather a reporting error. A robot is considered 'activated' when it is either traveling to a goal or handeling a task. However, if the robot stops during one of these actions (due to the lack of energy), the activation counter continues to increment, leading to an overestimation of the activation time. Importantly, the robot cannot move without sufficient energy.
+- In the distributed algorithm, the controller that is used for the centralized algorithm generates jittery and jerky behavior in the distributed algorithm, hence the implementation of a new Astolfi controller for smooth trajectories towards the tasks.
+- In the distributed algorithm, some robots may crash during the simulation, possibly due to inter-robot communication channel conflicts causing segmentation faults in the code.
+
+---
+
+## References
+- Astolfi controller : Astolfi, A. (1999). *Exponential stabilization of a wheeled mobile robot via discontinuous control*. Journal of Dynamic Systems, Measurement, and Control, **121**(1), 121-126.
