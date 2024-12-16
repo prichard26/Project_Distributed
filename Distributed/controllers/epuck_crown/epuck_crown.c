@@ -463,7 +463,7 @@ void reset(void)
     // What type of robot am I ?
     if ((robot_id == 0) || (robot_id == 1)) {robot_type = 0;}
     else robot_type = 1;
-    printf("Robot %d is of type %d\n", robot_id, robot_type);
+    // printf("Robot %d is of type %d\n", robot_id, robot_type);
 
     // Am I used in this simulation?
     if (robot_id >= NUM_ROBOTS) {
@@ -536,7 +536,7 @@ void receive_task_info() {
         processed_messages++;
         
         if (wb_receiver_get_data_size(sr_receiver_tag) != sizeof(robot_robot_message_t)) {
-            printf("Error: Unexpected message size. Skipping packet.\n");
+            // printf("Error: Unexpected message size. Skipping packet.\n");
             wb_receiver_next_packet(sr_receiver_tag);
             continue;
         }
@@ -546,7 +546,7 @@ void receive_task_info() {
         wb_receiver_next_packet(sr_receiver_tag);
 
         if (msg.task_id < 0 || msg.task_id >= 99) {
-            printf("Error: Received invalid task ID %d.\n", msg.task_id);
+            // printf("Error: Received invalid task ID %d.\n", msg.task_id);
             continue;
         }
 
@@ -658,7 +658,7 @@ void update_state(int _sum_distances, task_t task, int handling_time)
         handle_time_counter += TIME_STEP;
     } else if (state == HANDLING_TASK && handle_time_counter > handling_time) {
         state = FINISHED_TASK;
-        printf("Finished the task in %d ms\n", handle_time_counter);
+        // printf("Finished the task in %d ms\n", handle_time_counter);
         handle_time_counter = 0;
         update_finished_task_state(task);
     }
@@ -694,6 +694,10 @@ void update_self_motion(int msl, int msr) {
     double velocity = du * 1000.0 / (double) TIME_STEP;
     if (state == GO_TO_GOAL && velocity > stat_max_velocity)
         stat_max_velocity = velocity;
+
+    // Log robot position
+    log_message("time = %d, robot_id = %d, x = %.2f, y = %.2f",
+                clock, robot_id, my_pos[0], my_pos[1]);
 }
 
 
@@ -917,7 +921,8 @@ void run(int ms)
 
     if (state != STAY) {
         active_time += (double) TIME_STEP/1000;
-        //printf("Robot %d active for %.2f s\n", robot_id, active_time);
+
+        // log_message("Robot %d active for %.2f s\n", robot_id, active_time/180*100);
     }
 
     //printf("Robot %d active time : %d", robot_id, active_time);
@@ -925,7 +930,7 @@ void run(int ms)
         wb_motor_set_velocity(left_motor, 0);
         wb_motor_set_velocity(right_motor, 0);  
         wb_robot_step(TIME_STEP);
-        printf("Robot %d has no energy left.\n", robot_id);
+        // printf("Robot %d has no energy left.\n", robot_id);
         exit(0);
     }
 
@@ -940,7 +945,9 @@ void run(int ms)
     //print_task_table();
 
     //print_all_tasks();
-
+    // Log robot position
+    log_message("time = %d, robot_id = %d, x = %.2f, y = %.2f",
+                clock, robot_id, my_pos[0], my_pos[1]);
     // Update clock
     clock += ms;
 }
@@ -954,6 +961,7 @@ int main(int argc, char **argv)
         //printf("ROBOT LOOP\n");
         run(TIME_STEP);
     }
+    
     wb_robot_cleanup();
 
     return 0;

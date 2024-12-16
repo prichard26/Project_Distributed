@@ -1,13 +1,13 @@
 build/release/epuck_crown.o: epuck_crown.c \
- C:\Program\ Files\Webots/include/controller/c/webots/robot.h \
- C:\Program\ Files\Webots/include/controller/c/webots/types.h \
- C:\Program\ Files\Webots/include/controller/c/webots/nodes.h \
- C:\Program\ Files\Webots/include/controller/c/webots/emitter.h \
- C:\Program\ Files\Webots/include/controller/c/webots/receiver.h \
- C:\Program\ Files\Webots/include/controller/c/webots/distance_sensor.h \
- C:\Program\ Files\Webots/include/controller/c/webots/radio.h \
- C:\Program\ Files\Webots/include/controller/c/webots/motor.h \
- C:\Program\ Files\Webots/include/controller/c/webots/gps.h \
- C:\Program\ Files\Webots/include/controller/c/webots/supervisor.h \
- C:\Program\ Files\Webots/include/controller/c/webots/contact_point.h \
+ /usr/local/webots/include/controller/c/webots/robot.h \
+ /usr/local/webots/include/controller/c/webots/types.h \
+ /usr/local/webots/include/controller/c/webots/nodes.h \
+ /usr/local/webots/include/controller/c/webots/emitter.h \
+ /usr/local/webots/include/controller/c/webots/receiver.h \
+ /usr/local/webots/include/controller/c/webots/distance_sensor.h \
+ /usr/local/webots/include/controller/c/webots/radio.h \
+ /usr/local/webots/include/controller/c/webots/motor.h \
+ /usr/local/webots/include/controller/c/webots/gps.h \
+ /usr/local/webots/include/controller/c/webots/supervisor.h \
+ /usr/local/webots/include/controller/c/webots/contact_point.h \
  ../auct_super/message.h

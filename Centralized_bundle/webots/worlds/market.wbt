@@ -8,8 +8,8 @@ WorldInfo {
   title "Lab08 Market"
 }
 Viewpoint {
-  orientation -0.16295227560747816 0.12039647643996652 0.9792605599814512 1.5926165453569467
-  position 0.15703188710870347 -2.104099666971677 0.9517182418721312
+  orientation -0.46000092278424387 0.4322377389292629 0.7756092367184407 1.7862582718985376
+  position -0.16353244229642125 -1.2718935624815493 2.058411976754539
 }
 Background {
   skyColor [
@@ -94,13 +94,14 @@ DEF e-puck0 E-puck {
   rotation 2.5328875497210855e-06 -0.9999999999717659 -7.074790640191939e-06 0.000962939036823482
   name "e-puck0"
   controller "epuck_crown"
+  emitter_channel 0
 }
 DEF e-puck1 E-puck {
   translation -0.21 -0.05 -6.3962e-05
   rotation 0.6827272638098751 -0.7306733081546841 9.856302523928403e-07 3.578580787255785e-09
   name "e-puck1"
   controller "epuck_crown"
-  emitter_channel 2
+  emitter_channel 0
   receiver_channel 2
 }
 DEF e-puck2 E-puck {
@@ -108,7 +109,7 @@ DEF e-puck2 E-puck {
   rotation 0.6827287797539088 -0.7306718916823538 -1.0341736665017168e-06 3.578585231465048e-09
   name "e-puck2"
   controller "epuck_crown"
-  emitter_channel 3
+  emitter_channel 0
   receiver_channel 3
 }
 DEF e-puck3 E-puck {
@@ -134,7 +135,7 @@ DEF e0 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 1 0 0
         }
       }
       geometry Cylinder {
@@ -151,7 +152,7 @@ DEF e1 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 1 0 0
         }
       }
       geometry Cylinder {
@@ -169,7 +170,7 @@ DEF e2 Transform {
       appearance Appearance {
         material Material {
           ambientIntensity 0.5
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
           shininess 0.5
         }
       }
@@ -187,7 +188,7 @@ DEF e3 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -204,7 +205,7 @@ DEF e4 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -221,7 +222,7 @@ DEF e5 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -238,7 +239,7 @@ DEF e6 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -255,7 +256,7 @@ DEF e7 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {
@@ -272,7 +273,7 @@ DEF e8 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 1 0 0
         }
       }
       geometry Cylinder {
@@ -289,7 +290,7 @@ DEF e9 Transform {
     Shape {
       appearance Appearance {
         material Material {
-          diffuseColor 0 1 0
+          diffuseColor 0 0 1
         }
       }
       geometry Cylinder {

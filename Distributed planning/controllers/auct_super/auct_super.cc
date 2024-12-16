@@ -598,11 +598,22 @@ public:
       double ehr = ((double) num_events_handled_) / clock_s;
       double perf = ((double) num_events_handled_) / stat_total_distance_;
       
+     printf("\n");
+      printf("===== End of Simulation: Key metrics ======\n");
+      printf("\n");
+      for(int i=0;i<NUM_ROBOTS;i++){
+          buildMessage(i, NULL, MSG_QUIT, &msg);
+          wb_emitter_set_channel(emitter_, i+1);
+          wb_emitter_send(emitter_, &msg, sizeof(message_t));
+
+          printf("Robot %d: Average activation time = 0\n", i);
+      }
+      printf("Total collisions = %llu\n", total_collisions_/2);
+      printf("Total distance travelled = %f\n", stat_total_distance_);
+      printf("Total time handeling task = %d\n", 0/1000);  // done by hand from the robot side with print line 925
       printf("Handled %d events in %d seconds, events handled per second = %.2f\n",
              num_events_handled_, (int) clock_ / 1000, ehr);
-      printf("Total collisions = %llu\n", total_collisions_/2);
-      printf("Total distance travelled = %.2f\n", stat_total_distance_);
-      printf("Performance: %f\n", perf);
+      
       return false;
     } 
     else { return true;} //continue

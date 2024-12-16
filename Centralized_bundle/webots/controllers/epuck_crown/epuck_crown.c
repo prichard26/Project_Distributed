@@ -210,7 +210,6 @@ static void receive_updates()
         else if(msg.event_state == MSG_EVENT_DONE)
         {
             state = STAY;
-            log_message("BACK TO STAY");
 
             // If event is done, delete it from array 
             for(i=0; i<=target_list_length; i++)
@@ -440,6 +439,10 @@ void update_self_motion(int msl, int msr) {
     double velocity = du * 1000.0 / (double) TIME_STEP;
     if (state == GO_TO_GOAL && velocity > stat_max_velocity)
         stat_max_velocity = velocity;
+
+            // Log robot position
+    log_message("time = %d, robot_id = %d, x = %.2f, y = %.2f, theta = %.2f",
+                clock, robot_id, my_pos[0], my_pos[1], my_pos[2]);
 }
 
 
@@ -474,8 +477,8 @@ void compute_go_to_goal(int *msl, int *msr)
     float y =  a * sinf(my_pos[2]) + b * cosf(my_pos[2]); // y in robot coordinates
 
     // Control coefficients
-    float Ku = 0.2;   // Forward control coefficient
-    float Kw = 5.0;   // Rotational control coefficient
+    float Ku = 1.0;   // Forward control coefficient
+    float Kw = 20.0;   // Rotational control coefficient
 
     // Range and bearing
     float range = sqrtf(x*x + y*y);   // Distance to the wanted position
@@ -499,9 +502,9 @@ void compute_go_to_goal(int *msl, int *msr)
 // RUN e-puck
 void run(int ms)
 {
-    for (int i = 0; i<5; i++){
-        log_message("robot %d: target %d: x = %f, z = %f \n", robot_id, i, target[i][0], target[i][1]);
-    }
+    // for (int i = 0; i<5; i++){
+    //     log_message("robot %d: target %d: x = %f, z = %f \n", robot_id, i, target[i][0], target[i][1]);
+    // }
 
     float msl_w, msr_w;
     // Motor speed and sensor variables	
@@ -525,6 +528,8 @@ void run(int ms)
     // Get info from supervisor
     receive_updates();
     if (energy_level > 0){
+        // log_message("robot_id=%d has %2g energy left!", robot_id, energy_level);
+
         if (state == GO_TO_GOAL || state == OBSTACLE_AVOID || state == HANDLING_TASK) {
             energy_level -= ms; // Decrement energy by timestep
         }
@@ -567,7 +572,8 @@ void run(int ms)
         // Stop movement when out of energy
         wb_motor_set_velocity(left_motor, 0);
         wb_motor_set_velocity(right_motor, 0);
-        log_message("robot_id=%d has no energy left!", robot_id);
+        update_self_motion(0, 0);
+        // log_message("robot_id=%d has no energy left!", robot_id);
     }
 }
 

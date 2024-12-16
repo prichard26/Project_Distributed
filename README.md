@@ -25,6 +25,9 @@ For each method, the project incorporates a **three-step task planning** approac
    - Robots must avoid collisions and have limited communication range (0.3 m).  
    - Tasks are assigned dynamically based on priorities.  
 
+
+For exact guideline please refer to `DIS_24-25_course_project_assignment.pdf`
+
 ---
 
 ## Methods Implemented
@@ -38,7 +41,8 @@ Robots bid for tasks autonomously. Each robot calculates the cost of performing 
 Both strategies include a **three-step task planning** mechanism:  
    - Robots plan up to **3 tasks** in advance to optimize task execution.  
    - The system evaluates the total cost of task assignments for better efficiency.
-
+   - For exact implementation or results please refer to `report_slides.pdf`
+    
 ---
 
 ## Metrics  
@@ -59,10 +63,6 @@ In the presentation, the following aspects are covered:
 
 ---
 
-## Provided Materials
-The following materials are included for the project:
-- **Worlds**: `topic4.wbt`  
-- **Protos**: `epuck_range.proto`  
-- **Controllers**:  
-   - Supervisor: `supervisor.c`  
-   - e-Puck robots: `e-puck.c`
+## Non fixed issue
+
+- In centralized algorithms, the reported activation time in the supervisor may occasionally exceed 66.66%. This is not an actual error in the robot's behavior but rather a reporting error. A robot is considered 'activated' when it is either traveling to a goal or handeling a task. However, if the robot stops during one of these actions (due to the lack of energy), the activation counter continues to increment, leading to an overestimation of the activation time. Importantly, the robot cannot move without sufficient energy.

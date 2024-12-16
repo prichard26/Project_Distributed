@@ -56,7 +56,7 @@ WbDeviceTag right_motor; //handler for the right wheel of the robot
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Collective decision parameters */
 
-#define STATECHANGE_DIST 1200   // minimum value of all sensor inputs combined to change to obstacle avoidance mode
+#define STATECHANGE_DIST 650   // minimum value of all sensor inputs combined to change to obstacle avoidance mode
 
 typedef enum {
     STAY            = 1,
@@ -492,7 +492,7 @@ void reset(void)
     // What type of robot am I ?
     if ((robot_id == 0) || (robot_id == 1)) {robot_type = 0;}
     else robot_type = 1;
-    printf("Robot %d is of type %d\n", robot_id, robot_type);
+    // printf("Robot %d is of type %d\n", robot_id, robot_type);
 
     // Am I used in this simulation?
     if (robot_id >= NUM_ROBOTS) {
@@ -687,7 +687,7 @@ void update_state(int _sum_distances, task_t task, int handling_time)
         handle_time_counter += TIME_STEP;
     } else if (state == HANDLING_TASK && handle_time_counter > handling_time) {
         state = FINISHED_TASK;
-        printf("Finished the task in %d ms\n", handle_time_counter);
+        // printf("Finished the task in %d ms\n", handle_time_counter);
         handle_time_counter = 0;
         update_finished_task_state(task);
     }
@@ -790,7 +790,7 @@ void compute_go_to_task(task_t task, int *msl, int *msr)
     if (bearing < -M_PI) bearing += 2.0 * M_PI;
 
     float Ku = 1.0;  // Higher gain for larger distances
-    float Kw = 10.0; // Lower gain near the target
+    float Kw = 20.0; // Lower gain near the target
 
     // Compute forward control
     float u = Ku * range * cosf(bearing);
@@ -1125,6 +1125,7 @@ void run(int ms)
     msr_w = msr*MAX_SPEED_WEB/1000;
     wb_motor_set_velocity(left_motor, msl_w);
     wb_motor_set_velocity(right_motor, msr_w);
+    log_message("Robot %d active for %.2f s\n", robot_id, active_time/180*100);
 
     if (state != STAY) {
         active_time += (double) TIME_STEP/1000;
@@ -1136,7 +1137,7 @@ void run(int ms)
         wb_motor_set_velocity(left_motor, 0);
         wb_motor_set_velocity(right_motor, 0);  
         wb_robot_step(TIME_STEP);
-        printf("Robot %d has no energy left.\n", robot_id);
+        // printf("Robot %d has no energy left.\n", robot_id);
         exit(0);
     }
 
@@ -1151,7 +1152,8 @@ void run(int ms)
     //print_task_table();
 
     //print_all_tasks();
-
+    // log_message("time = %d, robot_id = %d, x = %.2f, y = %.2f",
+    //             clock, robot_id, my_pos[0], my_pos[1]);
     // Update clock
     clock += ms;
 }
