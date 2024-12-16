@@ -75,3 +75,4 @@ In the presentation, the following aspects are covered:
 
 ## References
 - Astolfi controller : Astolfi, A. (1999). *Exponential stabilization of a wheeled mobile robot via discontinuous control*. Journal of Dynamic Systems, Measurement, and Control, **121**(1), 121-126.
+- e-puck documentation : https://www.cyberbotics.com/doc/guide/epuck?version=R2021a
